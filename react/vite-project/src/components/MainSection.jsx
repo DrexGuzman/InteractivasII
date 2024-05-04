@@ -19,14 +19,16 @@ import { NextEvent } from './NextEvent.jsx';
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-3 sm:gap-x-10 gap-y-4 h-[70rem] sm:h-[30rem] mb-32  ">
         <Calendario/>
-        <div className="overflow-y-auto scrollbar-hide  col-span-2  bg-sky-600 rounded-3xl ">
-            <h1 className="text-center titulo mt-4 mb-4 text-white">Jueves 25 Abril 2024</h1>
+        <div className=" col-span-2  bg-sky-600 rounded-3xl ">
+            <h1 className="text-center  text-[1.5rem] sm:text-[3rem]  mt-4 mb-4 text-white">Jueves 25 Abril 2024</h1>
+            <div className='overflow-y-auto scrollbar-hide h-[24rem]'>
             <Eventos/>
             <Eventos />
             <Eventos />
             <Eventos />
             <Eventos />
             <Eventos />
+            </div>
         </div>
     </div>
 </div>
