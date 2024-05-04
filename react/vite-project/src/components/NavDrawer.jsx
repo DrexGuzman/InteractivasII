@@ -107,13 +107,13 @@ export function NavDrawer() {
     </div>
   </div>
   <div className="w-full flex justify-center mb-4">
+    <div className="relative">
     <img
       alt="User Profile"
-      className="relative rounded-full w-20 ring-4 ring-white size-[5rem]"
+      className="rounded-full w-20 ring-4 ring-white size-[5rem]"
       src="https://randomuser.me/api/portraits/women/31.jpg"
     />
-    <div className="absolute top-[90px] sm:right-[21rem] right-[6rem]">
-      <button className="rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
+    <button className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
         +
       </button>
     </div>
