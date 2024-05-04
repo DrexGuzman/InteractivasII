@@ -1,0 +1,103 @@
+@import url(../build/css/vars.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.color{color: var(--clr-blue-100); } 
+.orange-prim{color:var(--clr-yelow-100);}
+
+.titulo{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5rem;
+    
+} 
+
+.titulo-ligero{
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-sem-bold);
+    font-size: 2.5rem;
+} 
+
+.subtitulo{
+    font-family: var(--ff-primary);
+    font-size: 1.625rem;
+    font-weight: var(--fw-reg);
+    font-style: normal;
+} 
+.subtitulo-pesado{
+    font-family: var(--ff-primary);
+    font-size: 1.625rem;
+    font-weight: var(--fw-sem-bold);
+    font-style: normal;
+} 
+
+.texto{
+    font-family: var(--ff-secundary);
+    font-size: 1rem;
+} 
+
+.lupa{
+    background-image: url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+/*------ Settings ------*/
+.container {
+    --color: #a5a5b0;
+    --size: 30px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .container .star-regular {
+    animation: keyframes-star .5s;
+    justify-content: center;
+  }
+  
+  .container .star-solid {
+    animation: keyframes-star .5s;
+    justify-content: center;
+    display: none;
+  }
+  
+  /* ------ On check event ------ */
+  .container input:checked ~ .star-regular {
+    display: none;
+  }
+  
+  .container input:checked ~ .star-solid {
+    display: block;
+  }
+  
+  /* ------ Hide the default checkbox ------ */
+  .container input {
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* ------ Animations ------ */
+  @keyframes keyframes-star {
+    0% {
+      transform: rotate(0deg) scale(0);
+      opacity: 0;
+    }
+  
+    50% {
+      transform: rotate(10deg) scale(1.3);
+    }
+  }
+
+
+
+
+
+
+

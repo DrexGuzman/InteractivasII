@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>nuevo evento</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <script>
+
+    var defaultValue;
+
+    window.onload = function () {
+      defaultValue = document.querySelector('input[name="sick"]').value;
+    }
+    function avaiableSick(input) {
+      var sickInput = document.querySelector('input[name="sick"]');
+
+      if (input.id === 'opcion3.2') {
+        // Si el radio input "Si" está seleccionado
+        sickInput.disabled = false;
+        sickInput.style.opacity = '100%';
+      } else if (input.id === 'opcion3.1') {
+        // Si el radio input "No" está seleccionado
+        sickInput.disabled = true;
+        sickInput.style.opacity = '50%';
+        sickInput.value = defaultValue;
+      }
+    }
+
+    function clearDefaultValue(input) {
+      if (input.value === input.defaultValue) {
+        input.value = '';
+      }
+    }
+
+    function restoreDefaultValue(input) {
+      if (input.value === '') {
+        input.value = input.defaultValue;
+
+      }
+    }
+  </script>
+  </script>
+</head>
+
+<body class=" p-1 min-h-screen ">
+  <div class="max-w-[59rem] bg-sky-600 rounded-[3.4rem] py-20 m-auto text-center items-center ">
+    <header class=" grid max-w-[55rem]  grid-cols-4 gap-0 items-center">
+
+      <div class=" flex  gap-4 m-10 col-span-6 text-center   items-center  sm:gap-4">
+        <input
+          class="  p-2 mr-4 m-5 ring-2 h-10  ring-white rounded-full text-white bg-transparent w-full focus: outline-none"
+          type="text" value="Nombre de evento" onfocus="clearDefaultValue(this)" onblur="restoreDefaultValue(this)">
+        <div class="items-center  p-0 flex justify-center  ">
+
+
+
+          <div class="mb-2 ml-16  flex text-sm  text-white">
+            <label for="file-upload"
+              class="relative cursor-pointer rounded-md font-semibold text-[var(--clr-yelow-100)] hover:text-[var(--clr-yelow-100)]">
+              <span class=" p-0 flex justify-center   text-white">
+
+                <div class=" mt-2 p-0 flex justify-center  py-6">
+                  <div class="text-center rounded-full  ring-white ring-2 p-10 ">
+                    <!-- <div class="text-center rounded-full border  border-white ring-4 p-10"></div> -->
+
+                    <img src="/build/img/upload.svg" alt="">
+
+                  </div>
+
+                </div>
+
+              </span>
+              <input id="file-upload" name="file-upload" type="file" class="sr-only">
+            </label>
+
+          </div>
+
+
+        </div>
+      </div>
+    </header>
+
+
+
+
+
+    <main class=" max-w-[55rem]  grid grid-cols-2 gap-2 text-center">
+
+      <section class=" grid border-r border-white">
+        <h2 class="text-center m-2 sm:text-[1.625rem] text-white  items-center mt-10 mb-2">Fecha y hora </h2>
+        <div>
+
+          <input type="date"
+            class="border border-black rounded px-3 py-2 focus:outline-none bg-transparent focus:border-blue-500"
+            style="filter: invert(1) opacity(0.7);">
+
+
+
+
+          <input type="time"
+            class="border border-black rounded px-3 py-2 focus:outline-none bg-transparent focus:border-blue-500"
+            style="filter: invert(1) opacity(0.7);">
+        </div>
+
+
+
+
+
+        <h2 class="text-center m-2 sm:text-[1.625rem] text-white  items-center mt-10 mb-2">Categoria</h2>
+        <div class="m-2">
+          <div class="text-white grid grid-cols-2 gap-4 ml-20 mr-10">
+            <div>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="ml-2">Carrera</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="ml-2">Curso</span>
+              </label>
+            </div>
+            <div>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="ml-2">Universidad</span>
+              </label>
+              <label class="flex items-center">
+                <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                <span class="ml-2">Estudiante</span>
+              </label>
+            </div>
+          </div>
+
+
+        </div>
+      </section>
+
+      <div class="col-start-2">
+
+        <h2 class="text-center m-5 sm:text-[1.625rem] text-white  items-center mt-10 mb-2">Etiqueta</h2>
+        <div class="m-5">
+          <input
+            class="  p-2 mb-2  ring-2 ring-white rounded-full text-white bg-transparent w-full h-10 focus: outline-none"
+            type="text" value="" onfocus="clearDefaultValue(this)" onblur="restoreDefaultValue(this)">
+
+        </div>
+
+
+
+
+
+        <h2 class="text-center m-5 sm:text-[1.625rem] text-white  items-center mt-10 mb-2">Estado</h2>
+        <div class="m-5">
+          <div class=" flex gap-4 ml-20 mr-10 text-white ">
+
+            <label class="flex-row items-center">
+              <input type="checkbox" class="form-checkbox    h-5 w-5 text-blue-600">
+              <div class="ml-2">Inicio</div>
+            </label>
+            <label class="flex-row items-center">
+              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+              <div class="ml-2">En proceso</div>
+            </label>
+
+            <label class="flex-row items-center">
+              <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+              <div class="ml-2">Finalizado</div>
+            </label>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+    </main>
+
+    <h1 class=" m-5 sm:text-[1.625rem] text-white  items-start text-justify ml-16 mt-10 mb-2 ">Descripcion </h2>
+      <p class="ring-white ring-2 m-14 rounded-xl text-white mt-0">Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Expedita nihil quo consequatur autem error, iste distinctio mollitia modi ipsam nam pariatur libero. Ab
+        sed optio molestiae, culpa qui quisquam quo?</p>
+
+      <a class=" max-w-[55rem] bg-[var(--clr-yelow-100)] flex justify-center items-center m-5 text-center  rounded-full text-white w-full h-10 focus: outline-none "
+        href="#">Agregar</a>
+      <a class=" max-w-[55rem]  bg-transparent flex justify-center items-center m-5 text-center  rounded-full text-white w-full h-10 focus: outline-none "
+        href="#">Regresar</a>
+  </div>
+
+
+</body>
+
+</html>

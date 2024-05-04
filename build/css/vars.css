@@ -1,0 +1,46 @@
+:root {
+    /* custom properties - constants */
+    --base-fs: 15px;
+    --spacer-xsm: 0.25;
+    --spacer-sm: 0.5;
+    --spacer-md: 1;
+    --spacer-lg: 1.5;
+    --spacer-xlg: 3;
+    /* font & weight */
+
+    --ff-primary: "Montserrat Alternates", sans-serif;
+    --ff-secundary: "Carrois Gothic SC", sans-serif;
+    --fw-reg: 400;
+    --fw-med: 500;
+    --fw-sem-bold: 600;
+    --fw-bold: 700;
+    --fw-xbold: 900;
+
+
+    /* font sizes */
+    --fs-xsm: 1rem;
+    --fs-sm: 1.125rem;
+    --fs-rg: 1.25rem;
+    --fs-md: 1.5rem;
+    --fs-mdl: 2.125rem;
+    --fs-lg: 4rem;
+    --fs-xlg: 5rem;
+    /* colors */
+    /*  h -> hue/color 0/360, s -> saturation 0/100, l -> lightness 0/100, a -> alpha 0/1 */
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-gray-100: hsl(0, 0%, 71.76%);
+
+    --clr-blue-100:    hsl(200, 100%, 40%);
+    --clr-blue-200: hsl(200.22, 100%, 36.08%);
+
+
+
+    --clr-yelow-100: hsl(33.1, 89.69%, 61.96%);
+    --clr-orange-100:  hsl(22.5, 80%, 50.98%) ;
+
+   
+
+    --clr-green-100: hsl(126.94, 95.28%, 75.1%);
+
+
+}

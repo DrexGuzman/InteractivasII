@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body class="sm:my-5 sm:mx-12">
+    <header class="sm:block hidden"> <!-- header desktop-->
+        <div class=" flex gap-x-5 sm:bg-white bg-sky-600 sm:py-0 py-4">
+
+            <div class="sm:flex block gap-x-5 ">
+                <div class="flex flex-col">
+                    <div
+                        class=" bg-sky-600 rounded-3xl w-full h-[3.5rem] items-center flex justify-between grow sm:px-5">
+                        <a href="#"><img class="p-1 size-10" src="./img/vinxLogo.svg" alt=""></a>
+                        <a href="#"><img class="p-1 size-10" src="./img/sms.svg" alt=""></a>
+                        <a href="#"><img class="p-1 size-10" src="./img/notify.svg" alt=""></a>
+                    </div>
+                    <div class="flex gap-x-6 h-[100%] mt-4">
+
+
+                        <div class="hidden sm:block flex flex-col h-[100%]  p-4 bg-sky-600 rounded-3xl justify-center ">
+                            <h2 class="text-[var(--clr-yelow-100)] subtitulo-pesado flex justify-center">Proximo evento
+                            </h2>
+                            <div class="text-ellipsis overflow-hidden h-[5rem]">
+                                <h3 class=" mt-3 texto text-white">Lorem ipsum dolor sit amet consectetur. Feugiat
+                                    hendrerit aliquet diam vulputate nibh. Adipisci dapibus. Elit commodo facilisisLorem
+                                    ipsum
+                                    dolor
+                                    sit amet consectetur. Feugiat hendrerit aliquet diam vulputate nibh. Adipisci
+                                    dapibus.
+                                    Elit
+                                    commodo facilisis</h3>
+                            </div>
+                            <div class=" mt-3 flex justify-between">
+                                <h2 class="subtitulo-pesado text-[var(--clr-yelow-100)]">25 abr</h2>
+                                <h2 class="subtitulo-pesado text-[var(--clr-yelow-100)]">5:00pm</h2>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="flex sm:flex-col flex-row">
+                    <form class="ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] bg-sky-600 rounded-full" action="">
+                        <input class="focus:outline-none pl-8 w-full text-white texto bg-transparent" type="text"
+                            placeholder="Buscar">
+                        <input class="px-8 lupa w-10" type="submit" value="">
+                    </form>
+
+                    <!-- <div class="flex sm:hidden block">
+                    <input class="absolute size-8 hidden" type="checkbox" name="" id="">
+                    <img class="absolute size-8" src="./img/hamb-menu.svg" alt="">
+                </div> -->
+
+                    <div class="hidden sm:flex block gap-x-6 h-[100%] mt-4">
+                        <div class=" flex flex-col h-[100%]  p-4 bg-sky-600 rounded-3xl ">
+                            <div class="py-2 flex justify-between w-[20vw]">
+                                <h1 class="texto text-white">Cursos matriculados</h1>
+                                <img src="./img/courses.svg" alt="">
+                            </div>
+                            <hr class="text-white w-full">
+
+                            <ul class=" mt-2 flex flex-col">
+                                <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+                                <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+                                <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+
+                            </ul>
+                        </div>
+
+
+                        <div class=" flex flex-col h-[100%]  p-4 bg-sky-600 rounded-3xl">
+                            <div class="py-2 flex justify-between w-[20vw]">
+                                <h1 class="texto text-white">Aplicar filtros de busqueda</h1>
+                                <img src="./img/filters.svg" alt="">
+                            </div>
+                            <hr class="text-white w-full">
+
+                            <ul class=" mt-2 flex flex-col">
+
+                                <li class="mt-2">
+                                    <label class="container flex"> <!-- triangulo -->
+                                        <input type="checkbox" checked="checked">
+                                        <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.93782 13.1152L8 2.61523L14.0622 13.1152H1.93782Z" fill="#F5A747"
+                                                stroke="#F5A747" stroke-width="2" />
+                                        </svg>
+                                        <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.93782 13.1152L8 2.61523L14.0622 13.1152H1.93782Z" stroke="white"
+                                                stroke-width="2" />
+                                        </svg>
+                                        <span class="px-2 texto text-white">Eventos de carrera</span>
+                                    </label>
+                                </li>
+
+                                <li class="mt-2">
+                                    <label class="container flex"> <!-- cuadrado -->
+                                        <input type="checkbox" checked="checked">
+                                        <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.36396 12.7072V1.9793L12.0919 1.9793V12.7072L1.36396 12.7072Z"
+                                                fill="#F5A747" stroke="#F5A747" stroke-width="2" />
+                                        </svg>
+                                        <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1.36396 12.7072V1.9793L12.0919 1.9793V12.7072L1.36396 12.7072Z"
+                                                stroke="white" stroke-width="2" />
+                                        </svg>
+                                        <span class="px-2 texto text-white">Eventos de universidad</span>
+                                    </label>
+                                </li>
+
+                                <li class="mt-2">
+                                    <label class="container flex"><!-- penta -->
+                                        <input type="checkbox" checked="checked">
+                                        <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M9 0.615234L17.5595 6.83408L14.2901 16.8964H3.70993L0.440492 6.83408L9 0.615234Z"
+                                                fill="#F5A747" />
+                                        </svg>
+                                        <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M1.61606 7.21605L9 1.8513L16.3839 7.21605L13.5635 15.8964H4.43648L1.61606 7.21605Z"
+                                                stroke="white" stroke-width="2" />
+                                        </svg>
+                                        <span class="px-2 texto text-white">Eventos de cursos</span>
+                                    </label>
+                                </li>
+
+                                <li class="mt-2">
+                                    <label class="container flex"><!-- rombo -->
+                                        <input type="checkbox" checked="checked">
+                                        <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 17.201L1.41421 9.61523L9 2.02945L16.5858 9.61523L9 17.201Z"
+                                                fill="#F5A747" stroke="#F5A747" stroke-width="2" />
+                                        </svg>
+                                        <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M9 17.201L1.41421 9.61523L9 2.02945L16.5858 9.61523L9 17.201Z"
+                                                stroke="white" stroke-width="2" />
+                                        </svg>
+                                        <span class="px-2 texto text-white">Eventos de estudiantes</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="hidden sm:block">
+                <div class="p-7 bg-sky-600 flex  gap-x-2 rounded-3xl items-center  w-[22vw] ">
+                    <div class="">
+                        <h1 class="subtitulo-pesado text-white">Monica Muñoz Alpizar</h1>
+                        <h2 class="texto text-white pt-2">Informatica y tecnologia multimedia</h2>
+                        <h2 class="texto text-white pt-2">B33210</h2>
+                    </div>
+                    <img class="rounded-full w-[5vw]" src="https://randomuser.me/api/portraits/women/31.jpg"
+                        alt="User Profile">
+                </div>
+
+                <a class="mt-3 texto ring-2 ring-sky-600 h-10 rounded-full bg-sky-600 text-white flex justify-center items-center"
+                    href="#">Progreso del
+                    curso<a></a>
+
+                    <a class="mt-3 texto text-sky-600 ring-2 ring-sky-600 h-10 rounded-full flex justify-center items-center"
+                        href="login.html">Cerrar sesion<a>
+
+
+            </div>
+        </div>
+    </header>
+
+    <header class="relative sm:hidden block"> <!-- header movil -->
+        <div class="bg-sky-600 flex py-4 px-8">
+            <a class="texto text-white flex grow" href="index.html"><img class="size-8" src="./img/vinxLogo.svg"
+                    alt="">vinx</a>
+            <div class="items-center">
+                <input class="hidden absolute size-8 " type="checkbox" name="" id="">
+                <img class=" size-8" src="./img/hamb-menu.svg" alt="">
+            </div>
+        </div>
+        <!-- menu emergente -->
+        <div class="z-10 absolute top-0 right-[0px] w-[70vw] h-[100vh]  bg-sky-600 ring-2 ring-[var(--clr-yelow-100)] px-[1.188rem]">
+            <div class="relative justify-end flex p-4">
+                <div class="absolute bg-[var(--clr-yelow-100)] text-transparent size-4 rounded-full"><a href="#"></a>*</div>
+                <input class="hidden absolute size-8" type="checkbox" name="" id="">
+                <img class=" size-8" src="./img/notify.svg" alt="">
+            </div>
+            <div class="w-full flex justify-center mb-4">
+                <img class="relative rounded-full w-20 ring-4 ring-white size-[5rem]"
+                    src="https://randomuser.me/api/portraits/women/31.jpg" alt="User Profile">
+                
+                <div class="absolute top-[120px] right-20">
+                    <button
+                        class="rounded-full bg-[var(--clr-yelow-100)] size-8 text-white text-2xl font-bold">+</button>
+                </div>
+            </div>
+            <div class="flex flex-col gap-y-4">
+                <ul class="texto text-white text-center">
+                    <li class="subtitulo-pesado text-white text-center">Nombre de usuario</li>
+                    <li>Informática y Tecnología Multimedia</li>
+                    <li>C52145</li>
+                </ul>
+                <div class="flex flex-col gap-y-4">
+                    <div>
+                        <form class="ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full" action="">
+                            <input class="focus:outline-none pl-8 w-full text-white texto bg-transparent" type="text"
+                                placeholder="Buscar">
+                            <input class="px-8 lupa w-10" type="submit" value="">
+                        </form>
+                    </div>
+
+                    <div class="px-4 justify-between items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full">
+                        <h1 class="texto text-white text-center">Aplicar filtros</h1>
+                        <input class="hidden absolute size-8 " type="checkbox" name="" id="">
+                        <img class=" size-6" src="./img/filters.svg" alt="">
+                    </div>
+
+                    <hr class="w-[90vw] text-white bg-white">
+
+                    <div class="px-4 justify-between items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full">
+                        <h1 class="texto text-white text-center">Cursos matriculados</h1>
+                        <input class="hidden absolute size-8 " type="checkbox" name="" id="">
+                        <img class=" size-6" src="./img/courses.svg" alt="">
+                    </div>
+
+                    <hr class="w-[90vw] text-white bg-white">
+
+                    <a class="px-4 flex justify-center items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-white" href="#">Progreso de cursos</a>
+
+                    <a class="px-4 flex justify-center items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-white" href="#">Resumen de actividades</a>
+
+                    <hr class="w-[90vw] text-white bg-white">
+
+                    <a class="texto text-white flex justify-center" href="#">Cerrar sesion</a>
+
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+    <main>
+
+        <div class=" flex flex-grow justify-center mt-4  ">
+            <div
+                class="p-1 m-1 font-sans rounded-2xl  ring-2 ring-white shadow-xl w-80 py-8 relative bg-sky-600 text-white">
+                <div class="flex justify-around mb-8">
+                    <div>
+                        <p class="text-center texto">Poco</p>
+                        <div class="h-5 w-12  bg-[#F5A747] rounded-full mt-3"></div>
+                    </div>
+                    <div>
+                        <p class="text-center texto">Moderado</p>
+                        <div class="h-5 w-12 bg-gray-300 m-auto rounded-full mt-3"></div>
+                    </div>
+                    <div class="place-items-center">
+                        <p class="text-center texto">Mucho</p>
+                        <div class="h-5 w-12 bg-gray-300 m-auto rounded-full mt-3"></div>
+                    </div>
+                </div>
+                <div class="flex justify-around items-center">
+                    <a href=""
+                        class="w-5 h-5 ring-2 ring-[#F5A747] rounded-full text-center flex items-center justify-center"><svg
+                            width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z"
+                                fill="#F5A747" />
+                        </svg></a>
+                    <p class="p-1 text-xl font-semibold text-center subtitulo">Abril 2024</p>
+                    <a href=""
+                        class="w-5 h-5 ring-2 ring-[#F5A747] rounded-full text-center flex items-center justify-center"><svg
+                            class="-rotate-180" width="10" height="10" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z"
+                                fill="#F5A747" />
+                        </svg></a>
+                </div>
+                <hr class="w-[80%] border-[#F5A747] m-auto">
+                <div class="p-1 m-1">
+                    <div class="flex justify-around subtitulo font-normal mb-4">
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class=" font-normal">L</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class=" ">K</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class="">M</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class="">J</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class="">V</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class="">S</p>
+                        </div>
+                        <div class="grid place-items-center" :class="{'text-red-600': days == 'Ya'}">
+                            <p class="">D</p>
+                        </div>
+                    </div>
+                    <div id="parentDiv" class="grid grid-cols-7 gap-1 font-semibold text-center">
+                        <div class="">
+                            <p class=""></p>
+                        </div>
+                    </div>
+                    <a
+                        class="absolute left-[45%] top-[95%] ring-2 ring-white bg-sky-600 h-8 w-8 rounded-md flex items-center justify-center"><svg
+                            width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z"
+                                fill="white" />
+                        </svg></a>
+                    <span
+                        class="absolute left-[35%] top-[105%] text-sky-600 text-nowrap  font-semibold sm:text-[1.625rem]  sm:left-[25%]">Añadir
+                        evento</span>
+                </div>
+                <div
+                    class="absolute top-[115%] sm:top-[120%] bg-sky-600 text-center w-[98%] rounded-full ring-2 ring-white shadow-xl flex flex-col texto ">
+                    Resumen de actividades Diarias y <span>Semanales</span></div>
+            </div>
+            <div class="rounded-2xl  ring-2 ring-white shadow-xl  bg-sky-600 text-white">
+                <ol>
+                    <li>
+                        <section> <!---inicio seccion de actividades o eventos--->
+                            <div>
+                                <h1 class="text-center titulo mt-4">Jueves 25 Abril 2024</h1>
+                            </div>
+                            <section class="mt-3 flex space-x-2 mr-5"><!---inicio seccion de actividades--->
+                                <div class="text-left mt-10 ml-4  ">
+                                    <h1>5:30</h1>
+                                </div>
+                                <script>
+                                    function changeColor1() {
+                                        var svg = document.getElementById('checkSVG01');
+                                        svg.classList.toggle('text-yellow-500'); // Cambia el color a amarillo al hacer clic
+                                    }
+                                </script>
+                                <div class="container rounded-2xl  ring-2 ring-white">
+                                    <div>
+                                        <div class="relative flex space-x-7">
+                                            <div class="ml-4 mt-2 cursor-pointer" id="checkIcon"
+                                                onclick="changeColor1()">
+                                                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="text-white"
+                                                    id="checkSVG01">
+                                                    <path d="M9.89062 18.0001L15.894 24.0035L26.1028 13.7947"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <h1 class=" ml-6 subtitulo text-center">Reunion con el profesor</h1>
+                                        </div>
+
+                                        <div class="relative flex  space-x-6">
+                                            <div class="ml-4 mt-3">
+                                                <label class="container flex"><!-- penta -->
+                                                    <input type="checkbox" checked="checked">
+                                                    <svg class="star-regular" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9 0.615234L17.5595 6.83408L14.2901 16.8964H3.70993L0.440492 6.83408L9 0.615234Z"
+                                                            fill="#F5A747" />
+                                                    </svg>
+                                                    <svg class="star-solid" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1.61606 7.21605L9 1.8513L16.3839 7.21605L13.5635 15.8964H4.43648L1.61606 7.21605Z"
+                                                            stroke="white" stroke-width="2" />
+                                                    </svg>
+                                                    <span class="px-1 texto text-white"></span>
+                                                </label>
+                                            </div>
+                                            <h2 class="mt-4 text-left">Se busca verificar que todo este en orden con el proyecto</h2>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex ml-20 mt-3 ">
+                                        <div class="flex ml-[-30%] mt-3 mr-6">
+                                            <div class="relative mt-4  mb-4 mr-6 flex justify-center items-center">
+                                                <div class="object-right ml-20 rounded-full overflow-hidden border-4 border-gray-300">
+                                                    <img src="./img/3577429.png" width="80" height="80"
+                                                        alt="Texto descriptivo de la imagen">
+                                                </div>
+                                            </div>
+                                            <div class="relative mt-4 ml-5 mb-4">
+                                                <svg width="38" height="24" viewBox="0 0 10 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="19" cy="4" r="2" fill="white" />
+                                                    <circle cx="19" cy="12" r="2" fill="white" />
+                                                    <circle cx="19" cy="20" r="2" fill="white" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!---fin seccion de actividades--->
+                            <section class="mt-3 flex space-x-2 mr-5"><!---inicio seccion de actividades--->
+                                <div class="text-left mt-10 ml-4  ">
+                                    <h1>5:30</h1>
+                                </div>
+                                <script>
+                                    function changeColor2() {
+                                        var svg = document.getElementById('checkSVG02');
+                                        svg.classList.toggle('text-yellow-500'); // Cambia el color a amarillo al hacer clic
+                                    }
+                                </script>
+                                <div class="container  rounded-2xl  ring-2 ring-white">
+                                    <div>
+                                        <div class="relative flex space-x-7">
+                                            <div class="ml-4 mt-2 cursor-pointer" id="checkIcon"
+                                                onclick="changeColor2()">
+                                                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="text-white"
+                                                    id="checkSVG02">
+                                                    <path d="M9.89062 18.0001L15.894 24.0035L26.1028 13.7947"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <h1 class=" ml-6 subtitulo text-center">Reunion equipo de trabajo</h1>
+                                        </div>
+
+                                        <div class="relative flex  space-x-6">
+                                            <div class="ml-4 mt-3">
+                                                <label class="container flex"><!-- penta -->
+                                                    <input type="checkbox" checked="checked">
+                                                    <svg class="star-regular" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9 0.615234L17.5595 6.83408L14.2901 16.8964H3.70993L0.440492 6.83408L9 0.615234Z"
+                                                            fill="#F5A747" />
+                                                    </svg>
+                                                    <svg class="star-solid" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1.61606 7.21605L9 1.8513L16.3839 7.21605L13.5635 15.8964H4.43648L1.61606 7.21605Z"
+                                                            stroke="white" stroke-width="2" />
+                                                    </svg>
+                                                    <span class="px-1 texto text-white"></span>
+                                                </label>
+                                            </div>
+                                            <h2 class="mt-4 text-left">Se reunira el equipo de trabajo para discutir los planes que se tienen         </div>
+                                    </div>
+                                    <div class="relative flex ml-3 mt-3 ">
+                                        <div class="flex ml-[-30%] mt-3 mr-6">
+                                            <div class="relative mt-4 mb-4 mr-6 flex justify-center items-center">
+                                                <div class=" object-right ml-20 rounded-full overflow-hidden border-4 border-gray-300">
+                                                    <img src="./img/3577429.png" width="80" height="80"
+                                                        alt="Texto descriptivo de la imagen">
+                                                </div>
+                                            </div>
+                                            <div class="relative mt-4 ml-5 mb-4">
+                                                <svg width="38" height="24" viewBox="0 0 10 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="19" cy="4" r="2" fill="white" />
+                                                    <circle cx="19" cy="12" r="2" fill="white" />
+                                                    <circle cx="19" cy="20" r="2" fill="white" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!---fin seccion de actividades--->
+
+
+
+                            <section class="mt-3 flex space-x-2 mr-5"><!---inicio seccion de actividades--->
+                                <div class="text-left mt-10 ml-4  ">
+                                    <h1>5:30</h1>
+                                </div>
+                                <script>
+                                    function changeColor3() {
+                                        var svg = document.getElementById('checkSVG03');
+                                        svg.classList.toggle('text-yellow-500'); // Cambia el color a amarillo al hacer clic
+                                    }
+                                </script>
+                                <div class="mb-3 container rounded-2xl  ring-2 ring-white">
+                                    <div>
+                                        <div class="relative flex space-x-7">
+                                            <div class="ml-4 mt-2 cursor-pointer" id="checkIcon"
+                                                onclick="changeColor3()">
+                                                <svg width="30" height="30" viewBox="0 0 36 36" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" class="text-white"
+                                                    id="checkSVG03">
+                                                    <path d="M9.89062 18.0001L15.894 24.0035L26.1028 13.7947"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <h1 class=" ml-6 subtitulo text-center">Discusion tema de investigacion</h1>
+                                        </div>
+
+                                        <div class="relative flex  space-x-6">
+                                            <div class="ml-4 mt-3">
+                                                <label class="container flex"><!-- penta -->
+                                                    <input type="checkbox" checked="checked">
+                                                    <svg class="star-regular" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M9 0.615234L17.5595 6.83408L14.2901 16.8964H3.70993L0.440492 6.83408L9 0.615234Z"
+                                                            fill="#F5A747" />
+                                                    </svg>
+                                                    <svg class="star-solid" width="30" height="30" viewBox="0 0 18 19"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M1.61606 7.21605L9 1.8513L16.3839 7.21605L13.5635 15.8964H4.43648L1.61606 7.21605Z"
+                                                            stroke="white" stroke-width="2" />
+                                                    </svg>
+                                                    <span class="px-1 texto text-white"></span>
+                                                </label>
+                                            </div>
+                                            <h2 class="mt-4 text-left">Discusion de eleccion de tema para la investigacion</h2>
+                                        </div>
+                                    </div>
+                                    <div class="relative flex ml-3 mt-3 ">
+                                        <div class="flex ml-[-30%] mt-3 mr-6">
+                                            <div class="relative mt-4 mb-4 mr-6 flex justify-center items-center">
+                                                <div class=" object-right ml-20 rounded-full overflow-hidden border-4 border-gray-300">
+                                                    <img src="./img/3577429.png" width="80" height="80"
+                                                        alt="Texto descriptivo de la imagen">
+                                                </div>
+                                            </div>
+                                            <div class="relative mt-4 ml-5 ">
+                                                <svg width="38" height="24" viewBox="0 0 10 24" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <circle cx="19" cy="4" r="2" fill="white" />
+                                                    <circle cx="19" cy="12" r="2" fill="white" />
+                                                    <circle cx="19" cy="20" r="2" fill="white" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section><!---fin seccion de actividades--->
+                        </section><!---fin seccion de actividades o eventos--->
+                        </section>
+                    </li>
+                </ol>
+
+
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <script>
+        // Obtener el div padre
+        var parentDiv = document.getElementById("parentDiv");
+
+        // Crear 31 div hijos y agregarlos al div padre
+        for (var i = 1; i <= 30; i++) {
+            // Crear un nuevo div
+            var newDiv = document.createElement("div");
+            newDiv.classList.add("texto");
+            newDiv.classList.add("font-normal");
+
+            // Crear un nuevo párrafo con el número del día
+            var newParagraph = document.createElement("p");
+            newParagraph.textContent = i;
+
+            // Agregar el párrafo al div
+            newDiv.appendChild(newParagraph);
+
+            // Agregar el div al div padre
+            parentDiv.appendChild(newDiv);
+        }
+    </script>
+</body>
+
+</html>

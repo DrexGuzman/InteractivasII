@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <div class="bg-sky-600 grid grid-cols-3 py-4 px-8 gap-x-10">
+
+            <div class="items-center flex flex-col">
+                <a href="#"><img class="size-10" src="./img/vinxLogo.svg" alt=""></a>
+                <h1 class="subtitulo-pesado text-white">Vinx</h1>
+            </div>
+
+            <div class="items-center flex justify-center">
+                <form
+                    class="ring-2 ring-white flex justify-between h-[2rem] bg-sky-600 rounded-full w-[-webkit-fill-available]"
+                    action="">
+                    <input class="flex focus:outline-none pl-4 text-white texto bg-transparent" type="text"
+                        placeholder="Buscar">
+                    <input class="lupa w-10" type="submit" value="">
+                </form>
+            </div>
+
+            <div class="flex justify-between items-center">
+
+                <a href="#"><img class="p-1 size-10" src="./img/notify.svg" alt=""></a>
+
+                <div class="items-center">
+                    <input class="hidden absolute size-8 " type="checkbox" name="" id="">
+                    <img class=" size-8" src="./img/hamb-menu.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-4 px-8">
+        <div class="grid grid-cols-3 gap-x-5 gap-y-4">
+
+            <div>
+                <div class="hidden sm:block flex flex-col h-[100%]  p-4 bg-sky-600 rounded-3xl justify-center ">
+                    <h2 class="text-[var(--clr-yelow-100)] subtitulo-pesado flex justify-center">Proximo evento
+                    </h2>
+                    <div class="text-ellipsis overflow-hidden h-[5rem]">
+                        <h3 class=" mt-3 texto text-white">Lorem ipsum dolor sit amet consectetur. Feugiat
+                            hendrerit aliquet diam vulputate nibh. Adipisci dapibus. Elit commodo facilisisLorem
+                            ipsum
+                            dolor
+                            sit amet consectetur. Feugiat hendrerit aliquet diam vulputate nibh. Adipisci
+                            dapibus.
+                            Elit
+                            commodo facilisis</h3>
+                    </div>
+                    <div class=" mt-3 flex justify-between">
+                        <h2 class="subtitulo-pesado text-[var(--clr-yelow-100)]">25 abr</h2>
+                        <h2 class="subtitulo-pesado text-[var(--clr-yelow-100)]">5:00pm</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" flex flex-col p-4 bg-sky-600 rounded-3xl">
+                <div class="py-2 flex justify-between">
+                    <h1 class="texto text-white">Cursos matriculados</h1>
+                    <img src="./img/courses.svg" alt="">
+                </div>
+                <hr class="text-white w-full">
+
+                <ul class=" mt-2 flex flex-col">
+                    <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+                    <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+                    <li class="m-2 texto text-white ">Desarrollo de aplicaciones interactivas II</li>
+
+                </ul>
+            </div>
+
+            <div class=" flex flex-col p-4 bg-sky-600 rounded-3xl">
+                <div class="py-2 flex justify-between">
+                    <h1 class="texto text-white">Aplicar filtros de busqueda</h1>
+                    <img src="./img/filters.svg" alt="">
+                </div>
+                <hr class="text-white w-full">
+
+                <ul class=" mt-2 flex flex-col">
+
+                    <li class="mt-2">
+                        <label class="container flex"> <!-- triangulo -->
+                            <input type="checkbox" checked="checked">
+                            <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.93782 13.1152L8 2.61523L14.0622 13.1152H1.93782Z" fill="#F5A747"
+                                    stroke="#F5A747" stroke-width="2" />
+                            </svg>
+                            <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.93782 13.1152L8 2.61523L14.0622 13.1152H1.93782Z" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                            <span class="px-2 texto text-white">Eventos de carrera</span>
+                        </label>
+                    </li>
+
+                    <li class="mt-2">
+                        <label class="container flex"> <!-- cuadrado -->
+                            <input type="checkbox" checked="checked">
+                            <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.36396 12.7072V1.9793L12.0919 1.9793V12.7072L1.36396 12.7072Z" fill="#F5A747"
+                                    stroke="#F5A747" stroke-width="2" />
+                            </svg>
+                            <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.36396 12.7072V1.9793L12.0919 1.9793V12.7072L1.36396 12.7072Z" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                            <span class="px-2 texto text-white">Eventos de universidad</span>
+                        </label>
+                    </li>
+
+                    <li class="mt-2">
+                        <label class="container flex"><!-- penta -->
+                            <input type="checkbox" checked="checked">
+                            <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M9 0.615234L17.5595 6.83408L14.2901 16.8964H3.70993L0.440492 6.83408L9 0.615234Z"
+                                    fill="#F5A747" />
+                            </svg>
+                            <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1.61606 7.21605L9 1.8513L16.3839 7.21605L13.5635 15.8964H4.43648L1.61606 7.21605Z"
+                                    stroke="white" stroke-width="2" />
+                            </svg>
+                            <span class="px-2 texto text-white">Eventos de cursos</span>
+                        </label>
+                    </li>
+
+                    <li class="mt-2">
+                        <label class="container flex"><!-- rombo -->
+                            <input type="checkbox" checked="checked">
+                            <svg class="star-regular" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17.201L1.41421 9.61523L9 2.02945L16.5858 9.61523L9 17.201Z" fill="#F5A747"
+                                    stroke="#F5A747" stroke-width="2" />
+                            </svg>
+                            <svg class="star-solid" width="18" height="19" viewBox="0 0 18 19" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 17.201L1.41421 9.61523L9 2.02945L16.5858 9.61523L9 17.201Z" stroke="white"
+                                    stroke-width="2" />
+                            </svg>
+                            <span class="px-2 texto text-white">Eventos de estudiantes</span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class=" p-4 bg-sky-600 rounded-3xl">Codigo del calendario
+                <!-- codigo del calendario -->
+            </div>
+            <div class="col-span-2  p-4 bg-sky-600 rounded-3xl">Codigo de los eventos
+                <!-- codigo de los eventos -->
+            </div>
+
+        </div>
+
+    </main>
+
+
+</body>
+
+</html>

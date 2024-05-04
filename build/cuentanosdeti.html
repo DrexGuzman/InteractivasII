@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentanos de tí</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Carrois+Gothic&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script>
+
+        var defaultValue;
+
+        window.onload = function () {
+            defaultValue = document.querySelector('input[name="sick"]').value;
+        }
+        function avaiableSick(input) {
+            var sickInput = document.querySelector('input[name="sick"]');
+
+            if (input.id === 'opcion3.2') {
+                // Si el radio input "Si" está seleccionado
+                sickInput.disabled = false;
+                sickInput.style.opacity = '100%';
+            } else if (input.id === 'opcion3.1') {
+                // Si el radio input "No" está seleccionado
+                sickInput.disabled = true;
+                sickInput.style.opacity = '50%';
+                sickInput.value = defaultValue;
+            }
+        }
+
+        function clearDefaultValue(input) {
+            if (input.value === input.defaultValue) {
+                input.value = '';
+            }
+        }
+
+        function restoreDefaultValue(input) {
+            if (input.value === '') {
+                input.value = input.defaultValue;
+
+            }
+        }
+    </script>
+</head>
+<div class=" p-1 min-h-screen ">
+    <div class="max-w-[58rem] bg-sky-600 rounded-[3.4rem] py-20 m-auto ">
+        <header class="flex justify-center ">
+            <div class="flex flex-col sm:flex-row justify-center w-auto sm:gap-12"> <img class="m-auto size-12 sm:size-16" src="./img/vinxLogo.svg" alt=""> <h1 class="flex subtitulo font-semibold items-center text-white  sm:text-[2.5rem] sm:font-semibold">Cuentanos más de ti</h1>
+            </div>
+        </header>
+    
+        <main class="px-4 sm:px-12">
+            <section class="flex flex-col"></section>
+            <h2 class="flex texto sm:text-[1.625rem] text-white items-center mt-10 mb-2">¿Cuantas horas duermes al día? <img class="size-5"
+                    src="./img/moon.svg" alt=""></h2>
+            <form class="flex flex-nowrap justify-center">
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="sm:text-[1.625rem] texto text-white text-center" for="opcion1.1">&lt; de 5 horas </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion1.1" name="opcion" value="opcion1">
+                </div>
+    
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion1.2">8 horas </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion1.2" name="opcion" value="opcion1">
+                </div>
+    
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion1.3">&gt; de 8 horas </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion1.3" name="opcion" value="opcion1">
+                </div>
+            </form>
+        </section>
+        <section class="flex flex-col"></section>
+      
+            <h2 class="flex texto sm:text-[1.625rem] text-white mt-10 mb-2 items-start sm:items-center ">¿Que tan frecuente realizas actividad fisica la semana? <img class="size-7  "
+                    src="./img/weight.svg" alt=""></h2>
+            <form class="flex flex-nowrap justify-center">
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion2.1"> Nunca </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion2.1" name="opcion" value="opcion1">
+                </div>
+    
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion2.2">&lt; de 5 días </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion2.2" name="opcion" value="opcion1">
+                </div>
+    
+                <div class="flex flex-col items-center gap-2 flex-1">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion2.3">Todos </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion2.3" name="opcion" value="opcion1">
+                </div>
+            </form>
+        </section>
+
+        <section class=" flex flex-col">
+           
+               
+                <h2 class="flex texto sm:text-[1.625rem] text-white items-center mt-10 mb-2 gap-1">¿Padeces alguna enfermedad?  <img class="size-5" src="./img/heart.svg" alt=""></h2>
+            
+            
+            <form class="flex flex-wrap justify-center">
+                <div class="flex flex-col items-center flex-1 gap-2">
+                    <label class="texto  sm:text-[1.625rem] text-white text-center" for="opcion3.1">No </label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion3.1" name="opcion3" value="opcion" onclick="avaiableSick(this)">
+    
+                </div>
+                <div class="flex flex-col items-center flex-1 gap-2">
+                    <label class="texto sm:text-[1.625rem] text-white text-center" for="opcion3.2">Si</label>
+                    <input
+                        class="size-5 appearance-none ring-4 ring-white  rounded-full checked:bg-[var(--clr-yelow-100)] cursor-pointer"
+                        type="radio" id="opcion3.2" name="opcion3" value="opcion" onclick="avaiableSick(this)">
+    
+                </div>
+    
+                <div class="min-w-[22rem] pt-7 sm:pt-auto flex flex-col items-center justify-end flex-1">
+                    <input
+                        class="text-center  ring-2 ring-white rounded-full text-white bg-transparent w-full h-8 focus: outline-none"
+                        name="sick" type="text" value="Especifica cuál:" onfocus="clearDefaultValue(this)"
+                        onblur="restoreDefaultValue(this)" disabled="false" style="opacity: 50%;">
+                </div>
+            </form>
+        </section>
+
+        <div class="flex flex-col items-center mt-7 gap-2">
+            <a class="texto sm:text-[1.625rem] bg-[var(--clr-yelow-100)] text-white w-full text-center py-2 rounded-2xl" href="#">Completar registro<a>
+            <a class="texto sm:text-[1.625rem] text-[var(--clr-yelow-100)]" href="formRegi.html">Regresar</a>
+        </div>
+    
+        </main>
+    </div>
+</div>
+</html>
