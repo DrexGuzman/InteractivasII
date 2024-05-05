@@ -9,6 +9,11 @@
     font-size: 2.5rem;
     
 }
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
 
 .titulo-ligero{
     font-family:"Montserrat Alternates", sans-serif;
