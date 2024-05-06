@@ -2,21 +2,14 @@ import VinxLogo from "../assets/vinxLogo.svg";
 import Notify from "../assets/notify.svg";
 import Search from "../assets/search.svg";
 import ImgFilter from "../assets/filters.svg";
+import Chat from "../assets/chat.svg";
 import ImgCourse from "../assets/courses.svg";
 import React, { useState, useEffect } from 'react';
 
 export function NavDrawer() {
 
-  const [currentTime, setCurrentTime] = useState(new Date());
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
-      
-    }, 6);
 
-    return () => clearInterval(intervalId);
-  }, []); // Run once on component mount
   
   function showMenu(input) {
     const menu = document.getElementsByName("menu")[0];
@@ -38,14 +31,13 @@ export function NavDrawer() {
     <div className="mb-8">
       <div className="relative bg-sky-600 grid sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
       <div className="items-center flex">
-        <div className="flex-col">
-        <a href="#">
+        <div className="flex-col justify-center items-center">
+        <a className="flex items-center justify-center" href="#">
           <img alt="" className="size-10" src={VinxLogo} />
         </a>
         <h1 className="subtitulo-pesado text-white">Vinx</h1>
         </div>
 
-        <div className="ml-20 text-white font-bold text-2xl">{currentTime.toLocaleTimeString()}</div>
       </div>
       <div className="items-center justify-center hidden sm:flex">
         <form
@@ -62,13 +54,7 @@ export function NavDrawer() {
         </form>
       </div>
       <div className="flex sm:justify-between justify-center items-center">
-      <div className="relative sm:block hidden">
-      <div className="bg-amber-500 size-3 rounded-full absolute left-4"></div>
-    <img className="size-8"
-      alt=""
-      src={Notify}
-    />
-    </div>
+     
                 {/* <img alt="" className=" size-8 bg-sky-600" src={HambMenu} /> */}
           <div className="w-full flex justify-end">
           <input
@@ -78,12 +64,31 @@ export function NavDrawer() {
                   name=""
                   type="checkbox"
                 />
+          
+          <div className="flex justify-center items-center gap-12">
+                <div className="relative sm:block hidden">
+                <div className="bg-amber-500 size-6 rounded-full absolute left-4 bottom-4 font-extrabold">+5</div>
+                  <img className="size-8"
+                  alt=""
+                  src={Chat}
+                  />
+                </div>
+
+                <div className="relative sm:block hidden">
+                  <div className="bg-amber-500 size-6 rounded-full absolute left-4 bottom-4 font-extrabold">+1</div>
+                  <img className="size-8"
+                  alt=""
+                  src={Notify}
+                  />
+                </div>
           <img
             alt="User Profile"
             className="relative rounded-full  ring-4 ring-white size-[3rem]"
             src="https://randomuser.me/api/portraits/women/31.jpg"
           />
         </div>
+
+          </div>
       </div>
 
       {/* menu emergente */}
