@@ -62,9 +62,13 @@ export function NavDrawer() {
         </form>
       </div>
       <div className="flex sm:justify-between justify-center items-center">
-        <a className=" hidden sm:block" href="#">
-          <img alt="" className="p-1 size-10" src={Notify} />
-        </a>
+      <div className="relative sm:block hidden">
+      <div className="bg-amber-500 size-3 rounded-full absolute left-4"></div>
+    <img className="size-8"
+      alt=""
+      src={Notify}
+    />
+    </div>
                 {/* <img alt="" className=" size-8 bg-sky-600" src={HambMenu} /> */}
           <div className="w-full flex justify-end">
           <input
@@ -85,27 +89,25 @@ export function NavDrawer() {
       {/* menu emergente */}
 
       <div className="z-10 absolute top-0 right-[-1000px] sm:w-[40vw] w-[70vw] h-[100vh]  bg-black px-[1.188rem]" name="menu">
-      <div className="relative justify-star flex p-4">
-    <div className="block sm:hidden  absolute bg-yellow-500 text-transparent size-4 rounded-full">
-      <a href="#" />
-      *
-    
-    <div>
-    <input
-      className="hidden absolute size-8"
+      <div className="relative flex justify-between sm:justify-end py-4">
+        
+      <input
+      className="opacity-0 absolute size-8"
       id=""
       name=""
       type="checkbox"
     />
-    <img
+    <div className="relative">
+      <div className="sm:hidden bg-amber-500 size-3 rounded-full absolute top-4 left-3"></div>
+    <img className="mt-5 sm:hidden"
       alt=""
-      className="size-10"
       src={Notify}
     />
-    <h1>X</h1>
     </div>
-    </div>
+    <h1 className="absolute right-3 sm:right-8 top-8 text-white text-2xl font-bold">X</h1>
   </div>
+
+  
   <div className="w-full flex justify-center mb-4">
     <div className="relative">
     <img
