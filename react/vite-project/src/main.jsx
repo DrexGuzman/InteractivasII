@@ -18,8 +18,8 @@ import { ProgressSection } from './components/ProgressSection.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
     
     <div className='overflow-x-hidden h-[100vh] '>
-    {/* <Cuentanos/> */}  
-    <NavDrawer/>
+    <Cuentanos/>  
+    {/* <NavDrawer/> */}
    
     {/* <FormRegi/> */}
     {/* <AddEvent/> */}
@@ -29,7 +29,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Filters/> */}
     {/* <NextEvent/> */}
     {/* <Singup/> */}
-    <ProgressSection/>
+    {/* <ProgressSection/> */}
+
+    {/* <NavDrawer />
+        <div className="max-w-[90rem]  m-4 text lg:m-auto">
+    <div className="grid  grid-cols-1  min-[430px]:grid-cols-2   xs:grid-cols-1 sm:grid-cols-3  gap-x-10 mb-8">
+        <NextEvent />
+        <Courses />
+        <Filters />
+    </div>
+    <DailyTask />
+
+    </div>  */}
 </div>
         
       
