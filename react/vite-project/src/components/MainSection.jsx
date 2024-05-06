@@ -11,7 +11,7 @@ import { NextEvent } from './NextEvent.jsx';
 
  return (
   
-    <div className="max-w-[90rem]  m-4 text lg:m-auto">
+    <div className="max-w-[90rem]  m-4 text min-[1445px]:m-auto">
     <div className="grid  grid-cols-1  min-[430px]:grid-cols-2   xs:grid-cols-1 sm:grid-cols-3  gap-x-10 mb-8">
         <NextEvent />
         <Courses />
@@ -24,10 +24,7 @@ import { NextEvent } from './NextEvent.jsx';
             <div className='overflow-y-auto scrollbar-hide h-[24rem]'>
             <Eventos/>
             <Eventos />
-            <Eventos />
-            <Eventos />
-            <Eventos />
-            <Eventos />
+           
             </div>
         </div>
     </div>

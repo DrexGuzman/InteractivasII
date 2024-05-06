@@ -1,7 +1,12 @@
 export const RadialProgress = ({ porcent }) => {
     return (
         
-            <div className="relative size-48">
+
+        <section className=" px-8 flex  items-center flex-col flex-1 text-white border-t-yellow-300 border-t-2 md:border-t-0 " >
+               
+        <p className="text-center align-text-top text-[2rem] font-semibold ">Progreso</p>
+          
+        <div className="relative size-48">
                 <svg className="w-full h-full" viewBox="0 0 100 100">
                     <circle
                         className="text-gray-200 stroke-current"
@@ -26,6 +31,9 @@ export const RadialProgress = ({ porcent }) => {
                      <text x="50" y="50" font-family="Verdana" font-size="12" text-anchor="middle" alignment-baseline="middle">{porcent}% </text>
                 </svg>
             </div>
+            
+        </section>
+           
       
     );
 };

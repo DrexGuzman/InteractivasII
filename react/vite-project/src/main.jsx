@@ -17,11 +17,27 @@ import { ProgressSection } from './components/ProgressSection.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     
-    <div className='overflow-x-hidden h-[100vh]'>
+    <div className='overflow-x-hidden h-[100vh] '>
+    {/* <Cuentanos/> */}  
+    <NavDrawer/>
+   
+    {/* <FormRegi/> */}
+    {/* <AddEvent/> */}
+    {/* <Login/> */}
+    {/* <DailyTask/> */}
+    {/* <Courses/> */}
+    {/* <Filters/> */}
+    {/* <NextEvent/> */}
+    {/* <Singup/> */}
+    <ProgressSection/>
+</div>
         
+      
+       
+       
         
        
         
-    </div> 
+  
 );
 
