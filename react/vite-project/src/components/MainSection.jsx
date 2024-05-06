@@ -24,10 +24,14 @@ import { NextEvent } from './NextEvent.jsx';
             <div className='overflow-y-auto scrollbar-hide h-[24rem]'>
             <Eventos/>
             <Eventos />
-           
+
+            <Eventos />
+            <Eventos />
             </div>
         </div>
     </div>
+
+    
 </div>
 
  );

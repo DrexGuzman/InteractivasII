@@ -11,7 +11,7 @@ export function Eventos(titulo, text, image) {
                 <div className="relative flex justify-center">
                     <div className="absolute size-[1.5rem] md:size-[1.8] bg-amber-500 rounded-full top-[4rem]"></div>
                     <div className="absolute h-44 top-0 w-1 bg-amber-500 rounded-3xl"></div>
-                    <p className="absolute top-[3rem] left-5 text-white text-[1rem] xl:text-[2rem] text-nowrap">5:00pm</p>
+                    <p className=" hidden sm:block sm:absolute top-[3rem] left-5 text-white text-[1rem] xl:text-[2rem] text-nowrap">5:00pm</p>
                 </div>
             </div>
 
