@@ -2,23 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+/* Fuentes tamaños y pesos */
 .titulo{
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 2.5rem;
-    
-}
-.progress-ring__circle {
-  transition: stroke-dashoffset 0.35s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
+    font-size: 2.625; 
 }
 
 .titulo-ligero{
     font-family:"Montserrat", sans-serif;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 2.625;
 } 
 
 .subtitulo{
@@ -38,12 +35,59 @@
     font-family:"Carrois Gothic SC", sans-serif;
     font-size: 1rem;
 } 
+/* Fuentes tamaños y pesos */
+
+
+/* Colores */
+
+.bg-blue-1{
+    background-color: white/* #EFFAFF */;
+}
+
+.bg-blue-2{
+  background-color: #0088CC;
+}
+
+.clr-blue-3{
+  color: #11567D;
+
+}
+
+.-bg-withe{
+  background-color: #FFFFFF;
+}
+
+.bg-black{
+  background-color: #000000;
+}
+
+.bg-orange{
+  background-color: #F5A747;
+}
+
+.bg-green{
+  background-color: #66C771;
+}
+/* Colores */
+
 
 .lupa{
     background-image: url(../../components/img/search.svg);
     background-repeat: no-repeat;
     background-position: center;
 }
+
+
+
+/* Progress-Bar */
+.progress-ring__circle {
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+/* Progress-Bar */
+
+
 
 /*------ Settings ------*/
 .container {

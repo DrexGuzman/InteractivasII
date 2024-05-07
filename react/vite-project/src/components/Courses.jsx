@@ -3,9 +3,9 @@ import Course from "../assets/courses.svg";
 export function Courses() {
 
   return (
-    <div className="  hidden min-[430px]:flex flex-col p-4 bg-sky-600 rounded-3xl">
+    <div className="  hidden min-[430px]:flex flex-col p-4 bg-blue-1 rounded-3xl ring-[1px] ring-[#11567D] shadow-md ">
     <div className="py-2 flex justify-between">
-      <h1 className="texto text-white">
+      <h1 className="texto  clr-blue-3">
         Cursos matriculados
       </h1>
       <img className="size-6"
@@ -13,15 +13,15 @@ export function Courses() {
         src={Course}
       />
     </div>
-    <hr className="text-white w-full" />
-    <ul className=" mt-2 flex flex-col">
-      <li className="m-2 texto text-white ">
+    <hr className=" w-full border-[#11567D] " />
+    <ul className=" mt-2 flex flex-col list-disc pl-8">
+      <li className="m-2 texto   clr-blue-3">
         Desarrollo de aplicaciones interactivas II
       </li>
-      <li className="m-2 texto text-white ">
+      <li className="m-2 texto  clr-blue-3">
         Desarrollo de aplicaciones interactivas II
       </li>
-      <li className="m-2 texto text-white ">
+      <li className="m-2 texto clr-blue-3 ">
         Desarrollo de aplicaciones interactivas II
       </li>
     </ul>

@@ -29,13 +29,13 @@ export function NavDrawer() {
 
   return (
     <div className="mb-8">
-      <div className="relative bg-sky-600 grid sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
+      <div className="relative bg-blue-2 grid sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
       <div className="items-center flex">
         <div className="flex-col justify-center items-center">
         <a className="flex items-center justify-center" href="#">
           <img alt="" className="size-10" src={VinxLogo} />
         </a>
-        <h1 className="subtitulo-pesado text-white">Vinx</h1>
+        <h1 className="subtitulo-pesado text-[20px]  text-white text-center font-semibold">Vinx</h1>
         </div>
 
       </div>

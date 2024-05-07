@@ -60,35 +60,35 @@ export function Calendario() {
 
     <div className="flex flex-col gap-3 w-full ">
       <div className="flex  w-full  ">
-        <div className="p-1 m-1 font-sans rounded-2xl  ring-2 ring-white shadow-xl w-full py-8 relative bg-sky-600 text-white ">
+        <div className="p-1 m-1 font-sans rounded-2xl  ring-[1px] ring-[#11567D] shadow-md w-full py-8 relative bg-blue-1 texto clr-blue-3 ">
           <div class="flex justify-around mb-8">
             <div>
               <p class="text-center texto">Poco</p>
-              <div class="h-5 w-12  bg-[#F5A747] rounded-full mt-3"></div>
+              <div class="h-5 w-14 ring-[2px] ring-[#11567D]  bg-[#F5A747] rounded-lg  mt-3"></div>
             </div>
             <div>
-              <p class="text-center texto">Moderado</p>
-              <div class="h-5 w-12 bg-gray-300 m-auto rounded-full mt-3"></div>
+              <p class="text-center texto">Moderado</p> 
+              <div class="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
             </div>
             <div class="place-items-center">
               <p class="text-center texto">Mucho</p>
-              <div class="h-5 w-12 bg-gray-300 m-auto rounded-full mt-3"></div>
+              <div class="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
             </div>
           </div>
           <div class="flex justify-around items-center">
-            <button type="button" onClick={previousMonth} href="" class="w-5 h-5 ring-2 ring-[#F5A747] rounded-full text-center flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z" fill="#F5A747" />
+            <button type="button" onClick={previousMonth} href="" class="w-5 h-5 ring-2 ring-[#11567D] rounded-full text-center flex items-center justify-center "><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z" fill="#11567D" />
             </svg></button>
-            <p class="p-1 text-xl font-semibold text-center subtitulo w-[52%]">
+            <p class="p-1 text-xl font-semibold text-center subtitulo-pesado w-[52%]">  
               {format(firstDayCurrentMonth, 'MMMM yyyy')}
             </p>
-            <button onClick={nextMonth} type="button" href="" class="w-5 h-5 ring-2 ring-[#F5A747] rounded-full text-center flex items-center justify-center"><svg class="-rotate-180" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z" fill="#F5A747" />
+            <button onClick={nextMonth} type="button" href="" class="w-5 h-5 ring-2 ring-[#11567D] rounded-full text-center flex items-center justify-center"><svg class="-rotate-180" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z" fill="#11567D" />
             </svg></button>
           </div>
-          <hr class="w-[100%] border-[#F5A747] m-auto"></hr>
+          <hr class="w-[100%] border-[#11567D ] m-auto"></hr>
 
-          <div className="flex justify-around subtitulo font-normal mb-4 text-white">
+          <div className="flex justify-around subtitulo font-normal mb-4 clr-blue-3 subtitulo-pesado">
             <div className="grid place-items-center">D</div>
             <div className="grid place-items-center">L</div>
             <div className="grid place-items-center">K</div>
@@ -97,7 +97,7 @@ export function Calendario() {
             <div className="grid place-items-center">V</div>
             <div className="grid place-items-center">S</div>
           </div>
-          <div className="grid grid-cols-7 gap-1 font-semibold text-center">
+          <div className="grid grid-cols-7 gap-1 texto text-center">
             {days.map((day, dayIdx) => (
               <div
                 key={day.toString()}
@@ -128,11 +128,11 @@ export function Calendario() {
                     'bg-gray-900',
                     !isEqual(day, selectedDay) && 'hover:bg-gray-200',
                     (isEqual(day, selectedDay) || isToday(day)) &&
-                    'font-semibold',
-                    'mx-auto flex h-8 w-8 items-center justify-center rounded-full'
+                    '',
+                    'mx-auto flex h-8 w-8 items-center justify-center rounded-full texto'
                   )}
                 >
-                  <time dateTime={format(day, 'yyyy-MM-dd')}>
+                  <time className="texto" dateTime={format(day, 'yyyy-MM-dd')}>
                     {format(day, 'd')}
                   </time>
                 </button>
@@ -146,8 +146,8 @@ export function Calendario() {
 
           
           
-           <button  onClick={addEvent} className="absolute z-30 left-[45%] top-[95%] ring-2 ring-white bg-sky-600 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z" fill="white" />
+           <button  onClick={addEvent} className="absolute z-30 left-[45%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z" fill="#11567D" />
           </svg>
            </button>
            </div>
@@ -157,11 +157,11 @@ export function Calendario() {
       </div>
 
       <div className="flex flex-col  ">
-        <span class=" text-center text-sky-600 text-nowrap font-semibold sm:text-[1.625rem]  ">Añadir evento</span>
+        <span class=" text-center clr-blue-3 text-nowrap font-semibold sm:text-[1.625rem] subtitulo-pesado  ">Añadir evento</span>
       </div>
 
        
-      <div class=" bg-sky-600 text-center rounded-full ring-2 ring-white shadow-xl flex flex-col py-4 ">
+      <div class=" bg-blue-1 text-center rounded-full ring-1 ring-[#11567D] shadow-md flex flex-col py-4 ">
           Resumen de actividades Diarias y Semanales
         </div>
     </div>
