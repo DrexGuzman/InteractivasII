@@ -18,32 +18,32 @@ export function ProgressSection() {
            <h1 className="text-[2rem] text-sky-600 font-semibold">Cursos</h1> 
            <select className="w-full ring-2 ring-sky-600 rounded-full" name="" id=""></select>
            </div>
-        <div className="h-[33rem] overflow-x-hidden scrollbar-hide ">
+        <div className="h-[33rem] overflow-x-hidden p-1 scrollbar-hide ">
 
          
             
-            <section className="bg-sky-600 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ">
-                    < CoursesProgressName course={"Desarrollo de aplicaciones Interactivas"} semestre={"I Semestre"} />
+            <section className="bg-blue-1 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ring-1 ring-[#11567D]">
+                    < CoursesProgressName course={"Desarrollo de aplicaciones Interactivas"} semestre={"I Semestre 2024"} />
 
                     < EvaluationsProgress/>
                 
                     < RadialProgress porcent={55} />
             </section>
 
-            <section className="bg-sky-600 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ">
-                    < CoursesProgressName course={"Diseño web TM:6400"} semestre={"I Semestre"} />
+            <section className="bg-blue-1 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ring-1 ring-[#11567D]">
+                    < CoursesProgressName course={"Diseño de paginas web "} semestre={"I Semestre 2024"} />
 
                     < EvaluationsProgress/>
                 
-                    < RadialProgress porcent={85} />
+                    < RadialProgress porcent={80} />
             </section>
 
-            <section className="bg-sky-600 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ">
-                    < CoursesProgressName course={"Lectura en Inglés para Informática - 001"} semestre={"I Semestre"} />
+            <section className="bg-blue-1 flex flex-wrap  mt-4 rounded-2xl justify-around py-4 px-4 gap-y-4 ring-1 ring-[#11567D]">
+                    < CoursesProgressName course={"Desarrollo de aplicaciones Interactivas"} semestre={"I Semestre 2024"} />
 
                     < EvaluationsProgress/>
                 
-                    < RadialProgress porcent={25} />
+                    < RadialProgress porcent={95} />
             </section>
             </div>
 

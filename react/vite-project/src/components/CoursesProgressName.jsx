@@ -1,10 +1,10 @@
 
 export function CoursesProgressName  ({course, semestre})  {
     return (
-        <section className=" border-b-2  sm:border-b-0 sm:border-r-2 border-yellow-300 px-8  flex items-center flex-col flex-1 text-white " >
-                <p className="text-center align-text-top text-[2rem]  font-semibold mb-4 hidden   min-[430px]:flex ">Cursos</p>
-                    <p className="text-center">{course} </p>
-                    <p>{semestre} </p>
+        <section className=" border-b-[0.5px]  sm:border-b-0 sm:border-r-[0.5px] border-[#11567D] px-8   flex items-center flex-col flex-1 " >
+                <p className="text-center titulo clr-blue-3 align-text-top text-[2rem]  font-semibold mb-4 hidden   min-[430px]:flex ">Curso</p>
+                    <p className="text-center subtitulo-pesado clr-blue-3">{course} </p>
+                    <p className="subtitulo clr-blue-3">{semestre} </p>
         </section>
     );
 }

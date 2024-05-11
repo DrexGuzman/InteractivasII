@@ -3,16 +3,14 @@ import Check from "../assets/evenready.svg";
 import Penta from "../assets/penta.svg";
 import Ramdom from "../assets/ramdomevent.png";
 import EventesMenu from "../assets/eventsMenu.svg";
-export function Eventos(titulo, text, image) {
+export function Eventos({titulo, text, image, hora}) {
     return (
-        <div className="mt-3 rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D] ml-[25%] mr-8 relative flex flex-col lg:flex-row justify-center items-center px-4 gap-4 ">
-            <div className="absolute h-8 w-8 bg-white border-b-2 border-l-2 border-[#11567D] bottom-[32%] -left-[1.1rem] rotate-45"></div>
-            <div className="absolute right-[127.5%] h-full flex flex-col">
-                <div className="relative flex justify-center">
-                 
-                    <p className=" absolute top-[3rem] left-5 clr-blue-3  text-[1rem] xl:text-[2rem] text-nowrap subtitulo-pesado ">5:00pm</p>
-                </div>
-            </div>
+        <div className='flex flex-col justify-center'>
+        <p className="   clr-blue-3  text-[1rem] xl:text-[2rem] text-nowrap subtitulo-pesado ">Hora: 5:00pm</p>
+        <div className="rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D]   relative flex flex-col lg:flex-row justify-center items-center px-4 gap-4 ">
+             
+            
+           
 
             <div className=' hidden  w-[10rem] items-center justify-start gap-2 lg:flex lg:flex-col'>
                 <button>
@@ -42,6 +40,7 @@ export function Eventos(titulo, text, image) {
 
               {/*  <img  className='mb-12' src={EventesMenu} alt="" /> */}
 
+        </div>
         </div>
     );
 }

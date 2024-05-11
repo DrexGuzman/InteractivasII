@@ -31,15 +31,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <Cuentanos/> */}
 
 
-{/*     <NavDrawer/>
-    <MainSection/>
- */}
+    {/* <NavDrawer/>
+    <MainSection/> */}
+
 
     {/* <AddEvent/> */}
 
 
-    {/* <NavDrawer/>
-    <ProgressSection/> */}
+    <NavDrawer/>
+    <ProgressSection/>
 
 
    {/*  <NavDrawer />

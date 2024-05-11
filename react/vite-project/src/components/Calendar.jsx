@@ -1,6 +1,8 @@
 import "../index.css";
-import { Eventos } from "./Events";
-
+import { useCalendar } from "../hoocks/useCalendar";
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
 import {
   add,
@@ -18,38 +20,9 @@ import {
   startOfWeek,
 } from 'date-fns'
 
-import { Fragment, useState } from 'react';
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
-
-function addEvent(){
-  const newEvent=<Eventos/>
-  console.log(newEvent)
-}
 
 export function Calendario() {
-
-  let today = startOfToday()
-  let [selectedDay, setSelectedDay] = useState(today)
-  let [currentMonth, setCurrentMonth] = useState(format(today, 'MMM-yyyy'))
-  let firstDayCurrentMonth = parse(currentMonth, 'MMM-yyyy', new Date())
-
-  let days = eachDayOfInterval({
-    start: startOfWeek(firstDayCurrentMonth),
-    end: endOfMonth(endOfMonth(firstDayCurrentMonth)),
-  })
-
-  function previousMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 })
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-  }
-
-  function nextMonth() {
-    let firstDayNextMonth = add(firstDayCurrentMonth, { months: 1 })
-    setCurrentMonth(format(firstDayNextMonth, 'MMM-yyyy'))
-  }
+const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();
 
   return (
 
@@ -146,7 +119,7 @@ export function Calendario() {
 
           
           
-           <button  onClick={addEvent} className="absolute z-30 left-[45%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <button className="absolute z-30 left-[45%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z" fill="#11567D" />
           </svg>
            </button>

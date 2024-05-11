@@ -21,12 +21,8 @@ import { NextEvent } from './NextEvent.jsx';
         <Calendario/>
         <div className=" col-span-2  bg-blue-1 rounded-3xl ring-1 ring-[#11567D] ">
             <h1 className="text-center  text-[1.5rem] sm:text-[3rem]  mt-4 mb-4 clr-blue-3 titulo">Jueves 25 Abril 2024</h1>
-            <div className='overflow-y-auto scrollbar-hide h-[24rem]'>
+            <div className='overflow-y-auto scrollbar-hide h-[24rem] flex flex-col px-12  gap-4'>
             <Eventos/>
-            <Eventos />
-
-            <Eventos />
-            <Eventos />
             </div>
         </div>
     </div>
