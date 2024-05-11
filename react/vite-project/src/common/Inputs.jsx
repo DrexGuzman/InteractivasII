@@ -17,7 +17,7 @@ import '../index.css'
 
  return (
     <input
-    className=" mb-3 text-center ring-2 ring-white rounded-full text-white bg-transparent w-full h-10 focus: outline-none"
+    className=" mb-[1.562rem] h-[62px] text-center ring-2 ring-blue-3 rounded-full text-blue-3 w-full h-10 focus: outline-none text-blue-3 font-bold bg-blue-1 text-texto font-regular font-second"
     defaultValue={text}
     onBlur={(e) => restoreDefaultValue(e.target)}
     onFocus={(e) => clearDefaultValue(e.target)}

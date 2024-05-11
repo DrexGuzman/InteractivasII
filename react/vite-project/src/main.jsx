@@ -19,7 +19,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     
     <div className='overflow-x-hidden h-[100vh] '>
 
-  {/*   <Login/> */}
+    <Login/>
 
 
     {/* <Singup/> */}
@@ -38,8 +38,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     {/* <AddEvent/> */}
 
 
-    <NavDrawer/>
-    <ProgressSection/>
+    {/* <NavDrawer/>
+    <ProgressSection/> */}
 
 
    {/*  <NavDrawer />

@@ -4,7 +4,7 @@ import '../index.css'
 
  return (
     <a
-        className=" bg-white flex justify-center items-center my-3 text-center ring-2 ring-white rounded-full text-black bg-transparent w-full h-10 focus: outline-none"
+        className=" bg-white flex justify-center items-center mb-[1.562rem] text-center ring-2 ring-blue-3 rounded-full text-black bg-transparent w-full h-[62px] focus: outline-none"
         href="#"
       >
         <svg

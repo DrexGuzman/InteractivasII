@@ -7,15 +7,19 @@ import { Vinx } from '../common/VinxLogo';
  export function Login() {
 
  return (
-    <div className=" bg-sky-600 text-white flex   min-h-svh">
-    <div className="flex flex-col justify-center items-center m-auto p-8 w-[29rem] ">
+    <div className="text-white flex min-h-svh flex flex-col items-center">
+       <Vinx/>
+    <div className="flex flex-col max-w-[36rem] 
+     ">
 
-        <Vinx titulo="Iniciar Sesion" />
+       
+        <div className='  flex flex-col '>
+        <h1 className='font-bold text-4xl text-center mb-3 mt-4 text-blue-3 '>Iniciar sesion</h1>
         <Inputs text="Usuario" />
         <Inputs text="Contraseña" />
 
       <a
-        className="ml-[64%] text-sm text-nowrap"
+        className="text-blue-3 ml-[64%] mb-[1.562rem] text-sm text-nowrap"
         href="#"
       >
         Olvidó su contraseña?
@@ -23,11 +27,12 @@ import { Vinx } from '../common/VinxLogo';
 
         <Button text="Iniciar Sesion" address="#" />
 
-      <hr className="w-full" />
+      <hr className="w-full mb-[1.562rem] border-blue-3" />
       <LoginGoogle/>
-      <a href="singup.html">
+      <a className='text-blue-3' href="singup.html">
         Registrarse
       </a>
+        </div>
     </div>
     <a href="singup.html">
     </a>

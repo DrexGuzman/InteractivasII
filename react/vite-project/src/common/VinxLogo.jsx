@@ -4,7 +4,7 @@ export function Vinx({titulo}) {
 
     return (
 
-        <div>
+        <div className='bg-sky-600 w-screen pt-12'>
           <div className="flex flex-col justify-center items-center gap-3 mb-9 ">
         <svg
           fill="none"
@@ -41,9 +41,7 @@ export function Vinx({titulo}) {
           Agenda Virtual Universitaria
         </h2>
       </div>
-      <h2 className="font-bold text-4xl text-center mb-3 mt-4">
-        {titulo}
-      </h2>
+    
         </div>
 
 
