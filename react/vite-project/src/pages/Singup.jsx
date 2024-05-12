@@ -9,24 +9,22 @@ import VinxLogo from '../assets/vinxLogo.svg';
  export function Singup() {
 
  return (
-    <div className=" bg-sky-600 text-white flex   min-h-svh">
-    <div className="flex flex-col justify-center items-center m-auto p-8 w-[29rem] ">
-
-        <Vinx titulo="Registrarse" />
-
-        
-    
-        <Button text="Usuario nuevo" address="#"/>
-           
-
-      <hr className="w-full" />
-      <LoginGoogle/>
-      <a href="singup.html">
-        Iniciar sesión
-      </a>
-    </div>
-    <a href="singup.html">
-    </a>
+  <>
+  <div className='bg-blue-2 text-white text-main'>
+  <Vinx/>
   </div>
+  <div className='flex flex-col items-end mx-10 lg:mx-72 xl:mx-96'>
+    
+    <h1 className='m-auto font-bold text-4xl mb-[1.562rem] text-blue-3 '>Registrarse</h1>
+
+    <Button text="Usuario nuevo" address="#" />
+
+    <hr className="w-full mb-[1.562rem] border-blue-3" />
+
+    <LoginGoogle/>
+
+    <a className='m-auto text-blue-3 mb-[3.124rem] ' href="#">Iniciar sesión</a>
+  </div>
+  </>
  );
  }

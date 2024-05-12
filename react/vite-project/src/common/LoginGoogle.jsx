@@ -33,7 +33,7 @@ import '../index.css'
             fill="#EB4335"
           />
         </svg>
-        Iniciar sesión con Cuenta de google
+        Iniciar sesión con google
       </a>
   
  );

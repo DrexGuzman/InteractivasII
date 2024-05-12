@@ -3,12 +3,12 @@ import Img from '../assets/upload.svg';
 
 export function UpLoad({text}) {
     return (
-        <div className='flex flex-col items-center'>
-            <div className='my-3 size-20 overflow-hidden relative ring-2 ring-amber-500 rounded-full'>
-                <img className='absolute top-4 size-12 right-4' src={Img} alt="" />
-                <input className='absolute top-7 opacity-0' type="file" />
+        <div className='flex flex-col items-center mb-[1.562rem] m-auto'>
+            <div className='my-3 sm:size-20 size-12 overflow-hidden relative ring-2 ring-blue-3 rounded-full'>
+                <img className='absolute sm:top-4 top-3 sm:size-12 size-6 sm:right-4 right-3' src={Img} alt="" />
+                <input className='absolute sm:top-7 sm:righ-0 opacity-0 right-1' type="file" />
             </div>
-            <h3 className='subtitulo'>{text}</h3>
+            <h3 className='text-subtitulo text-blue-3'>{text}</h3>
         </div>
     );
 }
