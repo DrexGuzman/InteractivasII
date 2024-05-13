@@ -35,14 +35,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MainSection/> */}
 
 
-    <AddEvent/> 
+    {/* <AddEvent/>  */}
 
 
     {/* <NavDrawer/>
     <ProgressSection/> */}
 
 
-    {/* <NavDrawer />
+    <NavDrawer />
         <div className="max-w-[90rem]  m-4 text lg:m-auto">
     <div className="grid  grid-cols-1  min-[430px]:grid-cols-2   xs:grid-cols-1 sm:grid-cols-3  gap-x-10 mb-8">
         <NextEvent />
@@ -50,7 +50,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Filters />
     </div>
     <DailyTask />
-    </div> pendiente*/}
+    </div>
 
     
 
