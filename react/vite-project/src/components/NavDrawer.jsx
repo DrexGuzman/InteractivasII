@@ -8,9 +8,6 @@ import React, { useState, useEffect } from 'react';
 
 export function NavDrawer() {
 
-
-
-  
   function showMenu(input) {
     const menu = document.getElementsByName("menu")[0];
     const checkbox = document.getElementById("checkbox");
@@ -42,10 +39,10 @@ export function NavDrawer() {
       <div className="items-center justify-center hidden sm:flex">
         <form
           action=""
-          className="ring-2 ring-white flex justify-between h-[2rem] bg-sky-600 rounded-full w-[-webkit-fill-available]"
+          className="flex justify-between h-[2rem] bg-blue-1 rounded-full w-[-webkit-fill-available]"
         >
           <input
-            className="flex focus:outline-none pl-4 text-white texto bg-transparent"
+            className="flex focus:outline-none pl-4 text-blue-3 texto bg-transparent"
             placeholder="Buscar"
             type="text"
           />
@@ -141,10 +138,10 @@ export function NavDrawer() {
       <div className="sm:hidden">
         <form
           action=""
-          className="ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full"
+          className=" bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full"
         >
           <input
-            className="focus:outline-none pl-8 w-full text-white texto bg-transparent"
+            className="focus:outline-none pl-8 w-full text-blue-3 texto bg-transparent"
             placeholder="Buscar"
             type="text"
           />
@@ -155,8 +152,8 @@ export function NavDrawer() {
           />
         </form>
       </div>
-      <div className="px-4 justify-between items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full sm:hidden">
-        <h1 className="texto text-white text-center">
+      <div className="px-4 justify-between items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full sm:hidden">
+        <h1 className="texto text-blue-3 text-center">
           Aplicar filtros
         </h1>
         <input
@@ -173,8 +170,8 @@ export function NavDrawer() {
       </div>
       <hr className="sm:hidden w-[90vw] text-white bg-white" />
       
-      <div className="px-4 justify-between items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full sm:hidden">
-        <h1 className="texto text-white text-center">
+      <div className="px-4 justify-between items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full sm:hidden">
+        <h1 className="texto text-blue-3 text-center">
           Cursos matriculados
         </h1>
         <input
@@ -191,13 +188,13 @@ export function NavDrawer() {
       </div>
       <hr className="w-[90vw] text-white bg-white" />
       <a
-        className="px-4 flex justify-center items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-white"
+        className="px-4 flex justify-center items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3"
         href="#"
       >
         Progreso de cursos
       </a>
       <a
-        className="px-4 flex justify-center items-center ring-2 ring-white flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-white"
+        className="px-4 flex justify-center items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3"
         href="#"
       >
         Resumen de actividades
