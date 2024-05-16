@@ -1,22 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Modal from './assets/components/modal'
 
+import { Cuentanos } from './components/Cuentanos'
+import { FormRegi } from './pages/FormRegi'
+import { useModal } from './hoocks/useModal.js'
 function App() {
-// const [count, setCount] = useState(0)
 
-  // return (
-    
-  // )
+  const handlemodal =useModal();
+
+  return (
+   <>    
+   {handlemodal.isOpen && (
+    <>
+      <Cuentanos modalOpen={handlemodal.openModal} modalClose={handlemodal.closeModal}></Cuentanos>
+      
+    </>
+   )}
+
+      <FormRegi closeModal={handlemodal.openModal}/>
+   </>
+
+  )
 
 
-  const[isModalOpen, setIsModalOpen]=useState(false);
+ /*  const[isModalOpen, setIsModalOpen]=useState(false);
   return <div className="App">
    
     <Modal isOpen={isModalOpen} closeModal={()=>setIsModalOpen(false)}/>
-  </div>
+  </div> */
 }
 
 export default App

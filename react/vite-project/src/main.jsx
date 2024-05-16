@@ -13,10 +13,12 @@ import{Login} from './pages/Login.jsx'
     import{NextEvent} from './components/NextEvent.jsx'
 import{Singup} from './pages/Singup.jsx'
 import { ProgressSection } from './components/ProgressSection.jsx'
-
+import { useModal } from './hoocks/useModal.js'
+import App from './App.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-    
+   <>
+
     <div className='overflow-x-hidden h-[100vh] '>
 
     {/* <Login/> */}
@@ -24,8 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     {/* <Singup/> */}
 
-
-    {/* <FormRegi/> */}
+   <App/>
 
 
     {/* <Cuentanos/> pendiente*/}
@@ -35,7 +36,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MainSection/> */}
 
 
-    <AddEvent/> 
+    {/* <AddEvent/>  */}
 
 
     {/* <NavDrawer/>
@@ -59,7 +60,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 </div>
         
       
-       
+</>   
        
         
        

@@ -4,7 +4,7 @@ import { Vinx } from '../common/VinxLogo';
 import { UpLoad } from '../common/UpLoad';
 import { ButtonBlue } from '../common/ButtonBlue';
 
- export function FormRegi() {
+ export function FormRegi({closeModal}) {
 
  return (
   <>
@@ -22,7 +22,7 @@ import { ButtonBlue } from '../common/ButtonBlue';
     <InputsLeft text="Nombre de usuario" type={"text"}/>
     <InputsLeft text="Contraseña" type={"password"}/>
     <hr className="w-full mb-[1.562rem] border-blue-3" />
-    <ButtonBlue text="Continuar" address="#" />
+    <ButtonBlue closeModal={closeModal} text="Continuar"  address="#" />
 
     
 
