@@ -26,7 +26,7 @@ export function NavDrawer() {
 
   return (
     <div className="mb-8">
-      <div className="relative bg-blue-2 grid sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
+      <div className="relative bg-blue-2 grid  sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
       <div className="items-center flex">
         <div className="flex-col justify-center items-center">
         <a className="flex items-center justify-center" href="#">
