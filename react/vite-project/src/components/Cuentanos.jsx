@@ -106,7 +106,7 @@ export function Cuentanos({ modalOpen, modalClose, isOpen }) {
             </section>
 
             <div className="flex flex-col items-center mt-7">
-              <ButtonBlue text="Completar Registro" address="formRegi.html" />
+              <ButtonBlue text="Completar Registro" address="vinx"/>
               <button onClick={modalClose} className="text-subtitulo font-pesado font-main">Regresar</button>
             </div>
           </div>

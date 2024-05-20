@@ -3,6 +3,8 @@ import { Inputs } from '../common/Inputs';
 import { Button } from '../common/Button';
 import { LoginGoogle } from '../common/LoginGoogle';
 import { Vinx } from '../common/VinxLogo';
+import { Link } from 'react-router-dom';
+
 
  export function Login() {
 
@@ -22,13 +24,12 @@ import { Vinx } from '../common/VinxLogo';
 
     <a className="text-blue-3 mb-[1.562rem] text-sm text-nowrap"href="#">Olvidó su contraseña?</a>
 
-    <Button text="Iniciar Sesion" address="#" />
+    <Button text="Iniciar Sesion" address="vinx" />
 
     <hr className="w-full mb-[1.562rem] border-blue-3" />
 
     <LoginGoogle/>
-
-    <a className='m-auto text-blue-3 mb-[3.124rem] ' href="singup.html">Registrarse</a>
+    <Link className='m-auto text-blue-3 mb-[3.124rem] ' to='/singup' >Registrarse</Link>
   </div>
   </>
     

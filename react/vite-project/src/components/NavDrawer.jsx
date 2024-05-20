@@ -5,6 +5,7 @@ import ImgFilter from "../assets/filters.svg";
 import Chat from "../assets/chat.svg";
 import ImgCourse from "../assets/courses.svg";
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 
 export function NavDrawer() {
 
@@ -29,10 +30,10 @@ export function NavDrawer() {
       <div className="relative bg-blue-2 grid  sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
       <div className="items-center flex">
         <div className="flex-col justify-center items-center">
-        <a className="flex items-center justify-center" href="#">
-          <img alt="" className="size-10" src={VinxLogo} />
-        </a>
+        <Link to='/vinx' className="flex items-center justify-center flex-col" >
+        <img alt="" className="size-10" src={VinxLogo} />
         <h1 className="subtitulo-pesado text-[20px]  text-white text-center font-semibold">Vinx</h1>
+        </Link>
         </div>
 
       </div>
@@ -187,25 +188,13 @@ export function NavDrawer() {
         />
       </div>
       <hr className="w-[90vw] text-white bg-white" />
-      <a
-        className="px-4 flex justify-center items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3"
-        href="#"
-      >
-        Progreso de cursos
-      </a>
-      <a
-        className="px-4 flex justify-center items-center bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3"
-        href="#"
-      >
-        Resumen de actividades
-      </a>
+      <Link to='/vinx/progress' className="px-4 flex justify-center items-center bg-blue-1 sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3" >Progreso de cursos</Link>
+
+      <Link to='/vinx/dailyTask' className="px-4 flex justify-center items-center bg-blue-1 sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3" >Resumen de actividades</Link>
+      
       <hr className="w-[90vw] text-white bg-white" />
-      <a
-        className="texto text-white flex justify-center"
-        href="#"
-      >
-        Cerrar sesion
-      </a>
+      <Link to='/' className="texto text-white flex justify-center" >Cerrar sesion</Link>
+      
     </div>
   </div>
       </div>

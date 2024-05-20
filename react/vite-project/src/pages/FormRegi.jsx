@@ -22,7 +22,7 @@ import { ButtonBlue } from '../common/ButtonBlue';
     <InputsLeft text="Nombre de usuario" type={"text"}/>
     <InputsLeft text="Contraseña" type={"password"}/>
     <hr className="w-full mb-[1.562rem] border-blue-3" />
-    <ButtonBlue closeModal={closeModal} text="Continuar"  address="#" />
+    <ButtonBlue closeModal={closeModal} text="Continuar"  address="" />
 
     
 

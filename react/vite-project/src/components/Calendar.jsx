@@ -19,6 +19,7 @@ import {
   startOfToday,
   startOfWeek,
 } from 'date-fns'
+import { Link } from "react-router-dom";
 
 
 export function Calendario() {
@@ -133,9 +134,9 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
 
 
        
-      <div class=" bg-blue-1 text-center rounded-full ring-1 ring-[#11567D] shadow-md  hidden sm:flex flex-col py-4 mt-12 ">
+      <Link to='dailyTask' class=" bg-blue-1 text-center rounded-full ring-1 ring-[#11567D] shadow-md  hidden sm:flex flex-col py-4 mt-12 ">
           Resumen de actividades Diarias y Semanales
-        </div>
+        </Link>
     </div>
 
 

@@ -15,32 +15,36 @@ import{Singup} from './pages/Singup.jsx'
 import { ProgressSection } from './components/ProgressSection.jsx'
 import { useModal } from './hoocks/useModal.js'
 import App from './App.jsx'
+import { BrowserRouter} from 'react-router-dom'
+
+//npm install react-router-dom
 
 ReactDOM.createRoot(document.getElementById('root')).render(
    <>
 
-    <div className='overflow-x-hidden h-[100vh] '>
+    
 
    {/* <Login/>  */}
 
 
     {/*  <Singup/>   */}
-{/* 
-    <App/>   */}
+
+    <BrowserRouter>
+        <App />
+      </BrowserRouter>
 
 
   {/*  <Cuentanos/> */}
 
-   <NavDrawer/>
-    <MainSection/>  
+  {/*  <NavDrawer/>
+    <MainSection/>  */} 
 
 
 {/*  <AddEvent/>   
  */}
 
 {/* <NavDrawer/>
-    <ProgressSection/>  */}
-
+    <ProgressSection/> */}
 
 {/*  <NavDrawer />
         <div className="max-w-[90rem]  m-4 text lg:m-auto">
@@ -51,15 +55,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </div>
     <DailyTask />
     </div>  */}
-
-    
-
-    
-
-</div>
-
-        
-      
 </>   
        
         

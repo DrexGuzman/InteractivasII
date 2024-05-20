@@ -17,7 +17,7 @@ import VinxLogo from '../assets/vinxLogo.svg';
     
     <h1 className='m-auto font-bold text-4xl mb-[1.562rem] text-blue-3 '>Registrarse</h1>
 
-    <Button text="Usuario nuevo" address="#" />
+    <Button text="Usuario nuevo" address="newuser" />
 
     <hr className="w-full mb-[1.562rem] border-blue-3" />
 
