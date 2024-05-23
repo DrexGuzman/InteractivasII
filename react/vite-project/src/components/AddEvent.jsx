@@ -4,7 +4,7 @@ import { UpLoad } from '../common/UpLoad';
 import { ButtonBlue } from '../common/ButtonBlue';
 import { ComboBox } from '../common/ComboBox';
 
- export function AddEvent() {
+ export function AddEvent({closeModal, addEvent }) {
 
     function clearDefaultValue(input) {
         if (input.value === input.defaultValue) {
@@ -19,9 +19,17 @@ import { ComboBox } from '../common/ComboBox';
         }
       }
 
- return (
+      function handleContinue() {
+        addEvent();
+        closeModal();
+    }
+ 
 
-    <div className='bg-white ring-1 ring-blue-3 rounded-2xl lg:w-[40vw] w-[80vw] px-8 text-center py-8'>
+ return (
+<div className='inset-0 bg-gray-950 bg-opacity-50 fixed z-50'>
+       <div className="flex overflow-y-auto fixed inset-0 z-50 justify-center items-center w-full  sm:max-h-full ">
+      <div className="p-4 max-h-full">
+    <div className=' bg-white ring-1 ring-blue-3 rounded-2xl lg:w-[40vw] w-[80vw] px-8 text-center py-5'>
         <div className='flex items-center gap-x-5'>
           <Inputs text="Nombre del evento" type="text" />
           <UpLoad/>
@@ -50,9 +58,14 @@ import { ComboBox } from '../common/ComboBox';
         onFocus={(e) => clearDefaultValue(e.target)}></textarea>
         </div>
     </div>
-    <ButtonBlue text="Agregar" address="#"/>
-    <a className='text-blue-3 mb-[3.124rem] font-bold text-subtitulo' href="singup.html">Regresar</a>
+    <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>   
+            <button onClick={handleContinue}  className=" focus: outline-none">Agregar Evento</button>    
+            </div>
+    <a  onClick={closeModal} className='text-blue-3 mb-[3.124rem] font-bold text-subtitulo' >Regresar</a>
     </div>
+      </div>
+      </div>
+      </div>
     
  );
  }

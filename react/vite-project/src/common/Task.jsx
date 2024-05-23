@@ -24,7 +24,7 @@ export function Task({text}) {
         <p className='text-blue-3'>{text}</p>
         <div className='relative'>
             <img src={checkW} alt="" id='img'/>
-         <input className='absolute top-0 left-0 size-6 opacity-0' type='checkbox' name='' id='check' onChange={check}/>  
+         <input className='absolute top-0 left-0 size-6 opacity-1' type='checkbox' name='' id='check' onChange={check}/>  
         </div>
     </div>
     );

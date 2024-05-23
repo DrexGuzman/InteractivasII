@@ -7,9 +7,11 @@ import { Vinx } from './pages/Vinx.jsx';
 import { Singup } from './pages/Singup.jsx';
 import { ResumeActivities } from './pages/ResumeActivities.jsx';
 import {ProgressCourses} from './pages/ProgressCourses.jsx'
-
+import { AddEvent } from './components/AddEvent.jsx';
+import { Landing } from './pages/Landing.jsx';
 function App() {
-  const handlemodal = useModal();
+  const modalCuentanos = useModal();
+
 
   return (
    
@@ -20,17 +22,19 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/vinx" element={<Vinx />} />
           <Route path="/singup" element={<Singup />} />
-          <Route path="/newuser" element={<FormRegi closeModal={handlemodal.openModal} />} />
-          <Route path="/newuser" element={<FormRegi closeModal={handlemodal.openModal} />} />
+          <Route path="/newuser" element={<FormRegi closeModal={modalCuentanos.openModal} />} />
           <Route path="/vinx/dailyTask" element={<ResumeActivities />} />
           <Route path="/vinx/progress" element={<ProgressCourses />} />
+          <Route path="/vinx.dev" element={< Landing/>} />
         </Routes>
   
-        {handlemodal.isOpen && (
+        {modalCuentanos.isOpen && (
           <>
-            <Cuentanos modalOpen={handlemodal.openModal} modalClose={handlemodal.closeModal} />
+            <Cuentanos modalOpen={modalCuentanos.openModal} modalClose={modalCuentanos.closeModal} />
           </>
         )}
+
+        
       </div>
    
   );

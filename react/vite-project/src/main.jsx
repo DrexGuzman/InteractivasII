@@ -24,13 +24,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     
 
-   {/* <Login/>  */}
+{/*    <Login/>  */}
 
 
     {/*  <Singup/>   */}
 
     <BrowserRouter>
         <App />
+      {/*  <AddEvent/> */}
       </BrowserRouter>
 
 

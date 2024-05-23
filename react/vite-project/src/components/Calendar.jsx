@@ -1,5 +1,6 @@
 import "../index.css";
 import { useCalendar } from "../hoocks/useCalendar";
+import { useModal } from "../hoocks/useModal";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
@@ -19,18 +20,25 @@ import {
   startOfToday,
   startOfWeek,
 } from 'date-fns'
+
 import { Link } from "react-router-dom";
+import { AddEvent } from "./AddEvent";
 
 
-export function Calendario() {
+export function Calendario({eventsList, addNewEvent, dayClicked}) {
+ 
+ const modalAddEvents = useModal();
+
 const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();
 
   return (
 
-
-
-
-
+<>
+      {modalAddEvents.isOpen && (
+          <>
+            <AddEvent closeModal={modalAddEvents.closeModal} addEvent={addNewEvent}  />
+          </>
+        )}
 
     <div className="flex flex-col gap-3 w-full ">
       <div className="flex  w-full  ">
@@ -73,7 +81,7 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
           </div>
           <div className="grid grid-cols-7 gap-1 texto text-center">
             {days.map((day, dayIdx) => (
-              <div
+              <div onClick={() => dayClicked(day)}
                 key={day.toString()}
                 className={classNames(
                   dayIdx === 0 && colStartClasses[getDay(day)],
@@ -120,7 +128,7 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
 
           
           
-           <button className=" absolute  z-30 left-[48%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <button onClick={modalAddEvents.openModal} className=" absolute  left-[48%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z" fill="#11567D" />
           </svg>
           <span class=" text-center text-blue-3 font-main text-texto font-pesado sm:text-subtitulo text-nowrap  absolute top-8 ">Añadir nuevo</span>
@@ -138,6 +146,8 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
           Resumen de actividades Diarias y Semanales
         </Link>
     </div>
+</>
+
 
 
   )

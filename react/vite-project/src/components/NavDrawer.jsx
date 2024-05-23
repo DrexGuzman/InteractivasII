@@ -27,6 +27,13 @@ export function NavDrawer() {
 
   return (
     <div className="mb-8">
+        <input
+                  className="opacity-0 fixed  right-4 sm:right-10 top-[1.2rem]  size-[3rem] z-10"
+                  onChange={(e) => showMenu(e.target)}
+                  id="checkbox"
+                  name=""
+                  type="checkbox"
+                />
       <div className="relative bg-blue-2 grid  sm:grid-cols-3 grid-cols-2 py-2 sm:px-8 px-4 sm:gap-x-10 gap-x-28">
       <div className="items-center flex">
         <div className="flex-col justify-center items-center">
@@ -55,13 +62,7 @@ export function NavDrawer() {
      
                 {/* <img alt="" className=" size-8 bg-sky-600" src={HambMenu} /> */}
           <div className="w-full flex justify-end">
-          <input
-                  className="opacity-0 absolute size-[3rem] z-10"
-                  onChange={(e) => showMenu(e.target)}
-                  id="checkbox"
-                  name=""
-                  type="checkbox"
-                />
+        
           
           <div className="flex justify-center items-center gap-12">
                 <div className="relative sm:block hidden">
@@ -91,11 +92,11 @@ export function NavDrawer() {
 
       {/* menu emergente */}
 
-      <div className="z-10 absolute top-0 right-[-1000px] sm:w-[40vw] w-[70vw] h-[100vh]  bg-black px-[1.188rem]" name="menu">
+      <div className="z-10 fixed  top-0 right-[-1000px] sm:w-[40vw] w-[70vw] h-[100vh]  bg-black px-[1.188rem]" name="menu">
       <div className="relative flex justify-between sm:justify-end py-4">
         
       <input
-      className="opacity-0 absolute size-8"
+      className="opacity-0 absolute size-8 "
       id=""
       name=""
       type="checkbox"
