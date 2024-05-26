@@ -1,11 +1,15 @@
+import { se } from 'date-fns/locale';
 import {useState } from 'react';
 
 export const useAddEvent=()=> {
     
   const [eventosList, setEventosList] = useState([
     {
-      titulo: "Conferencia de Innovación", texto: "Una conferencia sobre las últimas innovaciones tecnológicas.", image: "https://via.placeholder.com/150", fecha: "2024-06-01", hora: "10:00 AM", categoria: "universidad"
-    }
+      titulo: "Conferencia de Innovación", texto: "Una conferencia sobre las últimas innovaciones tecnológicas.", image: "https://via.placeholder.com/150", fecha: "2024-06-01", hora: "10:00 AM", categoria: "universidad",
+      
+    },
+    
+    
   ]);
     
       function addNewEvent() {
@@ -24,6 +28,6 @@ export const useAddEvent=()=> {
 
       
     
-      return {eventosList, addNewEvent}
+      return {eventosList, addNewEvent, setEventosList}
 }
 

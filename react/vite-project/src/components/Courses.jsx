@@ -16,13 +16,13 @@ export function Courses() {
     <hr className=" w-full border-[#11567D] " />
     <ul className=" mt-2 flex flex-col list-disc pl-8">
       <li className="m-2 texto   clr-blue-3">
-       <Link to='progress' > Desarrollo de aplicaciones interactivas II</Link>
+       <Link to='../vinx/progress' > Desarrollo de aplicaciones interactivas II</Link>
       </li>
       <li className="m-2 texto  clr-blue-3">
-      <Link to='progress' > Desarrollo de aplicaciones interactivas II</Link>
+      <Link to='../vinx/progress' > Desarrollo de aplicaciones interactivas II</Link>
       </li>
       <li className="m-2 texto clr-blue-3 ">
-      <Link to='progress' > Desarrollo de aplicaciones interactivas II</Link>
+      <Link to='../vinx/progress ' > Desarrollo de aplicaciones interactivas II</Link>
       </li>
     </ul>
   </div>
