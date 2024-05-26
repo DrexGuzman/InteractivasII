@@ -9,8 +9,7 @@ import { ResumeActivities } from './pages/ResumeActivities.jsx';
 import {ProgressCourses} from './pages/ProgressCourses.jsx'
 import { AddEvent } from './components/AddEvent.jsx';
 import { Landing } from './pages/Landing.jsx';
-import {Notifications} from './pages/Prueba.jsx';
-import {MenuDemo} from './pages/Prueba2.jsx';
+
 function App() {
   const modalCuentanos = useModal();
 
@@ -23,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/vinx" element={<Vinx />} />
-          <Route path="/Prueba" element={<Notifications/>} />
+         
           <Route path="/singup" element={<Singup />} />
           <Route path="/newuser" element={<FormRegi closeModal={modalCuentanos.openModal} />} />
           <Route path="/vinx/dailyTask" element={<ResumeActivities />} />
