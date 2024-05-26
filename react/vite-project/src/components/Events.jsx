@@ -1,18 +1,33 @@
 import '../index.css';
+import checkW from '../assets/checkWhite.svg';
+import checkG from '../assets/CheckGreen.svg';
 import Check from "../assets/evenready.svg";
 import Penta from "../assets/penta.svg";
 import Ramdom from "../assets/ramdomevent.png";
 import EventesMenu from "../assets/eventsMenu.svg";
+import { useHandleCheck } from '../hoocks/useHandleCheck';
+
 
 export function Eventos({ titulo, texto, image, hora, cat}) {
+
+    const {isChecked, handleCheck} = useHandleCheck();
+
     return (
         <div className='flex flex-col justify-center relative  '>
             <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hora: 5:00pm</p>
             <div className="rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D] relative flex flex-row justify-center items-center   py-4 px-8 gap-4">
                 <div className=' w-[10rem] items-center justify-start gap-2  hidden sm:flex flex-col'>
-                    <button>
-                        <img src={Check} alt="" />
-                    </button>   
+                    
+                <div className='relative'>
+                <img src={isChecked ? checkG : checkW} alt="" id='img'/>
+                <input
+                className='absolute top-0 left-0 size-9 opacity-0'
+                type='checkbox'
+                checked={isChecked}
+                onChange={handleCheck}
+                />
+                </div>
+                   
                     <img className='min-w-8' src={Penta} alt="" />
                 </div>
                 <div className='flex flex-col items-center sm:items-start  min-w-[135px]  '>
