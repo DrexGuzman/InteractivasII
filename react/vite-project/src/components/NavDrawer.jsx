@@ -1,19 +1,18 @@
 import VinxLogo from "../assets/vinxLogo.svg";
-import Notify from "../assets/notify.svg";
+
 import Search from "../assets/search.svg";
 import ImgFilter from "../assets/filters.svg";
 import ImgCourse from "../assets/courses.svg";
 import Chat from "../assets/chat.svg";
-import Delete from "../assets/delete.svg";
-import Task from "../assets/newTask.svg";
-
-
 import { MagicMotion } from "react-magic-motion";
 
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import { FiltersDropDown } from "./FiltersDropDown";
 import { CoursesDropDown } from "./CoursesDropDown";
+import { NoficationDropDrown } from "./NoficationDropDrown";
+import { MessagesDropDrown } from "./MessagesDropDown";
+
 
 export function NavDrawer() {
     const [activeModal, setActiveModal] = useState(null);
@@ -79,46 +78,9 @@ export function NavDrawer() {
         
           
           <div className="flex justify-center items-center gap-12">
-          <button className="group relative sm:block hidden">
-              <div className="bg-amber-500 size-6 group-focus:scale-0 duration-200  rounded-full absolute left-4 bottom-4 font-extrabold">3</div>
-                <img className="size-8 group-focus:opacity-70" alt="" src={Chat} />
-                
+          <div className="sm:block hidden  left-0 right-0"><MessagesDropDrown/></div>
+              <div className="sm:block hidden  left-0 right-0"><NoficationDropDrown /></div>
 
-                <div className="absolute  scale-y-0 group-focus:scale-y-100 origin-top duration-200 min-h-[33rem] w-[25rem] ring-2 ring-blue-3 rounded-sm bg-blue-1 right-0 z-40 top-14">
-                <div className="size-4 rotate-45 border-t-2 border-l-2  border- -z-0 absolute right-[2%] top-[-3%] "></div>
-                    <p className="text-texto font-second text-blue-3 font-bold">Mensajes</p>
-                  </div>
-                
-            
-              </button>
-
-              <button className="group relative sm:block hidden">
-                <div className="bg-amber-500 size-6 group-focus:scale-0 duration-200 rounded-full absolute left-4 bottom-4 font-extrabold">4</div>
-                <img className="size-8 group-focus:opacity-70" alt="" src={Notify} />
-                <div className="absolute  scale-y-0 group-focus:scale-y-100  origin-top duration-200   w-[25rem] min-h-[33rem] ring-2 ring-blue-3 rounded-sm bg-blue-1 right-0 z-40 top-14">
-                <div className="size-4 rotate-45 border-t-2 border-l-2  border- -z-0 absolute right-[2%] top-[-3%] "></div>
-                    <p className="pl-2 pt-2 text-texto font-second font-bold  text-blue-3 border-t-2 border flex justify-between">Noficaciones  <button className="pr-2"> salir</button></p>
-                   
-                    <ul className=" text-texto font-second text-blue-3 overflow-y-auto overflow-hidden  max-h-[33rem] ">
-                      <li className=" hover:bg-blue-2  hover:text-white ">
-                     
-                          <p className="flex gap-1 pl-3 pt-2 relative "> 
-                             <img className="size-5 " alt="" src={Task} />
-                           Nuevo tarea de assignada
-                           <button className="absolute right-2 ">
-                                <img className=" size-5 hover:scale-125  " alt="" src={Delete} />
-                           </button>
-                          
-                           </p>
-                           
-                          <p className="text-[12px] text-start pl-4 ">recibido hace 33 minutos</p>
-                      </li>
-
-                      
-                    </ul>
-                  </div>
-
-              </button>
           <img
             alt="User Profile"
             className="relative rounded-full  ring-4 ring-white size-[3rem]"
@@ -131,12 +93,14 @@ export function NavDrawer() {
 
       {/* menu emergente */}
 
-      <div className="fixed top-0 right-[-1000px] z-20 sm:w-[40vw] w-[70vw] h-screen bg-black px-[1.188rem] overflow-y-auto " name="menu">
-      <div className="relative flex justify-between sm:justify-end py-4">
-        <input className="opacity-0 absolute size-8" id="" name="" type="checkbox" />
+      <div className="fixed top-0 right-[-1000px] z-20 sm:w-[40vw] w-[70vw] h-screen bg-black px-[1.188rem] overflow-y-auto scrollbar-hide   overflow-hidden " name="menu">
+      <div className="relative flex justify-between  py-4">
+        <div className="flex sm:hidden gap-8 ">
+        <NoficationDropDrown/>
+        <MessagesDropDrown/>
+        </div>
+        <input className="opacity-0 fixed size-8" id="" name="" type="checkbox" />
         <div className="relative">
-          <div className="sm:hidden bg-amber-500 size-3 rounded-full absolute top-4 left-3"></div>
-          <img className="mt-5 sm:hidden" alt="" src={Notify} />
         </div>
         <h1 className="absolute right-3 sm:right-8 top-8 text-white text-2xl font-bold cursor-pointer">X</h1>
       </div>
