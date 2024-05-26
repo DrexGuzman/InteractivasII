@@ -1,23 +1,8 @@
 import '../index.css';
-import Star from '../assets/Star.svg';
-import checkW from '../assets/checkWhite.svg';
-import checkG from '../assets/CheckGreen.svg';
 import {Task} from '../common/Task';
 import {Statistics} from '../common/Statistics';
 
 export function DailyTask() {
-
-    function check() {
-        const check = document.getElementById('check');
-        const img = document.getElementById('img');
-        check.addEventListener('change', () => {
-            if (check.checked) {
-                img.src = checkG;
-            } else {
-                img.src = checkW;
-            }
-        });
-    }
 
     return (
         <div className='grid lg:grid-cols-4 grid-cols-1 gap-y-4 gap-x-10 mb-8 '>

@@ -1,21 +1,39 @@
 import filters from "../assets/filters.svg";
-export function Filters() {
+export function FiltersDropDown() {
+
+  function dropDown(input) {
+    const filterBox = document.getElementById("filterBox");
+    if (input.checked) {
+      
+      filterBox.style.height = "11rem";
+      filterBox.style.transition = "height 0.5s";
+    } else {
+      filterBox.style.height = "2rem";
+      filterBox.style.transition = "height 0.5s";
+    }
+  }
 
     return (
-        <div id="filterBox" className=" overflow-hidden  hidden  lg-[1440px]:flex flex-col p-4 bg-blue-1 rounded-3xl ring-[1px] ring-[#11567D] shadow-md ">
-        <div className="py-2 flex justify-between">
-          <h1 className="texto clr-blue-3 pb-2">
+        <div id="filterBox" className=" h-[2rem] overflow-hidden lg-[1440px]:flex flex-col py-1 px-2 bg-blue-1 rounded-3xl ring-[1px] ring-[#11567D] shadow-md ">
+        <div className=" flex justify-between items-center">
+          <h1 className="texto clr-blue-3">
             Aplicar filtros de busqueda
           </h1>
           <div className='relative'>
+        <input onChange={(e) => dropDown(e.target)}
+          className="absolute opacity-0 size-5"
+          id="applyFilters"
+          name=""
+          type="checkbox"
+        />
         <img
           alt=""
-          className=" size-6"
+          className=" size-5"
           src={filters}
         />
         </div>
         </div>
-        <hr className="border-[#11567D] w-full" />
+        <hr className="border-[#11567D] w-full mt-1" />
         <ul className=" mt-2 flex flex-col">
           <li className="mt-2">
             <label className="container flex">
