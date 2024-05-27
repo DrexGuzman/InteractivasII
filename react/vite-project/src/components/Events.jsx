@@ -63,14 +63,13 @@ export function Eventos({ titulo, texto, image, hora, cat}) {
                
                 <img className=' hidden sm:block' src={Ramdom} alt="" />
 
-                    <button className="group relative  sm:z-20">
-                    
+                <button className="group relative  sm:z-10">
                     <img className="size-8 group-focus:opacity-0  duration-200" alt="" src={EventesMenu} />
                     <div className=" absolute opacity-0 group-focus:opacity-100  duration-200    w-[12rem] h-[4rem] top-[-1rem]  right-[-6.5rem]  ">
                             <div className='flex flex-col gap-8 items-center justify-center h-full'>
                                 <button onFocusCapture={modalAddEvents.toggleModal} className='hover:scale-125'>
                                     <svg width="22" height="22" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9 18H17.5M15 8L18 5L14 1L11 4M15 8L5 18H1V14L11 4M15 8L11 4" stroke="#11567D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M9 18H17.5M15 8L18 5L14 1L11 4M15 8L5 18H1V14L11 4M15 8L11 4" stroke="#11567D" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
                                 </button>
                                 <button  className=''>
@@ -78,7 +77,7 @@ export function Eventos({ titulo, texto, image, hora, cat}) {
                                 </button>
                             </div>
                         </div>
-                    </button>
+                </button>
                
             </div>
         </div>

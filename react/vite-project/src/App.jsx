@@ -32,7 +32,7 @@ function App() {
   
         {modalCuentanos.isOpen && (
           <>
-            <Cuentanos modalOpen={modalCuentanos.openModal} modalClose={modalCuentanos.closeModal} />
+            <Cuentanos modalClose={modalCuentanos.closeModal} />
           </>
         )}
 

@@ -22,7 +22,12 @@ import { ButtonBlue } from '../common/ButtonBlue';
     <InputsLeft text="Nombre de usuario" type={"text"}/>
     <InputsLeft text="Contraseña" type={"password"}/>
     <hr className="w-full mb-[1.562rem] border-blue-3" />
-    <ButtonBlue closeModal={closeModal} text="Continuar"  address="" />
+    <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>
+               {/*  <Link to={`/${address}`} className=" focus: outline-none" >{text}</Link> */}
+                
+                <button onClick={closeModal} className=" focus: outline-none">Continuar</button>
+                
+            </div>
 
     
 

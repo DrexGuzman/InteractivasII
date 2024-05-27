@@ -41,8 +41,8 @@ import { useToday } from '../hoocks/useToday.js';
             overflow: "hidden",
           }}
         >
-          {data.eventosList.map((todo) => (
-           <Eventos  cat={todo.categoria} titulo={todo.titulo} texto={todo.texto} image={todo.image} fecha={todo.fecha} hora={todo.hora} />
+          {data.eventosList.map((todo, index) => (
+           <Eventos key={index} cat={todo.categoria} titulo={todo.titulo} texto={todo.texto} image={todo.image} fecha={todo.fecha} hora={todo.hora} />
                
           ))}
         </ul>

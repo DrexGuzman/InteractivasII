@@ -6,8 +6,8 @@ import Heart from '../assets/heart.svg';
 import { ButtonBlue } from '../common/ButtonBlue';
 import { useInput } from '../hoocks/useInput';
 import { useState } from 'react';
-
-export function Cuentanos({ modalOpen, modalClose, isOpen }) {
+import { Link, Route, Navigate, Routes } from 'react-router-dom';
+export function Cuentanos({ modalClose }) {
   const { isEnabled, changeEnabled, changeDisabled } = useInput();
   const [value, setValue] = useState("Especifica cual?");
 
@@ -106,7 +106,14 @@ export function Cuentanos({ modalOpen, modalClose, isOpen }) {
             </section>
 
             <div className="flex flex-col items-center mt-7">
-              <ButtonBlue text="Completar Registro" address="vinx"/>
+            <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>
+                
+                
+                <button onClick={modalClose} className=" focus: outline-none">
+                <Link to="/vinx" className=" focus: outline-none" >Completar Registro</Link>
+                </button> 
+                
+            </div>
               <button onClick={modalClose} className="text-subtitulo font-pesado font-main">Regresar</button>
             </div>
           </div>

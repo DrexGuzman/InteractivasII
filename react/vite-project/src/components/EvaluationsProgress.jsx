@@ -3,7 +3,7 @@ import { EvaluationInformation } from "./EvaluationInformation";
 export function EvaluationsProgress(){
 
     return(
-        <section className="   md:border-r-[0.5px] border-[#11567D] px-8  flex items-center flex-col flex-1 clr-blue-3 " >
+        <section className="  border-t-[0.5px] min-[600px]:border-t-[0px] min-[600px]:border-l-[0.5px]  border-[#11567D] px-8  flex items-center flex-col flex-1 clr-blue-3 " >
                 <p className="text-center align-text-top text-[2rem]  titulo mb-4">Evaluaciones</p>
                     <ul className="w-full">
                    

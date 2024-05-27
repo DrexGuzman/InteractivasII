@@ -2,7 +2,7 @@ export const RadialProgress = ({ porcent }) => {
     return (
         
 
-        <section className=" px-8 flex  items-center flex-col flex-1 clr-blue-3 border-t-[#11567D] border-t-[0.5px] md:border-t-0 " >
+        <section className=" border-t-[0.5px] min-[840px]:border-t-[0px]  min-[840px]:border-l-[0.5px]  border-[#11567D] px-8 flex  items-center flex-col flex-1 clr-blue-3 border-t-[#11567D]  " >
                
         <p className="text-center align-text-top text-[2rem] font-semibold titulo">Progreso</p>
           
@@ -28,7 +28,7 @@ export const RadialProgress = ({ porcent }) => {
                         strokeDashoffset={`calc(232.4 -  ${porcent * -232.4} / 100)`}
                     ></circle>
 
-                     <text  x="50" y="51" font-family="Montserrat" fill="#11567D" font-size="12" font-weight="600" text-anchor="middle" alignment-baseline="middle">{porcent}% </text>
+                     <text  x="50" y="51" fontFamily="Montserrat" fill="#11567D" fontSize="12" fontWeight="600" textAnchor="middle" alignmentBaseline="middle">{porcent}% </text>
                 </svg>
             </div>
             

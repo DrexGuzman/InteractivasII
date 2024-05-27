@@ -58,15 +58,16 @@ export function NavDrawer() {
       <div className="items-center justify-center hidden sm:flex">
         <form
           action=""
-          className="flex justify-between h-[2rem] bg-blue-1 rounded-full w-[-webkit-fill-available]"
+          className="flex justify-between h-[2rem] bg-blue-1 rounded-full w-[-webkit-fill-available] relative "
+        
         >
           <input
             className="flex focus:outline-none pl-4 text-blue-3 texto bg-transparent"
             placeholder="Buscar"
             type="text"
           />
-          {/* style={{ backgroundImage: `url(${Search})` }} */}
-          <input className=" bg-no-repeat bg-center w-10" style={{ backgroundImage: `url(${Search})` }} type="submit" value="" />
+       
+          <input className=" absolute bg-no-repeat bg-center w-10 right-0 top-1 " style={{ backgroundImage: `url(${Search})` }} type="submit" value="" />
         </form>
       </div>
       <div className="flex sm:justify-between justify-center items-center">
@@ -91,9 +92,11 @@ export function NavDrawer() {
 
       {/* menu emergente */}
 
-      <div className="fixed top-0 right-[-1000px] z-20 sm:w-[40vw] w-[70vw] h-screen bg-black px-[1.188rem] overflow-y-auto scrollbar-hide   overflow-hidden " name="menu">
+      <div className="fixed top-0 right-[-1000px] z-20  w-full sm:w-[25rem] h-screen bg-black px-[1.188rem] overflow-y-auto scrollbar-hide   overflow-hidden " name="menu">
       <div className="relative flex justify-between  py-4">
         <div className="flex sm:hidden gap-8 ">
+            <NoficationDropDrown/>
+            <MessagesDropDrown/>
         </div>
         <input className="opacity-0 fixed size-8" id="" name="" type="checkbox" />
         <div className="relative">
