@@ -58,10 +58,10 @@ import { ComboBox } from '../common/ComboBox';
         onFocus={(e) => clearDefaultValue(e.target)}></textarea>
         </div>
     </div>
-    <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>   
-            <button onClick={handleContinue}  className=" focus: outline-none">Agregar Evento</button>    
-            </div>
-    <a  onClick={closeModal} className='text-blue-3 mb-[3.124rem] font-bold text-subtitulo' >Regresar</a>
+           
+            <button onClick={handleContinue}  className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center focus:outline-none items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>Guardar Evento</button>    
+            
+    <a  onClick={closeModal} className='text-blue-3 mb-[3.124rem] font-bold text-subtitulo cursor-pointer' >Regresar</a>
     </div>
       </div>
       </div>

@@ -4,7 +4,7 @@ import Task from "../assets/newTask.svg";
 export function NoficationDropDrown() {
     return(
         
-        <button className="group relative z-40 sm:z-20 ">
+        <button className="group relative z-30 sm:z-20 ">
         <div className="bg-amber-500 size-6 group-focus:scale-0 duration-200 rounded-full absolute left-4 bottom-4 font-extrabold">4</div>
         <img className="size-8 group-focus:opacity-70" alt="" src={Notify} />
         <div className="fixed inset-0 sm:absolute scale-y-0 group-focus:scale-y-100  origin-top duration-200   sm:w-[25rem] min-h-[33rem] ring-2 ring-blue-3 rounded-sm bg-blue-1  sm:inset-auto sm:right-0 z-40 sm:top-14">
