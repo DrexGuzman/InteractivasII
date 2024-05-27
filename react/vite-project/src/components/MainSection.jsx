@@ -8,7 +8,6 @@ import React, { useState } from 'react';
 import { useAddEvent } from "../hoocks/useAddEvents";
 import { useSelectedDay } from '../hoocks/useSelectedDay.js';
 import { useToday } from '../hoocks/useToday.js';
-import { MagicMotion } from "react-magic-motion";
     
  export function MainSection() {
   

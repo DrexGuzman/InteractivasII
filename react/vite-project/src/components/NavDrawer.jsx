@@ -1,10 +1,6 @@
 import VinxLogo from "../assets/vinxLogo.svg";
-
+import Editwhite from "../assets/edit-white.svg";
 import Search from "../assets/search.svg";
-import ImgFilter from "../assets/filters.svg";
-import ImgCourse from "../assets/courses.svg";
-import Chat from "../assets/chat.svg";
-import { MagicMotion } from "react-magic-motion";
 
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
@@ -12,6 +8,8 @@ import { FiltersDropDown } from "./FiltersDropDown";
 import { CoursesDropDown } from "./CoursesDropDown";
 import { NoficationDropDrown } from "./NoficationDropDrown";
 import { MessagesDropDrown } from "./MessagesDropDown";
+import { ProfileDropDown } from "./ProfileDropDown";
+
 
 
 export function NavDrawer() {
@@ -96,8 +94,6 @@ export function NavDrawer() {
       <div className="fixed top-0 right-[-1000px] z-20 sm:w-[40vw] w-[70vw] h-screen bg-black px-[1.188rem] overflow-y-auto scrollbar-hide   overflow-hidden " name="menu">
       <div className="relative flex justify-between  py-4">
         <div className="flex sm:hidden gap-8 ">
-        <NoficationDropDrown/>
-        <MessagesDropDrown/>
         </div>
         <input className="opacity-0 fixed size-8" id="" name="" type="checkbox" />
         <div className="relative">
@@ -108,16 +104,16 @@ export function NavDrawer() {
       <div className="w-full flex justify-center mb-4">
         <div className="relative">
           <img alt="User Profile" className="rounded-full w-20 ring-4 ring-white size-[5rem]" src="https://randomuser.me/api/portraits/women/31.jpg" />
-          <button className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">+</button>
+          <div className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
+          <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="" id=""  />
+          <img className="absolute top-2 right-2 size-4" src={Editwhite} alt="" />
+          </div>
         </div>
       </div>
 
       <div className="flex flex-col gap-y-4">
-        <ul className="texto text-white text-center">
-          <li className="subtitulo-pesado text-white text-center">Nombre de usuario</li>
-          <li>Informática y Tecnología Multimedia</li>
-          <li>C52145</li>
-        </ul>
+
+        <ProfileDropDown />
 
         <div className="flex flex-col gap-y-4">
           <div className="sm:hidden">
