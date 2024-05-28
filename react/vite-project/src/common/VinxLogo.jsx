@@ -1,5 +1,6 @@
 import '../index.css'
 
+// Vinx component to display the Vinx logo and title
 export function Vinx({titulo}) {
 
     return (
@@ -43,7 +44,5 @@ export function Vinx({titulo}) {
       </div>
     
         </div>
-
-
     );
 }

@@ -1,17 +1,20 @@
-import '../index.css'
+import '../index.css';
 
- export function Inputs({text, type}) {
-  
+// Inputs component to render input fields with placeholder text
+export function Inputs({ text, type }) {
 
+  // Function to clear default value when input is focused
   function clearDefaultValue(input) {
     if (input.value === input.defaultValue) {
       input.value = '';
-      if(type==="password"){
+      // Change input type to 'password' if type is 'password'
+      if (type === "password") {
         input.type = 'password';
       }
     }
   }
 
+  // Function to restore default value when input is blurred
   function restoreDefaultValue(input) {
     if (input.value === '') {
       input.value = input.defaultValue;
@@ -19,13 +22,12 @@ import '../index.css'
     }
   }
 
- return (
-    
+  return (
     <input
-    className="w-full mb-[1.562rem] h-[62px] text-center ring-2 ring-blue-3 rounded-full text-blue-3 focus: outline-none text-blue-3 text-texto font-regular font-second bg-blue-1"
-    defaultValue={text}
-    onBlur={(e) => restoreDefaultValue(e.target)}
-    onFocus={(e) => clearDefaultValue(e.target)}
-  />
- );
- }
+      className="w-full mb-4 h-16 text-center ring-2 ring-blue-3 rounded-full text-blue-3 focus:outline-none text-texto font-regular font-second bg-blue-1"
+      defaultValue={text}
+      onBlur={(e) => restoreDefaultValue(e.target)}
+      onFocus={(e) => clearDefaultValue(e.target)}
+    />
+  );
+}

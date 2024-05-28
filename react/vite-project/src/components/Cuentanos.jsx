@@ -4,9 +4,9 @@ import Sleep from '../assets/moon.svg';
 import Weight from '../assets/weight.svg';
 import Heart from '../assets/heart.svg';
 import { ButtonBlue } from '../common/ButtonBlue';
-import { useInput } from '../hoocks/useInput';
+import { useInput } from '../hooks/useInput';
 import { useState } from 'react';
-import { Link, Route, Navigate, Routes } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 export function Cuentanos({ modalClose }) {
   const { isEnabled, changeEnabled, changeDisabled } = useInput();
   const [value, setValue] = useState("Especifica cual?");
@@ -27,6 +27,7 @@ export function Cuentanos({ modalClose }) {
   }
 
   return (
+    // This component represents a modal window
     <div className='inset-0 bg-gray-950 bg-opacity-50 fixed z-50'>
        <div className="flex overflow-y-auto fixed inset-0 z-50 justify-center items-center w-full  sm:max-h-full ">
       <div className="p-4 max-h-full">

@@ -4,11 +4,7 @@ export function Vinx() {
     return (
         <>
         <NavDrawer />
-        <MainSection />
-
-        
-          
-        </>
-        
+        <MainSection />  
+        </> 
     );
 }

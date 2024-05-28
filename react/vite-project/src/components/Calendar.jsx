@@ -1,6 +1,6 @@
 import "../index.css";
-import { useCalendar } from "../hoocks/useCalendar";
-import { useModal } from "../hoocks/useModal";
+import { useCalendar } from "../hooks/useCalendar";
+import { useModal } from "../hooks/useModal";
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
