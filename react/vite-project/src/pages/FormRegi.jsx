@@ -44,7 +44,7 @@ export function FormRegi() {
 
         <a
           className='m-auto text-blue-3 mb-[3.124rem] font-pesado text-subtitulo'
-          href='singup.html'
+          href='/signup'
         >
           Regresar
         </a>
