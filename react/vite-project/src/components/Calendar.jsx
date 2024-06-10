@@ -25,11 +25,19 @@ import { Link } from "react-router-dom";
 import { AddEvent } from "./AddEvent";
 
 
-export function Calendario({eventsList, addNewEvent, dayClicked}) {
+export function Calendario({eventsList, addNewEvent, dayClicked, setDay}) {
+  /*  
+    if(isSameDay(parseISO(eventsList[0].eve_datetime), startOfToday())){
+      console.log(eventsList[0].eve_datetime);
+      return console.log('es hoy');
+    } */
  
  const modalAddEvents = useModal();
 
 const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();
+
+/* setDay(selectedDay.getDate()); */
+
 
   return (
 
@@ -112,13 +120,21 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
                     !isEqual(day, selectedDay) && 'hover:bg-gray-200',
                     (isEqual(day, selectedDay) || isToday(day)) &&
                     '',
-                    'mx-auto flex h-8 w-8 items-center justify-center rounded-full texto'
+                    'mx-auto flex h-8 w-8 items-center justify-center rounded-full texto relative'
                   )}
                 >
                   <time className="texto" dateTime={format(day, 'yyyy-MM-dd')}>
                     {format(day, 'd')}
                   </time>
+                <div className="w-1 h-1 mx-auto top-0 right-0  absolute ">
+                    {eventsList.some((event) =>
+                      isSameDay(parseISO(event.eve_datetime), day)
+                    ) && (
+                      <div className="w-1 h-1 rounded-full bg-sky-500"></div>
+                    )}
+                  </div>
                 </button>
+
 
 
               </div>

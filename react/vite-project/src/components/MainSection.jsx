@@ -8,14 +8,19 @@ import React, { useState } from 'react';
 import { useAddEvent } from "../hooks/useAddEvents";
 import { useSelectedDay } from '../hooks/useSelectedDay.js';
 import { useToday } from '../hooks/useToday.js';
-
+import { useFetchData } from '../hooks/useFetchData.js';
 /**
  * MainSection component.
  * Renders the main section of the application.
  */
 export function MainSection() {
-  const { dayClicked } = useSelectedDay();
+  const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
+  const  events = useFetchData();
+console.log(day);
+
+  
+ 
 
   const data = useAddEvent();
 
@@ -28,7 +33,7 @@ export function MainSection() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 gap-y-12 sm:gap-y-4 sm:mb-4">
-        <Calendario eventsList={data.eventosList} addNewEvent={data.addNewEvent} dayClicked={dayClicked} />
+        <Calendario eventsList={events.data} addNewEvent={data.addNewEvent} dayClicked={dayClicked}  />
         <div className="col-span-2 bg-blue-1 rounded-3xl ring-1 ring-[#11567D] h-[34rem]">
           <h1 id='selectedDate' className="text-center text-[1.5rem] sm:text-[3rem] mt-4 mb-4 clr-blue-3 titulo">{`${selectedDate}`}</h1>
           <div className='overflow-y-auto scrollbar-hide h-[25rem]'>
@@ -40,8 +45,13 @@ export function MainSection() {
                 overflow: "hidden",
               }}
             >
-              {data.eventosList.map((todo, index) => (
-                <Eventos key={index} cat={todo.categoria} titulo={todo.titulo} texto={todo.texto} image={todo.image} fecha={todo.fecha} hora={todo.hora} />
+              {events.data.map((event, index) => (
+                
+
+                event.dia == day ? (
+                  <Eventos key={index} cat={""} titulo={event.eve_title} texto={event.eve_description} image={"todo.image"} fecha={""} hora={event.hora} />
+                 
+                ) : null
               ))}
             </ul>
           </div>
