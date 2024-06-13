@@ -11,12 +11,7 @@ export function FormRegi() {
 
   return (
     <>
-    {/* // Modal to show the form to register */} 
-      {modalCuentanos.isOpen && (
-        <>
-          <Cuentanos modalClose={modalCuentanos.closeModal} />
-        </>
-      )}
+    
 
       {/*  // Logo  */}
       <div className='bg-blue-2 text-white text-main'>
@@ -28,19 +23,24 @@ export function FormRegi() {
         <h1 className='m-auto font-bold text-4xl mb-[1.562rem] text-blue-3'>
           Formulario de Registro
         </h1>
-        <UpLoad text='Cargar imagen' />
 
-        <InputsLeft text='Nombre' type={'text'} />
-        <InputsLeft text='Apellido' type={'text'} />
-        <InputsLeft text='correo' type={'text'} />
-        <InputsLeft text='Nombre de usuario' type={'text'} />
-        <InputsLeft text='Contraseña' type={'password'} />
+        <form action="http://localhost/backend-interactivas-II/vinx-app/public/api/user/create" method='POST' encType='multipart/form-data'>
+        <UpLoad text='Cargar imagen' />
+        <InputsLeft text='Nombre' type={'text'} name={'nombre'} />
+        <InputsLeft text='Apellido' type={'text'} name={'apellido'}  />
+        <InputsLeft text='correo' type={'text'} name={'correo'} />
+        <InputsLeft text='Nombre de usuario' type={'text'} name={'usuario'}  />
+        <InputsLeft text='Contraseña' type={'password'} name={'contrasena'} />
         <hr className='w-full mb-[1.562rem] border-blue-3' />
         <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>
-          <button onClick={modalCuentanos.openModal} className='focus:outline-none'>
-            Continuar
-          </button>
+          
+          {/* // Modal to show the form to register */} 
+          {modalCuentanos.isOpen && (
+              <Cuentanos modalClose={modalCuentanos.closeModal} />
+          )}
+          <div  onClick={modalCuentanos.openModal} className='focus:outline-none cursor-pointer'><h1>Continuar</h1></div>
         </div>
+        </form>
 
         <a
           className='m-auto text-blue-3 mb-[3.124rem] font-pesado text-subtitulo'

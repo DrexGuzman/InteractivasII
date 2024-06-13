@@ -45,7 +45,7 @@ export function Cuentanos({ modalClose }) {
             {/* Sleep section */}
             <section className="flex flex-col mt-[1.6rem]">
               <h2 className="flex font-main font-regular text-texto sm:text-subtitulo items-center">¿Cuantas horas duermes al día? <img className="size-5" src={Sleep} alt="Sleep" /></h2>
-              <form className="flex flex-nowrap justify-center">
+              <div className="flex flex-nowrap justify-center">
                 <div className="flex flex-col items-center gap-2 flex-1">
                   <label className="font-second text-texto text-center" htmlFor="opcion1.1">&lt; de 5 horas</label>
                   <input className="size-8 appearance-none ring-4 ring-blue-3 bg-blue-1 rounded-full checked:bg-yellow-500 cursor-pointer" type="radio" id="opcion1.1" name="sleep" value="less_than_5_hours" />
@@ -58,13 +58,14 @@ export function Cuentanos({ modalClose }) {
                   <label className="font-second text-texto text-center" htmlFor="opcion1.3">&gt; de 8 horas</label>
                   <input className="size-8 appearance-none ring-4 ring-blue-3 bg-blue-1 rounded-full checked:bg-yellow-500 cursor-pointer" type="radio" id="opcion1.3" name="sleep" value="more_than_8_hours" />
                 </div>
-              </form>
+                
+              </div>
             </section>
 
             {/* Activity section */}
             <section className="flex flex-col mt-[1.6rem]">
               <h2 className="flex font-main font-regular text-texto sm:text-subtitulo  items-center">¿Qué tan frecuente realizas actividad física en la semana? <img className="size-7" src={Weight} alt="Weight" /></h2>
-              <form className="flex flex-nowrap justify-center">
+              <div className="flex flex-nowrap justify-center">
                 <div className="flex flex-col items-center gap-2 flex-1">
                   <label className="font-second text-texto text-center" htmlFor="opcion2.1">Nunca</label>
                   <input className="size-8 appearance-none ring-4 ring-blue-3 bg-blue-1 rounded-full checked:bg-yellow-500 cursor-pointer" type="radio" id="opcion2.1" name="activity" value="never" />
@@ -77,13 +78,13 @@ export function Cuentanos({ modalClose }) {
                   <label className="font-second text-texto text-center" htmlFor="opcion2.3">Todos</label>
                   <input className="size-8 appearance-none ring-4 ring-blue-3 bg-blue-1 rounded-full checked:bg-yellow-500 cursor-pointer" type="radio" id="opcion2.3" name="activity" value="everyday" />
                 </div>
-              </form>
+              </div>
             </section>
 
             {/* Disease section */}
             <section className="flex flex-col mt-[1.6rem]">
               <h2 className="flex font-main font-regular text-texto sm:text-subtitulo  items-center gap-1">¿Padeces alguna enfermedad? <img className="size-5" src={Heart} alt="Heart" /></h2>
-              <form className="flex flex-wrap justify-center">
+              <div className="flex flex-wrap justify-center">
                 
                 <div className="flex flex-col items-center flex-1 gap-2">
                   <label className="font-second text-texto text-center" htmlFor="opcion3.1">No</label>
@@ -98,20 +99,21 @@ export function Cuentanos({ modalClose }) {
                     className="text-center ring-2 ring-blue-3 rounded-full bg-blue-1 h-8 focus:outline-none"
                     type="text"
                     value={value}
+                    name='disease_name'
                     disabled={isEnabled}
                     onFocus={handleFocus}
                     onChange={handleChange}
                   />
                 </div>
-              </form>
+              </div>
             </section>
 
             <div className="flex flex-col items-center mt-7">
             <div className='flex bg-blue-3 font-main font-pesado text-subtitulo justify-center items-center mb-[1rem] text-center rounded-full text-white w-full h-[62px] '>
                 
                 
-                <button onClick={modalClose} className=" focus: outline-none">
-                <Link to="/vinx" className=" focus: outline-none" >Completar Registro</Link>
+                <button  className=" focus: outline-none">
+                  <h1 className=" focus: outline-none">Completar Registro</h1>
                 </button> 
                 
             </div>

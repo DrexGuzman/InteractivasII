@@ -1,7 +1,7 @@
 import '../index.css';
 
 // InputsLeft component to render input fields with placeholder text and left padding
-export function InputsLeft({ text, type }) {
+export function InputsLeft({ text, type, name }) {
 
   // Function to clear default value when input is focused
   function clearDefaultValue(input) {
@@ -23,7 +23,7 @@ export function InputsLeft({ text, type }) {
   }
 
   return (
-    <input
+    <input name={name}
       className="w-full mb-4 h-16 pl-10 ring-2 ring-blue-3 rounded-full text-blue-3 focus:outline-none text-texto font-regular font-second bg-blue-1"
       defaultValue={text}
       onBlur={(e) => restoreDefaultValue(e.target)}

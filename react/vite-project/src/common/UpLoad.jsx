@@ -10,7 +10,7 @@ export function UpLoad({ text }) {
                 {/* Upload icon */}
                 <img className='absolute sm:top-4 top-3 sm:size-12 size-6 sm:right-4 right-3' src={Img} alt="" />
                 {/* Hidden file input */}
-                <input className='absolute sm:top-7 sm:righ-0 opacity-0 right-1' type="file" />
+                <input className='absolute sm:top-7 sm:righ-0 opacity-0 right-1' type="file" name='image' />
             </div>
             {/* Text */}
             <h3 className='text-subtitulo text-blue-3'>{text}</h3>
