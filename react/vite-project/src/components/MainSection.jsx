@@ -17,10 +17,8 @@ export function MainSection() {
   const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
   const  events = useFetchData();
-console.log(day);
+  console.log(day);
 
-  
- 
 
   const data = useAddEvent();
 

@@ -8,7 +8,7 @@ import { ComboBox } from '../common/ComboBox';
  * @param {function} closeModal - Function to close the modal.
  * @param {function} addEvent - Function to add the event.
  */
-export function AddEvent({ closeModal, addEvent }) {
+export function AddEvent({ closeModal, addEvent, action }) {
 
     /**
      * Clears the default value of an input.
@@ -41,7 +41,11 @@ export function AddEvent({ closeModal, addEvent }) {
     }
 
     return (
+       
         <div className='inset-0 bg-gray-950 bg-opacity-50 fixed z-50'>
+             <form action={action}>
+            
+            </form>
             <div className="flex overflow-y-auto fixed inset-0 z-50 justify-center items-center w-full  sm:max-h-full ">
                 <div className="p-4 max-h-full">
                     <div className=' bg-white ring-1 ring-blue-3 rounded-2xl lg:w-[40vw] w-[80vw] px-8 text-center py-5'>

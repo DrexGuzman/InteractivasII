@@ -1,4 +1,5 @@
 import '../index.css';
+import React, { useState, useEffect } from 'react';
 import { Inputs } from '../common/Inputs';
 import { Button } from '../common/Button';
 import { LoginGoogle } from '../common/LoginGoogle';
@@ -6,6 +7,7 @@ import { Vinx } from '../common/VinxLogo';
 import { Link } from 'react-router-dom';
 
 export function Login() {
+
   return (
     <>
       <div className='bg-blue-2 text-white text-main'>

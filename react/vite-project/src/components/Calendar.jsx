@@ -44,7 +44,7 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
 <>
       {modalAddEvents.isOpen && (
           <>
-            <AddEvent closeModal={modalAddEvents.closeModal} addEvent={addNewEvent}  />
+            <AddEvent closeModal={modalAddEvents.closeModal} addEvent={addNewEvent} action={'http://localhost/backend-interactivas-II/vinx-app/public/api/new-event/'} />
           </>
         )}
 
