@@ -2,11 +2,13 @@ import VinxLogo from "../assets/vinxLogo.svg";
 import Editwhite from "../assets/edit-white.svg";
 import Search from "../assets/search.svg";
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
 import { FiltersDropDown } from "./FiltersDropDown";
 import { CoursesDropDown } from "./CoursesDropDown";
 import { NoficationDropDrown } from "./NoficationDropDrown";
 import { MessagesDropDrown } from "./MessagesDropDown";
 import { ProfileDropDown } from "./ProfileDropDown";
+import { set } from "date-fns";
 
 // This component represents a navigation drawer
 export function NavDrawer() {
@@ -27,6 +29,44 @@ export function NavDrawer() {
       menu.style.display = "hidden";
     }
   }
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch('http://localhost/backend-interactivas-II/vinx-app/public/api/user/toke', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+        });
+        const data = await response.json();
+        setUser(data);
+      } catch (error) {
+        console.error('Error al obtener datos protegidos:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+  console.log(user);
+
+
+
+
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href = 'http://localhost:5173'; // Redirigir a la página de inicio de sesión
+};
+
+if (!user) {
+  return <div>Cargando...</div>; // Mensaje mientras se cargan los datos
+}
+
+
 
   return (
     <div className="mb-8 relative">
@@ -64,11 +104,12 @@ export function NavDrawer() {
             <div className="flex justify-center items-center gap-12">
               <div className="sm:block hidden  left-0 right-0"><MessagesDropDrown /></div>
               <div className="sm:block hidden  left-0 right-0"><NoficationDropDrown /></div>
+              <div className="relative rounded-full overflow-hidden ring-4 ring-white size-[3rem] flex justify-center items-center">
               <img
                 alt="User Profile"
-                className="relative rounded-full  ring-4 ring-white size-[3rem]"
-                src="https://randomuser.me/api/portraits/women/31.jpg"
+                src={user.image_url}
               />
+              </div>
             </div>
           </div>
         </div>
@@ -88,7 +129,9 @@ export function NavDrawer() {
 
           <div className="w-full flex justify-center mb-4">
             <div className="relative">
-              <img alt="User Profile" className="rounded-full w-20 ring-4 ring-white size-[5rem]" src="https://randomuser.me/api/portraits/women/31.jpg" />
+              <div  className=" overflow-hidden rounded-full w-20 ring-4 ring-white size-[5rem] flex justify-center items-center">
+              <img alt="User Profile" src={user.image_url} />
+              </div>
               <div className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
                 <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="" id="" />
                 <img className="absolute top-2 right-2 size-4" src={Editwhite} alt="" />
@@ -97,7 +140,7 @@ export function NavDrawer() {
           </div>
 
           <div className="flex flex-col gap-y-4">
-            <ProfileDropDown />
+            <ProfileDropDown fullname={user.user_name} carreer={user.user_career} carne={user.user_studentCarne}  />
             <div className="flex flex-col gap-y-4">
               <div className="sm:hidden">
                 <form action="" className="bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full">
@@ -116,7 +159,7 @@ export function NavDrawer() {
               <Link to='/vinx/progress' className="px-4 flex justify-center items-center bg-blue-1 sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3">Progreso de cursos</Link>
               <Link to='/vinx/dailyTask' className="px-4 flex justify-center items-center bg-blue-1 sm:h-[3.5rem] h-[2rem] rounded-full texto text-blue-3">Resumen de actividades</Link>
               <hr className="w-[90vw] text-white bg-white" />
-              <Link to='/' className="texto text-white flex justify-center mb-4">Cerrar sesión</Link>
+              <button onClick={handleLogout} className="texto text-white flex justify-center mb-4">Cerrar sesión</button>
             </div>
           </div>
         </div>

@@ -17,10 +17,12 @@ export function MainSection() {
   const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
   const  events = useFetchData();
-  console.log(day);
-
+  //console.log(day);
 
   const data = useAddEvent();
+
+
+
 
   return (
     <div className="max-w-[90rem] m-4 text min-[1445px]:m-auto relative">
