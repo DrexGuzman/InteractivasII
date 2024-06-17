@@ -26,15 +26,22 @@ import { AddEvent } from "./AddEvent";
 
 
 export function Calendario({eventsList, addNewEvent, dayClicked, setDay}) {
-  /*  
-    if(isSameDay(parseISO(eventsList[0].eve_datetime), startOfToday())){
-      console.log(eventsList[0].eve_datetime);
-      return console.log('es hoy');
-    } */
+
+ let events = []; 
+ eventsList.map((course) => {
+     course.events.map((event) => {
+          events.push(event);
+     }) 
+    console.log(events);
+  })
+
+
  
+ 
+ ;
  const modalAddEvents = useModal();
 
-const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();
+  const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();
 
 /* setDay(selectedDay.getDate()); */
 
@@ -127,7 +134,7 @@ const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSel
                     {format(day, 'd')}
                   </time>
                 <div className="w-1 h-1 mx-auto top-0 right-0  absolute ">
-                    {eventsList.some((event) =>
+                    {events.some((event) =>
                       isSameDay(parseISO(event.eve_datetime), day)
                     ) && (
                       <div className="w-1 h-1 rounded-full bg-sky-500"></div>

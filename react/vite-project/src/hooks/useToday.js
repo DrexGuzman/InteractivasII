@@ -28,7 +28,7 @@ export const useToday = () => {
   }
 
   // Log the selected date to the console (for debugging)
-  console.log(selectedDate);
+  
 
   // Return the selected date and day of the week
   return { selectedDate, day, setFecha };

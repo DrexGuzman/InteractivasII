@@ -8,7 +8,7 @@ export const useFetchData = () => {
 
   const getData = async () => {
     try{
-      const response = await fetch('http://localhost/backend-interactivas-II/vinx-app/public/api/events/all');
+      const response = await fetch(`http://localhost/backend-interactivas-II/vinx-app/public/api/courses/${1}`);
       const data = await response.json();
       setData(data);
       setIsLoading(false)

@@ -5,7 +5,7 @@ import { useState } from 'react';
 export const useSelectedDay = () => {
   const today = new Date();
   const initialDay = today.getDate();
-  const [day, setDay] = useState(initialDay );
+  const [day, setDay] = useState(today);
 
   // Function to handle the day click event
   const dayClicked = (day) => {
@@ -16,11 +16,12 @@ export const useSelectedDay = () => {
     const dateString = date.toDateString();
     const [weekday, month, dayOfMonth, year] = dateString.split(' ');
     const formattedDate = `${weekday}, ${dayOfMonth} ${month} ${year}`;
-    setDay(dayOfMonth);
+    setDay(date);
     // Set the inner HTML of an element with id 'selectedDate' to the formatted date
     document.getElementById('selectedDate').innerHTML = formattedDate;
+    
   };
-
+console.log(day);
   // Return the dayClicked function
   return { dayClicked, day };
 }
