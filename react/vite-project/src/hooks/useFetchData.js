@@ -1,3 +1,4 @@
+import { id } from "date-fns/locale";
 import { useEffect, useState } from "react";
 
 export const useFetchData = () => {
@@ -7,8 +8,20 @@ export const useFetchData = () => {
 
 
   const getData = async () => {
+    
+    const response = await fetch('http://localhost/backend-interactivas-II/vinx-app/public/api/user/toke', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        'Content-Type': 'application/json'
+      },
+    });
+    const data = await response.json();
+    console.log(data.user_id);
+     const id = data.user_id;
     try{
-      const response = await fetch(`http://localhost/backend-interactivas-II/vinx-app/public/api/courses/${1}`);
+      
+      const response = await fetch(`http://localhost/backend-interactivas-II/vinx-app/public/api/courses/${id}`);
       const data = await response.json();
       setData(data);
       setIsLoading(false)

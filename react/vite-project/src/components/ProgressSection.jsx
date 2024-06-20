@@ -9,14 +9,6 @@ import { RadialProgress } from "./RadialProgress";
 export function ProgressSection() {
     return (
         <>
-            <NavDrawer />
-            <div className="max-w-[90rem] m-4 text min-[1445px]:m-auto">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 mb-8">
-                    <NextEvent />
-                    <Courses />
-                    <Filters />
-                </div>
-
                 <div className="flex flex-col justify-center items-center sm:hidden mb-4">
                     <h1 className="text-[2rem] text-sky-600 font-semibold">Cursos</h1>
                     <select className="w-full ring-2 ring-sky-600 rounded-full" name="" id=""></select>
@@ -41,7 +33,7 @@ export function ProgressSection() {
                         <RadialProgress porcent={95} />
                     </section>
                 </div>
-            </div>
+            
         </>
     );
 }

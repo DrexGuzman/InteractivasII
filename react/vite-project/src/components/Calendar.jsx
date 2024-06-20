@@ -26,14 +26,13 @@ import { AddEvent } from "./AddEvent";
 
 
 export function Calendario({eventsList, addNewEvent, dayClicked, setDay}) {
-
+console.log();
  let events = []; 
- eventsList.map((course) => {
-     course.events.map((event) => {
-          events.push(event);
-     }) 
-    console.log(events);
-  })
+ if(!eventsList.isLoading){
+  events = eventsList.data.events;
+  
+    
+ }
 
 
  

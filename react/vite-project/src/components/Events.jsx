@@ -11,20 +11,22 @@ import { AddEvent } from "./AddEvent";
 import Delete from "../assets/delete.svg";
 
 //Component of a new event with title, description, image, hour and category
-export function Eventos({ titulo, texto, image, hora, cat}) {
+export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted}) {
     const modalAddEvents = useModal();
     const {isChecked, handleCheck} = useHandleCheck();
+   
+   
 
     return (
         <>
         {modalAddEvents.isOpen && (
           <>
-            <AddEvent closeModal={modalAddEvents.toggleModal}   />
+            <AddEvent closeModal={modalAddEvents.toggleModal} texto={texto} titulo={titulo} hora={hora} fecha={fecha} />
           </>
         )}
         
         <div className='flex flex-col justify-center relative'>
-            <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hora: {hora}</p>
+            <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hour: {horaFomatted}</p>
             <div className="rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D] relative flex flex-row justify-center items-center py-4 px-8 gap-4">
                 <div className='w-[10rem] items-center justify-start gap-2 hidden sm:flex flex-col'>
                     
@@ -59,13 +61,17 @@ export function Eventos({ titulo, texto, image, hora, cat}) {
                             />
                             </div>  
                         <img className='min-w-8 sm:hidden' src={Penta} alt="" />
-                        <img className='block size-12' src={Ramdom} alt="" />
+                        <div className='flex items-center justify-center  min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] ring-2 ring-black rounded-full overflow-hidden'>
+                            <img className='w-full h-full object-contain' src={image ? 'http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/klipartz.com.png' : Ramdom} alt="" />
+                        </div>
                     
                     
                 </div>
                 </div>
                {/* Shows and hide delete and modify event option white the 3 dots images is clicked*/}
-                <img className='hidden sm:block' src={Ramdom} alt="" />
+               <div className='hidden sm:flex items-center justify-center  min-h-[70px] min-w-[70px] max-h-[70px] max-w-[70px] ring-2 ring-black rounded-full overflow-hidden'>
+    <img className='w-full h-full object-contain' src={image ? 'http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/klipartz.com.png' : Ramdom} alt="" />
+</div>
                 
                 {/* <button className="group relative sm:z-10">
                     <img className="size-8 group-focus:opacity-0 duration-200" alt="" src={EventesMenu} />

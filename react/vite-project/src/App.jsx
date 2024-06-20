@@ -16,11 +16,11 @@ function App() {
       <div className='overflow-x-hidden h-[100vh]'>
         <Routes>
           <Route path="/" element={<Login />} />
-          <Route path="/vinx" element={<Vinx />} />
+          <Route path="/vinx/*" element={<Vinx />} />
           <Route path="/signup" element={<Singup />} />
           <Route path="/newuser" element={<FormRegi/>} />
-          <Route path="/vinx/dailyTask" element={<ResumeActivities />} />
-          <Route path="/vinx/progress" element={<ProgressCourses />} />
+          {/* <Route path="/vinx/dailyTask" element={<ResumeActivities/>} />
+          <Route path="/vinx/progress" element={<ProgressCourses />} /> */}
           <Route path="/vinx.dev" element={< Landing/>} />
         </Routes>
       </div>

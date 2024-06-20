@@ -31,6 +31,7 @@ export function NavDrawer() {
   }
 
   const [user, setUser] = useState(null);
+  console.log(user);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -49,7 +50,9 @@ export function NavDrawer() {
       }
     };
 
-    fetchUserData();
+      fetchUserData();
+    
+    
   }, []);
   console.log(user);
 
