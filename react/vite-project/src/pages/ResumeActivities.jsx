@@ -5,7 +5,8 @@ import {Courses} from "../components/Courses";
 import {Filters} from "../components/Filters";
 
 export function ResumeActivities(){
-
+   
+    
     return(
         <>
         <NavDrawer />

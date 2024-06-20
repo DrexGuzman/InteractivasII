@@ -8,7 +8,7 @@ import { ComboBox } from '../common/ComboBox';
  * @param {function} closeModal - Function to close the modal.
  * @param {function} addEvent - Function to add the event.
  */
-export function AddEvent({ closeModal, addEvent, action }) {
+export function AddEvent({ closeModal, addEvent, action, titulo, texto, image, hora, cat, fecha }) {
 
     /**
      * Clears the default value of an input.
@@ -50,17 +50,17 @@ export function AddEvent({ closeModal, addEvent, action }) {
                 <div className="p-4 max-h-full">
                     <div className=' bg-white ring-1 ring-blue-3 rounded-2xl lg:w-[40vw] w-[80vw] px-8 text-center py-5'>
                         <div className='flex items-center gap-x-5'>
-                            <Inputs text="Nombre del evento" type="text" />
+                            <Inputs text="Nombre del evento" type="text" texto={titulo} />
                             <UpLoad/>
                         </div>
 
                         <div className='sm:grid sm:grid-cols-2 gap-x-4 p'>
                             <div>
-                                <h1 className='text-blue-3 font-main text-subtitulo mb-[1rem]'>Fecha y hora</h1>
+                                <h1 className='text-subtitulo mb-[0.781rem] text-blue-3'>Fecha y hora</h1>
                         
                                 <div className='flex gap-x-4'>
-                                    <input className='w-full mb-[1.562rem] h-[62px] text-center ring-[0.031rem] ring-blue-3 rounded-full text-blue-3 focus: outline-none text-blue-3 font-bold  text-texto font-regular font-second bg-blue-1' type="date" name="" id="" />
-                                    <input className='w-full mb-[1.562rem] h-[62px] text-center ring-[0.031rem] ring-blue-3 rounded-full text-blue-3 focus: outline-none text-blue-3 font-bold  text-texto font-regular font-second bg-blue-1' type="time" name="" id="" />
+                                    <input className='w-full mb-[1.562rem] h-[62px] text-center ring-[0.031rem] ring-blue-3 rounded-full text-blue-3 focus: outline-none text-blue-3 font-bold  text-texto font-regular font-second bg-blue-1' type="date" name="" id="" defaultValue={fecha}  />
+                                    <input className='w-full mb-[1.562rem] h-[62px] text-center ring-[0.031rem] ring-blue-3 rounded-full text-blue-3 focus: outline-none text-blue-3 font-bold  text-texto font-regular font-second bg-blue-1' type="time" name="" id="" defaultValue={hora}  />
                                 </div>
                             </div>
 
@@ -72,9 +72,9 @@ export function AddEvent({ closeModal, addEvent, action }) {
 
                             <div className='col-span-2 mb-[1.562rem]'>
                                 <h1 className='font-bold text-left text-blue-3 font-main text-subtitulo mb-[1.562rem]'>Descripcion</h1>
-                                <textarea className='w-full h-24 bg-blue-1 rounded-2xl p-4 ring-[0.031rem] ring-blue-3 text-blue-3 mb-[1.562rem]' name="" id="" defaultValue="Añade una hermosa descripción <3"
-                                    onBlur={(e) => restoreDefaultValue(e.target)}
-                                    onFocus={(e) => clearDefaultValue(e.target)}></textarea>
+                                <textarea className='w-full h-24 bg-blue-1 rounded-2xl p-4 ring-[0.031rem] ring-blue-3 text-blue-3 mb-[1.562rem]' name="" id=""   placeholder="Añade una hermosa descripción <3"
+                                    >{texto? texto : ''}
+                                    </textarea>
                             </div>
                         </div>
                      

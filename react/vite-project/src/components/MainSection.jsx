@@ -1,5 +1,7 @@
 import { format } from 'date-fns';
+import { Link, Route, Navigate, Routes } from 'react-router-dom';
 import { Calendario } from './Calendar.jsx';
+import { DailyTask } from './DailyTask.jsx';
 import { Eventos } from './Events.jsx';
 import { Courses } from './Courses.jsx';
 import { Filters } from './Filters.jsx';
@@ -17,7 +19,7 @@ export function MainSection() {
   const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
   const  events = useFetchData();
-  //console.log(day);
+ /*  console.log(events.data.events) */;
 
   const data = useAddEvent();
 
@@ -25,20 +27,17 @@ export function MainSection() {
 
 
   return (
+    <>
     
-    <div className="max-w-[90rem] m-4 text min-[1445px]:m-auto relative">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 mb-8">
-        <NextEvent />
-        <Courses />
-        <Filters />
-      </div>
-
+  
+     
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 gap-y-12 sm:gap-y-4 sm:mb-4">
-        {!events.isLoading && (
-          <Calendario eventsList={events.data[0].courses} addNewEvent={data.addNewEvent} dayClicked={dayClicked} />
-        )
-
-        }
+        
+          <Calendario eventsList={events} addNewEvent={data.addNewEvent} dayClicked={dayClicked} />
+        
+          
+        
+        
         <div className="col-span-2 bg-blue-1 rounded-3xl ring-1 ring-[#11567D] h-[100%]">
           <h1 id='selectedDate' className="text-center text-[1.5rem] sm:text-[3rem] mt-4 mb-4 clr-blue-3 titulo">{`${selectedDate}`}</h1>
           <div className='overflow-y-auto scrollbar-hide h-[25rem]'>
@@ -51,30 +50,17 @@ export function MainSection() {
               }}
             >
              {!events.isLoading && (
-               events.data[0].courses.map((course, index) => (
-                 //for each que recorra los eventos dentro de los cursos
-                course.events.map((event, index) => (
+               events.data.events.map((event, index) => (
                   event.eve_datetime.split(' ')[0] == format(day, 'yyyy-MM-dd') ? (
-                    <Eventos key={index} cat={event.cat} titulo={event.eve_title} texto={event.eve_description} image={course.image} fecha={course.fecha} hora={event.hora} />
+                    <Eventos key={index} cat={event.cat} titulo={event.eve_title} texto={event.eve_description} image={event.eve_image} fecha={ event.eve_datetime.split(' ')[0]}   hora={ event.eve_datetime.split(' ')[1]} horaFomatted={ event.hora} />
                   ) : null
                 ))
-                 
-              ))
             )}
-             
-
-             {/*  {events.data.map((event, index) => (
-                
-
-                event.dia == day ? (
-                  <Eventos key={index} cat={""} titulo={event.eve_title} texto={event.eve_description} image={"todo.image"} fecha={""} hora={event.hora} />
-                 
-                ) : null
-              ))} */}
             </ul>
           </div>
         </div>
       </div>
-    </div>
+    
+    </>
   );
 }

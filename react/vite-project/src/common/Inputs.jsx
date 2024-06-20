@@ -1,7 +1,7 @@
 import '../index.css';
 
 // Inputs component to render input fields with placeholder text
-export function Inputs({ text, type, name }) {
+export function Inputs({ text, type, name, texto }) {
 
   // Function to clear default value when input is focused
   function clearDefaultValue(input) {
@@ -25,10 +25,10 @@ export function Inputs({ text, type, name }) {
   return (
     <input
       className="w-full mb-4 h-16 text-center ring-2 ring-blue-3 rounded-full text-blue-3 focus:outline-none text-texto font-regular font-second bg-blue-1"
-      defaultValue={text}
+      defaultValue={texto? texto : text}
       name={name}
-      onBlur={(e) => restoreDefaultValue(e.target)}
-      onFocus={(e) => clearDefaultValue(e.target)}
+      onBlur={!texto ? (e) => restoreDefaultValue(e.target) : undefined}
+      onFocus={!texto ? (e) => clearDefaultValue(e.target) : undefined}
     />
   );
 }
