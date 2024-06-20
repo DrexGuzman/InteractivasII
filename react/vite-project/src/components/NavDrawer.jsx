@@ -56,7 +56,6 @@ export function NavDrawer() {
 
 
 
-
   const handleLogout = () => {
     localStorage.removeItem('token');
     window.location.href = 'http://localhost:5173'; // Redirigir a la página de inicio de sesión
