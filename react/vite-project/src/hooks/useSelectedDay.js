@@ -23,5 +23,5 @@ export const useSelectedDay = () => {
   };
 console.log(day);
   // Return the dayClicked function
-  return { dayClicked, day };
+  return { dayClicked, day, initialDay };
 }

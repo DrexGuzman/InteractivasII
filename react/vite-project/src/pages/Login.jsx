@@ -61,13 +61,13 @@ export function Login() {
           onChange={(e) => setUser(e.target.value)}
         />
         <input type='password' name='contrasena' 
-          placeholder='Contrase'
+          placeholder='Contraseña'
           className="w-full mb-4 h-16 text-center ring-2 ring-blue-3 rounded-full text-blue-3 focus:outline-none text-texto font-regular font-second bg-blue-1"
           onChange={(e) => setPassword(e.target.value)}
         />
 
         {/* <Inputs text="Contraseña" type={"password"} name={'contrasena'} onChange={(e) => setPassword(e.target.value)}/> */}
-        <a className="text-blue-3 mb-[1.562rem] text-sm text-nowrap" href="#">Olvidó su contraseña?</a>
+        <a className="text-blue-3 mb-[1.562rem] text-sm text-nowrap" href="/forgotpass">Olvidó su contraseña?</a>
         <Button text="Iniciar Sesion"/>
 
         <hr className="w-full mb-[1.562rem] border-blue-3" />

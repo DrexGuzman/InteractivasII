@@ -8,6 +8,7 @@ import { Singup } from './pages/Singup.jsx';
 import { ResumeActivities } from './pages/ResumeActivities.jsx';
 import {ProgressCourses} from './pages/ProgressCourses.jsx'
 import { Landing } from './pages/Landing.jsx';
+import { ForgotPass } from './pages/ForgotPass.jsx';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <div className='overflow-x-hidden h-[100vh]'>
         <Routes>
           <Route path="/" element={<Login />} />
+          <Route path="/forgotpass" element={<ForgotPass />} />
           <Route path="/vinx/*" element={<Vinx />} />
           <Route path="/signup" element={<Singup />} />
           <Route path="/newuser" element={<FormRegi/>} />
