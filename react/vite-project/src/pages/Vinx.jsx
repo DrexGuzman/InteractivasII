@@ -21,10 +21,8 @@ export function Vinx() {
     </div>
     <Routes>
           <Route path="/" element={ <MainSection eventsList={events} /> } />
-          <Route path="/dailyTask" element={ <DailyTask/> } />
           <Route path="/progress" element={ <ProgressSection  eventsList={events}/> } />
           <Route path="/dailyTask" element={ <DailyTask eventsList={events}/> } />
-          <Route path="/progress" element={ <ProgressSection/> } />
         </Routes> 
     </div>
         
