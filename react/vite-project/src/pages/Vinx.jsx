@@ -9,6 +9,7 @@ import {Filters} from "../components/Filters";
 import { useFetchData } from '../hooks/useFetchData.js';
 export function Vinx() {
     const  events = useFetchData();
+    
     return (
         <>
         <NavDrawer />
@@ -22,6 +23,8 @@ export function Vinx() {
           <Route path="/" element={ <MainSection eventsList={events} /> } />
           <Route path="/dailyTask" element={ <DailyTask/> } />
           <Route path="/progress" element={ <ProgressSection  eventsList={events}/> } />
+          <Route path="/dailyTask" element={ <DailyTask eventsList={events}/> } />
+          <Route path="/progress" element={ <ProgressSection/> } />
         </Routes> 
     </div>
         
