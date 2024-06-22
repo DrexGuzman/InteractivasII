@@ -1,4 +1,19 @@
-export const RadialProgress = ({ porcent }) => {
+export const RadialProgress = ({ eventsList, courseId }) => {
+    console.log(courseId);
+    
+    function getProncent() {
+        let totales = 0;
+        let completadas = 0;
+        eventsList.data.events.forEach((event) => {
+            if (event.eve_id_course === courseId) {
+                totales++;
+                if (event.estado === "Completada") {
+                    completadas++;
+                }
+            }
+        });
+        return completadas / totales * 100;
+    }
     return (
         <section className="border-t-[0.5px] min-[840px]:border-t-[0px] min-[840px]:border-l-[0.5px] border-[#11567D] px-8 flex items-center flex-col flex-1 clr-blue-3 border-t-[#11567D]">
             <p className="text-center align-text-top text-[2rem] font-semibold titulo">Progreso</p>
@@ -21,9 +36,9 @@ export const RadialProgress = ({ porcent }) => {
                         r="37"
                         fill="transparent"
                         strokeDasharray="232.4"
-                        strokeDashoffset={`calc(232.4 - ${porcent * -232.4} / 100)`}
+                        strokeDashoffset={`calc(232.4 - ${getProncent() * -232.4} / 100)`}
                     ></circle>
-                    <text x="50" y="51" fontFamily="Montserrat" fill="#11567D" fontSize="12" fontWeight="600" textAnchor="middle" alignmentBaseline="middle">{porcent}%</text>
+                    <text x="50" y="51" fontFamily="Montserrat" fill="#11567D" fontSize="12" fontWeight="600" textAnchor="middle" alignmentBaseline="middle">{getProncent()}%</text>
                 </svg>
             </div>
         </section>

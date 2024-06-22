@@ -3,9 +3,9 @@ import { DailyTask } from "../components/DailyTask";
 import {NextEvent} from "../components/NextEvent";
 import {Courses} from "../components/Courses";
 import {Filters} from "../components/Filters";
+import {format } from 'date-fns';
 
 export function ResumeActivities(){
-   
     
     return(
         <>

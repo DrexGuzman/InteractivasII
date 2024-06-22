@@ -7,6 +7,7 @@ export const useCalendar = () => {
 
     // Initialize today's date
     let today = startOfToday()
+  
 
     // State to store the selected day and current month
     let [selectedDay, setSelectedDay] = useState(today)

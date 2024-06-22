@@ -11,7 +11,7 @@ import { AddEvent } from "./AddEvent";
 import Delete from "../assets/delete.svg";
 
 //Component of a new event with title, description, image, hour and category
-export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted}) {
+export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, event}) {
     const modalAddEvents = useModal();
     const {isChecked, handleCheck} = useHandleCheck();
    
@@ -26,7 +26,7 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted})
         )}
         
         <div className='flex flex-col justify-center relative'>
-            <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hour: {horaFomatted}</p>
+            <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hour: {event.hora}</p>
             <div className="rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D] relative flex flex-row justify-center items-center py-4 px-8 gap-4">
                 <div className='w-[10rem] items-center justify-start gap-2 hidden sm:flex flex-col'>
                     
@@ -44,9 +44,9 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted})
                     <img className='min-w-8' src={Penta} alt="" />
                 </div>
                 <div className='flex flex-col items-center sm:items-start min-w-[135px] w-[70%] '>
-                        <h1 className='font-main line-clamp-1 sm:line-clamp-none text-subtitulo font-pesado text-blue-3'>{titulo}</h1>
+                        <h1 className='font-main line-clamp-1 sm:line-clamp-none text-subtitulo font-pesado text-blue-3'>{event.eve_title}</h1>
                     <div className='hidden sm:flex'>
-                    <p className='text-blue-3 text-texto font-second sm:line-clamp-2'>{texto}</p>
+                    <p className='text-blue-3 text-texto font-second sm:line-clamp-2'>{event.eve_description}</p>
                     </div>
                     <div className='items-center justify-between w-full gap-2 flex sm:hidden'>
                     
@@ -62,7 +62,7 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted})
                             </div>  
                         <img className='min-w-8 sm:hidden' src={Penta} alt="" />
                         <div className='flex items-center justify-center  min-h-[40px] min-w-[40px] max-h-[40px] max-w-[40px] ring-2 ring-black rounded-full overflow-hidden'>
-                            <img className='w-full h-full object-contain' src={image ? 'http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/klipartz.com.png' : Ramdom} alt="" />
+                            <img className='w-full h-full object-contain' src={event.eve_image ? `http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/${event.eve_image}`  : Ramdom} alt="" />
                         </div>
                     
                     
@@ -70,7 +70,7 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted})
                 </div>
                {/* Shows and hide delete and modify event option white the 3 dots images is clicked*/}
                <div className='hidden sm:flex items-center justify-center  min-h-[70px] min-w-[70px] max-h-[70px] max-w-[70px] ring-2 ring-black rounded-full overflow-hidden'>
-    <img className='w-full h-full object-contain' src={image ? 'http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/klipartz.com.png' : Ramdom} alt="" />
+    <img className='w-full h-full object-contain' src={event.eve_image ? `http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/${event.eve_image}` : Ramdom} alt="" />
 </div>
                 
                 {/* <button className="group relative sm:z-10">

@@ -37,7 +37,7 @@ console.log();
 
  
  
- ;
+
  const modalAddEvents = useModal();
 
   const {days, firstDayCurrentMonth, nextMonth, previousMonth, selectedDay, setSelectedDay} = useCalendar();

@@ -8,7 +8,7 @@ import { ComboBox } from '../common/ComboBox';
  * @param {function} closeModal - Function to close the modal.
  * @param {function} addEvent - Function to add the event.
  */
-export function AddEvent({ closeModal, addEvent, action, titulo, texto, image, hora, cat, fecha }) {
+export function AddEvent({ closeModal, addEvent, action, titulo, texto, image, hora, cat, fecha, tag, curso }) {
 
     /**
      * Clears the default value of an input.

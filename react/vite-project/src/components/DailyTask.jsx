@@ -1,8 +1,12 @@
 import '../index.css';
 import { Task } from '../common/Task';
 import { Statistics } from '../common/Statistics';
-
+import {format } from 'date-fns';
+import { useState } from 'react';
 export function DailyTask() {
+
+    const [day, setDay] = useState(format(new Date(), 'yyyy-MM-dd'));
+    console.log(day)
     return (
         // Componnent to show the daily tasks
         <div className='grid lg:grid-cols-4 grid-cols-1 gap-y-4 gap-x-10 mb-8'>

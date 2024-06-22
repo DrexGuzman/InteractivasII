@@ -20,7 +20,6 @@ export function MainSection() {
   const { selectedDate } = useToday();
   const  events = useFetchData();
  /*  console.log(events.data.events) */;
-
   const data = useAddEvent();
 
 
@@ -52,7 +51,7 @@ export function MainSection() {
              {!events.isLoading && (
                events.data.events.map((event, index) => (
                   event.eve_datetime.split(' ')[0] == format(day, 'yyyy-MM-dd') ? (
-                    <Eventos key={index} cat={event.cat} titulo={event.eve_title} texto={event.eve_description} image={event.eve_image} fecha={ event.eve_datetime.split(' ')[0]}   hora={ event.eve_datetime.split(' ')[1]} horaFomatted={ event.hora} />
+                    <Eventos key={index} event={event} cat={event.cat} titulo={event.eve_title} texto={event.eve_description} image={event.eve_image} fecha={ event.eve_datetime.split(' ')[0]}   hora={ event.eve_datetime.split(' ')[1]} horaFomatted={ event.hora} />
                   ) : null
                 ))
             )}
