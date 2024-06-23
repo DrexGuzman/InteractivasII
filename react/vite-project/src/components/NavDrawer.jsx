@@ -12,6 +12,7 @@ import { useFilteredEvents } from "../hooks/useFilteredEvents";
 import { format } from "date-fns";
 import { useModal } from '../hooks/useModal';
 import { AddEvent } from "./AddEvent";
+import { EventInfo } from "./EventInfo";
 
 // This component represents a navigation drawer
 export function NavDrawer({ eventos }) {
