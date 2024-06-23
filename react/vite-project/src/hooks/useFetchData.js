@@ -30,9 +30,7 @@ export const useFetchData = () => {
     }
     
   }
-
-
-
+  
   useEffect(() => {
     getData()
   }, [])

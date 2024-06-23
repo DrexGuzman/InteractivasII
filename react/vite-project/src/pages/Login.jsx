@@ -16,7 +16,6 @@ export function Login() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     fetch('http://localhost/backend-interactivas-II/vinx-app/public/api/user/auth', {
       method: 'POST',
       headers: {
