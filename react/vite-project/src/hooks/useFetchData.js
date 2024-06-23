@@ -38,5 +38,6 @@ export const useFetchData = () => {
   return {
     data,
     isLoading,
+    setData,
   }
 }
