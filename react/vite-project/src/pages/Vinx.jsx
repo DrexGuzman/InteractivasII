@@ -20,7 +20,7 @@ export function Vinx() {
         <Filters />
     </div>
     <Routes>
-          <Route path="/" element={ <MainSection eventsList={events} /> } />
+          <Route path="/" element={ <MainSection events={events} /> } />
           <Route path="/progress" element={ <ProgressSection  eventsList={events}/> } />
           <Route path="/dailyTask" element={ <DailyTask eventsList={events}/> } />
         </Routes> 
