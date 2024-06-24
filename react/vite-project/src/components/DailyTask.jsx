@@ -9,6 +9,7 @@ import { useEventsDay } from '../hooks/useEventsDay';
 
 export function DailyTask({ eventsList }) {
 
+
     let events = [];
     if (!eventsList.isLoading) {
         events = eventsList.data.events;
@@ -16,12 +17,14 @@ export function DailyTask({ eventsList }) {
 
 
     const [day, setDay] = useState(format(new Date(), 'yyyy-MM-dd', { locale: es }));
+    console.log('day: '+day);
     const [dayf, setDayf] = useState('');
     const [dayi, setDayi] = useState('');
-    const [year, months, days] = day.split('-');
+    const [years, months, days] = day.split('-');
     const [yeari, monthsi, iday] = dayi.split('-');
     const [yearf, monthsf, fday] = dayf.split('-');
     const [month, setMonth] = useState(format(day, 'MMMM', { locale: es }));
+    const [year, setYear] = useState(format(day, 'yyyy', { locale: es }));
 
 
 
@@ -41,6 +44,7 @@ export function DailyTask({ eventsList }) {
 
     const { eventsDay, eventsWeek, qtyEventsDay, qtyEventsWeek, qtyEventsDayCompleted, qtyEventsWeekCompleted } = useEventsDay(day, events, dayf, dayi);
 
+
     return (
         // Componnent to show the daily tasks
         <div className='grid lg:grid-cols-4 grid-cols-1 gap-y-4 gap-x-10 mb-8'>
@@ -50,22 +54,22 @@ export function DailyTask({ eventsList }) {
             </div>
 
             <div className='bg-blue-1 ring-[0.5px] ring-blue-3 lg:flex lg:flex-col px-8 text-center rounded-3xl'>
-                <h1 className='py-4 text-blue-3 font-bold text-xl'>Actividades del dia {days} de {month} 2024</h1>
+                <h1 className='py-4 text-blue-3 font-bold text-xl'>Actividades del dia {days} de {month} del {year}</h1>
                 <div className='h-80 overflow-y-auto scrollbar-hide'>
                     <div>
                         {eventsDay.map((event, index) => (
-                            <Task key={index} text={event.eve_title} />
+                            <Task key={index} text={event.eve_title} status={event.estado} />
                         ))}
                     </div>
                 </div>
             </div>
 
             <div className='bg-blue-1 ring-[0.5px] ring-blue-3 lg:flex lg:flex-col px-8 text-center rounded-3xl'>
-                <h1 className='py-4 text-blue-3 font-bold text-xl'>Actividades del {iday} al {fday} de {month}</h1>
+                <h1 className='py-4 text-blue-3 font-bold text-xl'>Actividades del {iday} al {fday} de {month} del {year}</h1>
                 <div className='h-80 overflow-scroll scrollbar-hide'>
                     <div>
                         {eventsWeek.map((event, index) => (
-                            <Task key={index} text={event.eve_title} />
+                            <Task key={index} text={event.eve_title} status={event.estado} />
                         ))}
                     </div>
                 </div>

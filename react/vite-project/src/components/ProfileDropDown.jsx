@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import gear from "../assets/gear.svg";
 
-export const ProfileDropDown = ({fullname, carreer, carne}) => {
+export const ProfileDropDown = ({fullname, carreer, carne, user, id}) => {
   //function to verify if the div is open or not
     const [isOpen, setIsOpen] = useState(false);
 
@@ -28,21 +28,24 @@ export const ProfileDropDown = ({fullname, carreer, carne}) => {
                     <img id="gear" className={`transition-transform duration-500 ${isOpen ? 'rotate-90' : 'rotate-0'}`} src={gear} alt="gear icon" />
                 </div>
             </div>
+            <form action="http://localhost/backend-interactivas-II/vinx-app/public/api/user/changeUserPassword" method='POST'>
+            <input type="hidden" value={id} name='id'/>
             <div className="px-4">
                 <p className="text-white pt-4">Nombre de usuario:</p>
-                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" type="text" />
+                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" defaultValue={user} name='user' type="text" />
             </div>
             <div className="px-4">
                 <p className="text-white pt-4">Contraseña:</p>
-                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" type="password" />
+                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" type="password" name='password' />
             </div>
             <div className="px-4">
-                <p className="text-white pt-4">Nueva contraseña:</p>
-                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" type="password" />
+                <p className="text-white pt-4">Confirma o cambia contraseña:</p>
+                <input className="w-full rounded-lg h-8 pt-2 bg-blue-1 px-4 py-1" type="password" name='newpassword' />
             </div>
             <div className="p-4">
                 <button className="font-bold bg-orange-1 w-full rounded-lg h-8" onClick={updateProfile}>Submit</button>
             </div>
+            </form>
         </div>
     );
 };

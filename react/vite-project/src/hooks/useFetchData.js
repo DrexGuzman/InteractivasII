@@ -20,7 +20,6 @@ export const useFetchData = () => {
     console.log(data.user_id);
      const id = data.user_id;
     try{
-      
       const response = await fetch(`http://localhost/backend-interactivas-II/vinx-app/public/api/courses/${id}`);
       const data = await response.json();
       setData(data);

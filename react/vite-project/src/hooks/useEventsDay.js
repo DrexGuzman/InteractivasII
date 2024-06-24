@@ -14,6 +14,7 @@ export const useEventsDay = (date, events, dayf, dayi) => {
 events.forEach(event => {
     
     if (format(event.eve_datetime,'yyyy-MM-dd') === date) {
+        console.log('Evento del dia : '+event.estado);
         eventsDay.push(event);
         qtyEventsDay++;
         if (event.estado === 'Completada') {
@@ -22,6 +23,7 @@ events.forEach(event => {
     }
 
     if (format(event.eve_datetime, 'yyyy-MM-dd') >= dayi && format(event.eve_datetime, 'yyyy-MM-dd') <= dayf) {
+        console.log('Evento semanal: '+event.estado);
         eventsWeek.push(event);
         qtyEventsWeek++;
         if (event.estado === 'Completada') {
