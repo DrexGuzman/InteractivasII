@@ -12,6 +12,7 @@ import { useFilteredEvents } from "../hooks/useFilteredEvents";
 import { format } from "date-fns";
 import { useModal } from '../hooks/useModal';
 import { AddEvent } from "./AddEvent";
+import { EventInfo } from "./EventInfo";
 
 // This component represents a navigation drawer
 export function NavDrawer({ eventos, handleFilterChange}) {
@@ -89,9 +90,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
   if (!user) {
     return <div>Cargando...</div>; // Mensaje mientras se cargan los datos
   }
-
-
-
+  
   return (
 
     <>
@@ -182,13 +181,21 @@ export function NavDrawer({ eventos, handleFilterChange}) {
             </div>
 
             <div className="flex flex-col gap-y-4">
-              <ProfileDropDown fullname={user.user_name + ' ' + user.user_lastname} carreer={user.user_career} carne={user.user_studentCarne} />
+              <ProfileDropDown fullname={user.user_name + ' ' + user.user_lastname} carreer={user.user_career} carne={user.user_studentCarne} user={user.user_user_name} id={user.user_id} />
               <div className="flex flex-col gap-y-4">
-                <div className="sm:hidden">
-                  <form action="" className="bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full">
-                    <input className="focus:outline-none pl-8 w-full text-blue-3 texto bg-transparent" placeholder="Buscar" type="text" />
-                    <input className="px-7 bg-no-repeat bg-center w-10" style={{ backgroundImage: `url(${Search})` }} type="submit" value="" />
-                  </form>
+                <div className="sm:hidden relative">
+                  <div className="bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full">
+                    <input value={query} onChange={handleInputChange} className="focus:outline-none pl-8 w-full text-blue-3 texto bg-transparent" placeholder="Buscar" type="text" />
+                    <div className="flex flex-col w-full absolute z-30 top-10 t-8 left-0 bg-blue-1 ring-blue-3 ring-[0.6px]">
+                {filteredEvents.map(event => (
+                  <button key={event.eve_id} onFocusCapture={modalAddEvents.toggleModal} className="hover:bg-blue-300 px-8 flex justify-between">
+                    <p className="text-blue-3">{event.eve_title}</p>
+                    <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
+                  </button>
+                ))}
+              </div>
+                    {/* <input className="px-7 bg-no-repeat bg-center w-10" style={{ backgroundImage: `url(${Search})` }} type="submit" value="" /> */}
+                  </div>
                 </div>
                 <div className="sm:hidden block">
                   <FiltersDropDown handleFilterChange={handleFilterChange} />

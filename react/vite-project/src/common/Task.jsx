@@ -6,10 +6,9 @@ import '../index.css'; // Importing CSS file
 import { useHandleCheck } from '../hooks/useHandleCheck.js'; // Importing custom hook
 
 // Task component to display a task with a checkbox
-export function Task({ text }) {
-
+export function Task({ text, status }) {
   // Using the custom hook to handle checkbox state
-  const { isChecked, handleCheck } = useHandleCheck();
+  const { isChecked } = useHandleCheck(status);
 
   return (
     <div className='relative text-center items-center justify-between flex py-4 gap-4'>
@@ -28,12 +27,12 @@ export function Task({ text }) {
         <img src={isChecked ? checkG : checkW} alt="" id='img' />
 
         {/* Hidden checkbox input */}
-        <input
+        {/* <input
           className='absolute top-0 left-0 size-6 opacity-0'
           type='checkbox'
           checked={isChecked}
           onChange={handleCheck}
-        />
+        /> */}
       </div>
     </div>
   );

@@ -19,7 +19,7 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, 
     
     const handleComplete = async () => {
         try {
-            await updateEvent(event.eve_id, 6); // Asegúrate de que este ID de evento y usuario sean correctos
+            await updateEvent(event.eve_id, 16); // Asegúrate de que este ID de evento y usuario sean correctos
     
             // Actualiza solo la propiedad events dentro de data después de la actualización exitosa
             events.setData(prevState => ({
