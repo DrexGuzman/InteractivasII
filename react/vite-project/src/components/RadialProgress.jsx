@@ -12,7 +12,7 @@ export const RadialProgress = ({ eventsList, courseId }) => {
                 }
             }
         });
-        return completadas / totales * 100;
+        return Math.round(completadas / totales * 100);
     }
     return (
         <section className="border-t-[0.5px] min-[840px]:border-t-[0px] min-[840px]:border-l-[0.5px] border-[#11567D] px-8 flex items-center flex-col flex-1 clr-blue-3 border-t-[#11567D]">

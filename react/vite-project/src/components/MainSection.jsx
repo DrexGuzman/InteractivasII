@@ -11,32 +11,20 @@ import { useAddEvent } from "../hooks/useAddEvents";
 import { useSelectedDay } from '../hooks/useSelectedDay.js';
 import { useToday } from '../hooks/useToday.js';
 import { useFetchData } from '../hooks/useFetchData.js';
+
 /**
  * MainSection component.
  * Renders the main section of the application.
  */
-export function MainSection({events}) {
+export function MainSection({ events, carreraFilter, universidadFilter, cursosFilter, estudiantesFilter }) {
   const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
-  /* const  events = useFetchData(); */
- /*  console.log(events.data.events) */;
   const data = useAddEvent();
-
-
-
 
   return (
     <>
-    
-  
-     
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-x-10 gap-y-12 sm:gap-y-4 sm:mb-4">
-        
-          <Calendario eventsList={events} addNewEvent={data.addNewEvent} dayClicked={dayClicked} />
-        
-          
-        
-        
+        <Calendario eventsList={events} addNewEvent={data.addNewEvent} dayClicked={dayClicked}  carreraFilter={carreraFilter} estudiantesFilter={universidadFilter} cursosFilter={cursosFilter} universidadFilter={estudiantesFilter}  />
         <div className="col-span-2 bg-blue-1 rounded-3xl ring-1 ring-[#11567D] h-[100%]">
           <h1 id='selectedDate' className="text-center text-[1.5rem] sm:text-[3rem] mt-4 mb-4 clr-blue-3 titulo">{`${selectedDate}`}</h1>
           <div className='overflow-y-auto scrollbar-hide h-[25rem]'>
@@ -48,18 +36,43 @@ export function MainSection({events}) {
                 overflow: "hidden",
               }}
             >
-             {!events.isLoading && (
-               events.data.events.map((event, index) => (
-                  event.eve_datetime.split(' ')[0] == format(day, 'yyyy-MM-dd') ? (
-                    <Eventos key={index} event={event} events={events} cat={event.cat} titulo={event.eve_title} texto={event.eve_description} image={event.eve_image} fecha={ event.eve_datetime.split(' ')[0]}   hora={ event.eve_datetime.split(' ')[1]} horaFomatted={ event.hora} />
-                  ) : null
-                ))
-            )}
+              {!events.isLoading && (
+                events.data.events.map((event, index) => {
+                  const eventDate = event.eve_datetime.split(' ')[0];
+                  const eventTime = event.eve_datetime.split(' ')[1];
+                  const isSameDate = eventDate === format(day, 'yyyy-MM-dd');
+
+                  const shouldRenderEvent = isSameDate && (
+                    (event.categoria_nombre === "Carrera" && carreraFilter) ||
+                    (event.categoria_nombre === "Universidad" && universidadFilter) ||
+                    (event.categoria_nombre === "Curso" && cursosFilter) ||
+                    (event.categoria_nombre === "Estudiantes" && estudiantesFilter)
+                  );
+
+                  if (shouldRenderEvent) {
+                    return (
+                      <Eventos
+                        key={index}
+                        event={event}
+                        events={events}
+                        cat={event.cat}
+                        titulo={event.eve_title}
+                        texto={event.eve_description}
+                        image={event.eve_image}
+                        fecha={eventDate}
+                        hora={eventTime}
+                        horaFormatted={event.hora}
+                      />
+                    );
+                  }
+
+                  return null;
+                })
+              )}
             </ul>
           </div>
         </div>
       </div>
-    
     </>
   );
 }

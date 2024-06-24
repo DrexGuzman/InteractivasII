@@ -3,7 +3,7 @@ import filters from "../assets/filters.svg";
 /**
  * Component for the Filters DropDown.
  */
-export function FiltersDropDown() {
+export function FiltersDropDown({handleFilterChange}) {
 
   /**
    * Function to handle the dropdown behavior.
@@ -50,6 +50,7 @@ export function FiltersDropDown() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("carrera")}
             />
             <svg
               className="star-regular"
@@ -90,6 +91,7 @@ export function FiltersDropDown() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("universidad")}
             />
             <svg
               className="star-regular"
@@ -130,6 +132,7 @@ export function FiltersDropDown() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("curso")}
             />
             <svg
               className="star-regular"
@@ -168,6 +171,7 @@ export function FiltersDropDown() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("estudiantes")}
             />
             <svg
               className="star-regular"

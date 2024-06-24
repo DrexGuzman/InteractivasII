@@ -3,7 +3,7 @@ import filters from "../assets/filters.svg";
 /**
  * Component for rendering filters.
  */
-export function Filters() {
+export function Filters({handleFilterChange}) {
   return (
     <div id="filterBox" className="overflow-hidden hidden lg-[1440px]:flex flex-col p-4 bg-blue-1 rounded-3xl ring-[1px] ring-[#11567D] shadow-md">
       <div className="py-2 flex justify-between">
@@ -23,9 +23,13 @@ export function Filters() {
         <li className="mt-2">
           <label className="container flex">
             <input
+            className="relative"
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("carrera")}
+            
             />
+         
             <svg
               className="star-regular"
               fill="none"
@@ -65,6 +69,7 @@ export function Filters() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("universidad")}
             />
             <svg
               className="star-regular"
@@ -105,6 +110,7 @@ export function Filters() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("curso")}
             />
             <svg
               className="star-regular"
@@ -143,6 +149,7 @@ export function Filters() {
             <input
               defaultChecked
               type="checkbox"
+              onChange={() => handleFilterChange("estudiantes")}
             />
             <svg
               className="star-regular"

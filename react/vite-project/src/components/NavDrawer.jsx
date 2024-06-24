@@ -14,7 +14,7 @@ import { useModal } from '../hooks/useModal';
 import { AddEvent } from "./AddEvent";
 
 // This component represents a navigation drawer
-export function NavDrawer({ eventos }) {
+export function NavDrawer({ eventos, handleFilterChange}) {
   const modalAddEvents = useModal();
   // This function shows or hides the menu based on the input checkbox
   function showMenu(input) {
@@ -191,7 +191,7 @@ export function NavDrawer({ eventos }) {
                   </form>
                 </div>
                 <div className="sm:hidden block">
-                  <FiltersDropDown />
+                  <FiltersDropDown handleFilterChange={handleFilterChange} />
                 </div>
                 <hr className="sm:hidden w-[90vw] text-white bg-white" />
                 <div className="sm:hidden block">

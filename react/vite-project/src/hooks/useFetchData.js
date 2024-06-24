@@ -17,7 +17,6 @@ export const useFetchData = () => {
       },
     });
     const data = await response.json();
-    console.log(data.user_id);
      const id = data.user_id;
     try{
       

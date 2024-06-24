@@ -101,21 +101,22 @@
   .container .star-regular {
     animation: keyframes-star .5s;
     justify-content: center;
+    display: none;
   }
   
   .container .star-solid {
     animation: keyframes-star .5s;
     justify-content: center;
-    display: none;
+    
   }
   
   /* ------ On check event ------ */
   .container input:checked ~ .star-regular {
-    display: none;
+    display: block;
   }
   
   .container input:checked ~ .star-solid {
-    display: block;
+    display: none;
   }
   
   /* ------ Hide the default checkbox ------ */

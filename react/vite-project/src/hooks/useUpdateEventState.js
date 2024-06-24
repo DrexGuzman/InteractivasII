@@ -1,6 +1,16 @@
 export const useUpdateEventState = () => {
     // State to store the selected date
-    const updateEvent = async (idEvent, idUser ) => {
+    const updateEvent = async (idEvent ) => {
+
+        const response = await fetch('http://localhost/backend-interactivas-II/vinx-app/public/api/user/toke', {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+          });
+          const data = await response.json();
+           const idUser = data.user_id;
         try {
             const response = await fetch(`http://localhost/backend-interactivas-II/vinx-app/public/api/events/updateState/${idEvent}/${idUser}`);
             if (!response.ok) {
