@@ -6,16 +6,15 @@ import Ramdom from "../assets/ramdomevent.png";
 import EventesMenu from "../assets/eventsMenu.svg";
 import { useHandleCheck } from '../hooks/useHandleCheck';
 import { useModal } from '../hooks/useModal';
-import { AddEvent } from "./AddEvent";
+import { ShowEvent } from "./ShowEvent";
 import Delete from "../assets/delete.svg";
 import { useUpdateEventState } from '../hooks/useUpdateEventState.js';
 
 // Component of a new event with title, description, image, hour and category
-export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, event, events }) {
+export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, event, events, tag, estado, curso }) {
     const modalAddEvents = useModal();
     const { isChecked, handleCheck } = useHandleCheck();
     const { updateEvent } = useUpdateEventState();
-    console.log(events);
     
     const handleComplete = async () => {
         try {
@@ -39,15 +38,16 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, 
         <>
             {modalAddEvents.isOpen && (
                 <>
-                    <AddEvent closeModal={modalAddEvents.toggleModal} texto={texto} titulo={titulo} hora={hora} fecha={fecha} />
+                    <ShowEvent closeModal={modalAddEvents.toggleModal} texto={texto} titulo={titulo} hora={hora} fecha={fecha} tag={tag} />
                 </>
             )}
         
             <div className='flex flex-col justify-center relative'>
                 <p className="text-blue-3 text-texto sm:text-subtitulo font-main font-pesado">Hour: {event.hora}</p>
                 <div className="rounded-2xl min-h-32 ring-1 bg-white ring-[#11567D] relative flex flex-row justify-center items-center py-4 px-8 gap-4">
+                <button onClick={modalAddEvents.openModal} className='absolute inset-0 z-20 w-full h-full'></button>
                     <div className='w-[10rem] items-center justify-start gap-2 hidden sm:flex flex-col'>
-                        <button onClick={handleComplete}>
+                        <button onClick={handleComplete} className='z-40'>
                             <img src={event.estado === "Completada" ? checkG : checkW} alt="" id='img' />
                         </button>
                         <img className='min-w-8' src={Penta} alt="" />
@@ -77,9 +77,9 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, 
                         <img className='w-full h-full object-contain' src={event.eve_image ? `http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/${event.eve_image}` : Ramdom} alt="" />
                     </div>
                     <div className="group z-10 relative">
-                        <button className=" focus:opacity-0 duration-200 ">
+                       {/*  <button className=" focus:opacity-0 duration-200 ">
                             <img className="size-8 group-focus:opacity-0 duration-200 " alt="" src={EventesMenu} />
-                        </button>
+                        </button> */}
                         <div className="absolute hidden rounded-xl opacity-0 group-focus-within:flex group-focus-within:opacity-100 duration-200 right-[-1rem] bottom-[-2.5rem] p-4">
                             <form>
                                 <div className='flex flex-col gap-8 items-center justify-center h-full'>

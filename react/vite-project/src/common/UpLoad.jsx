@@ -9,7 +9,7 @@ export function UpLoad({ text, image }) {
             <div className='my-3 sm:size-20 size-12 overflow-hidden relative ring-2 ring-blue-3 rounded-full'>
                 {/* Upload icon */}
 
-                <img className='absolute sm:top-4 top-3 sm:size-12 size-6 sm:right-4 right-3' src={`http://localhost/backend-interactivas-II/vinx-app/public/storage/images_events/${image}`} alt="" />
+                <img className='absolute sm:top-4 top-3 sm:size-12 size-6 sm:right-4 right-3' src={Img} alt="" />
                 {/* Hidden file input */}
                 <input className='absolute sm:top-7 sm:righ-0 opacity-0 right-1' type="file" name='image' />
             </div>

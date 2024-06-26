@@ -1,14 +1,22 @@
-import { useState } from 'react';
-import { startOfWeek, endOfWeek, format } from 'date-fns';
-import { es } from 'date-fns/locale'
-
-
+import { startOfWeek, endOfWeek, format, getDay } from 'date-fns';
 
 export const useWeek = ($date) => {
+    let start, end;
+    // Verificar si $date es un lunes (getDay() devuelve 1 para lunes)
+    if (getDay($date) == 0) {
 
-    const dayi = format(startOfWeek($date, { weekStartsOn: 1 }), 'yyyy-MM-dd'); // weekStartsOn: 1 significa que la semana empieza el lunes
-    
-    const dayf = format(endOfWeek($date, { weekStartsOn: 1 }), 'yyyy-MM-dd');
+        // Si es un lunes, mantener la fecha tal como está
+        start = startOfWeek($date, { weekStartsOn: 8 });
+        end = endOfWeek($date, { weekStartsOn: 8 });
+       
+    } else {
+        // Si no es un lunes, calcular el inicio y fin de la semana
+        start = startOfWeek($date, { weekStartsOn: 1 });
+        end = endOfWeek($date, { weekStartsOn: 1 });
+    }
 
-    return { dayi, dayf};
+    const dayi = format(start, 'yyyy-MM-dd');
+    const dayf = format(end, 'yyyy-MM-dd');
+
+    return { dayi, dayf };
 };

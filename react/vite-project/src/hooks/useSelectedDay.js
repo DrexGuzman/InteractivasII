@@ -21,7 +21,7 @@ export const useSelectedDay = () => {
     document.getElementById('selectedDate').innerHTML = formattedDate;
     
   };
-console.log(day);
+
   // Return the dayClicked function
   return { dayClicked, day, initialDay };
 }

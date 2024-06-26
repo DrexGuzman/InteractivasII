@@ -13,6 +13,7 @@ import { format } from "date-fns";
 import { useModal } from '../hooks/useModal';
 import { AddEvent } from "./AddEvent";
 import { EventInfo } from "./EventInfo";
+import { Loanding } from "./Loanding";
 
 // This component represents a navigation drawer
 export function NavDrawer({ eventos, handleFilterChange}) {
@@ -36,7 +37,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
   }
 
   const [user, setUser] = useState(null);
-  console.log(user);
+
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -66,7 +67,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
 
   //barra para buscar eventos
   const events = eventos.data.events;
-  console.log(events);
+ 
   const [query, setQuery] = useState('');
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [eventText, setEventText] = useState('');
@@ -88,7 +89,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
 
 
   if (!user) {
-    return <div>Cargando...</div>; // Mensaje mientras se cargan los datos
+    return <Loanding/>; // Mensaje mientras se cargan los datos
   }
   
   return (

@@ -20,6 +20,7 @@ export function MainSection({ events, carreraFilter, universidadFilter, cursosFi
   const { dayClicked, day } = useSelectedDay();
   const { selectedDate } = useToday();
   const data = useAddEvent();
+  console.log(day);
 
   return (
     <>
@@ -41,7 +42,6 @@ export function MainSection({ events, carreraFilter, universidadFilter, cursosFi
                   const eventDate = event.eve_datetime.split(' ')[0];
                   const eventTime = event.eve_datetime.split(' ')[1];
                   const isSameDate = eventDate === format(day, 'yyyy-MM-dd');
-
                   const shouldRenderEvent = isSameDate && (
                     (event.categoria_nombre === "Carrera" && carreraFilter) ||
                     (event.categoria_nombre === "Universidad" && universidadFilter) ||
@@ -55,13 +55,16 @@ export function MainSection({ events, carreraFilter, universidadFilter, cursosFi
                         key={index}
                         event={event}
                         events={events}
-                        cat={event.cat}
+                        cat={event.categoria_nombre}
                         titulo={event.eve_title}
                         texto={event.eve_description}
                         image={event.eve_image}
                         fecha={eventDate}
                         hora={eventTime}
+                        tag={event.etiqueta_nombre}
+                        estado={event.estado}
                         horaFormatted={event.hora}
+                        curso={event.curso_nombre}
                       />
                     );
                   }
