@@ -21,8 +21,6 @@ function App() {
           <Route path="/vinx/*" element={<Vinx />} />
           <Route path="/signup" element={<Singup />} />
           <Route path="/newuser" element={<FormRegi/>} />
-          {/* <Route path="/vinx/dailyTask" element={<ResumeActivities/>} />
-          <Route path="/vinx/progress" element={<ProgressCourses />} /> */}
           <Route path="/vinx.dev" element={< Landing/>} />
         </Routes>
       </div>

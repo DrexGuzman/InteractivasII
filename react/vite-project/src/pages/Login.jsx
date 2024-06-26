@@ -29,12 +29,9 @@ export function Login() {
     .then(response => response.json())
     .then(data => {
       if (data.success) {
-        // Almacenar el token en localStorage
-        localStorage.setItem('token', data.token);
-        // Redireccionar a principal
-        window.location.href = 'http://localhost:5173/vinx';
+          localStorage.setItem('token', data.token);
+          window.location.href = '/vinx';
       } else {
-        
         setError('Usuario o contraseña incorrectos');
         document.getElementsByName('usuario')[0].value='';
         document.getElementsByName('contrasena')[0].value='';
@@ -48,7 +45,6 @@ export function Login() {
       <div className='bg-blue-2 text-white text-main'>
         <Vinx />
       </div>
-        {/* <form action="http://localhost/backend-interactivas-II/vinx-app/public/api/user/auth" method='POST'> */}
         <form onSubmit={handleSubmit}>
       <div className='flex flex-col items-end mx-10 lg:mx-72 xl:mx-96'>
         <h1 className='m-auto font-bold text-4xl mb-[1.562rem] text-blue-3'>Iniciar sesion</h1>
@@ -65,7 +61,6 @@ export function Login() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* <Inputs text="Contraseña" type={"password"} name={'contrasena'} onChange={(e) => setPassword(e.target.value)}/> */}
         <a className="text-blue-3 mb-[1.562rem] text-sm text-nowrap" href="/forgotpass">Olvidó su contraseña?</a>
         <Button text="Iniciar Sesion"/>
 

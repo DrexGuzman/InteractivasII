@@ -7,9 +7,17 @@ import { NextEvent } from "../components/NextEvent";
 import { Courses } from "../components/Courses";
 import { Filters } from "../components/Filters";
 import { useFetchData } from '../hooks/useFetchData.js';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Vinx() {
+    
+     useEffect(() => {
+         const authToken = localStorage.getItem("token");
+         if (!authToken) {
+           window.location.href = "http://localhost:5173/";
+         }
+       }, []);
+
     const   events = useFetchData();
     
     const [isCarreraFilter, setCarreraFilter] = useState(true);
@@ -35,6 +43,8 @@ export function Vinx() {
                 break;
         }
     }
+
+    
 
     return (
         <>

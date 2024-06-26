@@ -17,7 +17,6 @@ export function DailyTask({ eventsList }) {
 
 
     const [day, setDay] = useState(format(new Date(), 'yyyy-MM-dd', { locale: es }));
-    console.log('day: '+day);
     const [dayf, setDayf] = useState('');
     const [dayi, setDayi] = useState('');
     const [years, months, days] = day.split('-');
