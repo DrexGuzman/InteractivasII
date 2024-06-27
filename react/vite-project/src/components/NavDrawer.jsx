@@ -13,9 +13,10 @@ import { format } from "date-fns";
 import { useModal } from '../hooks/useModal';
 import { AddEvent } from "./AddEvent";
 import { EventInfo } from "./EventInfo";
+import { data } from "autoprefixer";
 
 // This component represents a navigation drawer
-export function NavDrawer({ eventos, handleFilterChange}) {
+export function NavDrawer({ eventos, handleFilterChange }) {
   const modalAddEvents = useModal();
   // This function shows or hides the menu based on the input checkbox
   function showMenu(input) {
@@ -36,7 +37,6 @@ export function NavDrawer({ eventos, handleFilterChange}) {
   }
 
   const [user, setUser] = useState(null);
-  console.log(user);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -58,6 +58,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
   }, []);
 
 
+
   //Realizar el logout
   const handleLogout = () => {
     localStorage.removeItem('token');
@@ -66,13 +67,14 @@ export function NavDrawer({ eventos, handleFilterChange}) {
 
   //barra para buscar eventos
   const events = eventos.data.events;
-  console.log(events);
+  const [profileImg, setProfileImg] = useState('');
   const [query, setQuery] = useState('');
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [eventText, setEventText] = useState('');
   const [eventTitle, setEventTitle] = useState('');
   const [eventHour, setEventHour] = useState('');
   const [eventDate, setEventDate] = useState('');
+
   const handleInputChange = (e) => {
     const value = e.target.value;
     setQuery(value);
@@ -86,11 +88,21 @@ export function NavDrawer({ eventos, handleFilterChange}) {
     }
   };
 
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const photo = document.getElementsByName('updateImg')[0];
+      photo.submit();
+      // Aquí podrías agregar la lógica para enviar la imagen al servidor si es necesario.
+    }
+    
+  };
+
 
   if (!user) {
     return <div>Cargando...</div>; // Mensaje mientras se cargan los datos
   }
-  
+
   return (
 
     <>
@@ -146,7 +158,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
                 <div className="sm:block hidden  left-0 right-0"><MessagesDropDrown /></div>
                 <div className="sm:block hidden  left-0 right-0"><NoficationDropDrown /></div>
                 <div className="relative rounded-full overflow-hidden ring-4 ring-white size-[3rem] flex justify-center items-center">
-                  <img
+                  <img className="object-cover h-full w-full"
                     alt="User Profile"
                     src={user.image_url}
                   />
@@ -171,10 +183,13 @@ export function NavDrawer({ eventos, handleFilterChange}) {
             <div className="w-full flex justify-center mb-4">
               <div className="relative">
                 <div className=" overflow-hidden rounded-full w-20 ring-4 ring-white size-[5rem] flex justify-center items-center">
-                  <img alt="User Profile" src={user.image_url} />
+                  <img className="object-cover h-full w-full" alt="User Profile" src={user.image_url} />
                 </div>
                 <div className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
-                  <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="" id="" />
+                  <form name="updateImg" action="http://localhost/backend-interactivas-II/vinx-app/public/api/user/profile-img" method="POST" encType="multipart/form-data">
+                    <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="newImg" id="fileInput" onChange={handleProfileImageChange} />
+                    <input type="hidden" name="userId" value={user.user_id} />
+                  </form>
                   <img className="absolute top-2 right-2 size-4" src={Editwhite} alt="" />
                 </div>
               </div>
@@ -187,13 +202,13 @@ export function NavDrawer({ eventos, handleFilterChange}) {
                   <div className="bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full">
                     <input value={query} onChange={handleInputChange} className="focus:outline-none pl-8 w-full text-blue-3 texto bg-transparent" placeholder="Buscar" type="text" />
                     <div className="flex flex-col w-full absolute z-30 top-10 t-8 left-0 bg-blue-1 ring-blue-3 ring-[0.6px]">
-                {filteredEvents.map(event => (
-                  <button key={event.eve_id} onFocusCapture={modalAddEvents.toggleModal} className="hover:bg-blue-300 px-8 flex justify-between">
-                    <p className="text-blue-3">{event.eve_title}</p>
-                    <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
-                  </button>
-                ))}
-              </div>
+                      {filteredEvents.map(event => (
+                        <button key={event.eve_id} onFocusCapture={modalAddEvents.toggleModal} className="hover:bg-blue-300 px-8 flex justify-between">
+                          <p className="text-blue-3">{event.eve_title}</p>
+                          <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
+                        </button>
+                      ))}
+                    </div>
                     {/* <input className="px-7 bg-no-repeat bg-center w-10" style={{ backgroundImage: `url(${Search})` }} type="submit" value="" /> */}
                   </div>
                 </div>

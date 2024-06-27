@@ -28,6 +28,8 @@ export function FormRegi() {
         <UpLoad text='Cargar imagen' />
         <InputsLeft text='Nombre' type={'text'} name={'nombre'} />
         <InputsLeft text='Apellido' type={'text'} name={'apellido'}  />
+        <InputsLeft text='carrera' type={'text'} name={'carrera'}  />
+        <InputsLeft text='carnet' type={'text'} name={'carnet'}  />
         <InputsLeft text='correo' type={'text'} name={'correo'} />
         <InputsLeft text='Nombre de usuario' type={'text'} name={'usuario'}  />
         <InputsLeft text='Contraseña' type={'password'} name={'contrasena'} />
