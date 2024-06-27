@@ -14,9 +14,10 @@ import { useModal } from '../hooks/useModal';
 import { ShowEvent } from "./ShowEvent";
 import { EventInfo } from "./EventInfo";
 import { Loanding } from "./Loanding";
+import { data } from "autoprefixer";
 
 // This component represents a navigation drawer
-export function NavDrawer({ eventos, handleFilterChange}) {
+export function NavDrawer({ eventos, handleFilterChange }) {
   const modalAddEvents = useModal();
   const [selectedEvent, setSelectedEvent] = useState(null);  // Estado para almacenar el evento seleccionado
   const [user, setUser] = useState(null);
@@ -76,6 +77,13 @@ export function NavDrawer({ eventos, handleFilterChange}) {
       modalAddEvents.openModal();
     }
   }
+/*   const [profileImg, setProfileImg] = useState('');
+  const [query, setQuery] = useState('');
+  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [eventText, setEventText] = useState('');
+  const [eventTitle, setEventTitle] = useState('');
+  const [eventHour, setEventHour] = useState('');
+  const [eventDate, setEventDate] = useState(''); */
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -90,6 +98,17 @@ export function NavDrawer({ eventos, handleFilterChange}) {
       setFilteredEvents([]);
     }
   };
+
+  const handleProfileImageChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const photo = document.getElementsByName('updateImg')[0];
+      photo.submit();
+      // Aquí podrías agregar la lógica para enviar la imagen al servidor si es necesario.
+    }
+    
+  };
+
 
   if (!user) {
     return <Loanding />; // Mensaje mientras se cargan los datos
@@ -157,7 +176,7 @@ export function NavDrawer({ eventos, handleFilterChange}) {
                 <div className="sm:block hidden  left-0 right-0"><MessagesDropDrown /></div>
                 <div className="sm:block hidden  left-0 right-0"><NoficationDropDrown /></div>
                 <div className="relative rounded-full overflow-hidden ring-4 ring-white size-[3rem] flex justify-center items-center">
-                  <img
+                  <img className="object-cover h-full w-full"
                     alt="User Profile"
                     src={user.image_url}
                   />
@@ -182,10 +201,13 @@ export function NavDrawer({ eventos, handleFilterChange}) {
             <div className="w-full flex justify-center mb-4">
               <div className="relative">
                 <div className=" overflow-hidden rounded-full w-20 ring-4 ring-white size-[5rem] flex justify-center items-center">
-                  <img alt="User Profile" src={user.image_url} />
+                  <img className="object-cover h-full w-full" alt="User Profile" src={user.image_url} />
                 </div>
                 <div className="absolute top-16 right-1 rounded-full bg-yellow-500 size-8 text-white text-2xl font-bold">
-                  <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="" id="" />
+                  <form name="updateImg" action="http://localhost/backend-interactivas-II/vinx-app/public/api/user/profile-img" method="POST" encType="multipart/form-data">
+                    <input className="absolute rounded-full size-8 z-30 opacity-0" type="file" name="newImg" id="fileInput" onChange={handleProfileImageChange} />
+                    <input type="hidden" name="userId" value={user.user_id} />
+                  </form>
                   <img className="absolute top-2 right-2 size-4" src={Editwhite} alt="" />
                 </div>
               </div>
