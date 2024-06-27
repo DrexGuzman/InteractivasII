@@ -60,11 +60,12 @@ export function MainSection({ events, carreraFilter, universidadFilter, cursosFi
                         texto={event.eve_description}
                         image={event.eve_image}
                         fecha={eventDate}
-                        hora={eventTime}
+                        hora={event.hora}
                         tag={event.etiqueta_nombre}
                         estado={event.estado}
                         horaFormatted={event.hora}
                         curso={event.curso_nombre}
+                        fechahora={event.eve_datetime}
                       />
                     );
                   }

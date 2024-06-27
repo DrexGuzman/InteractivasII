@@ -13,6 +13,11 @@ export function Login() {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
     const[error, setError] = useState('');
+    const[isLoading, setLoading] = useState(false);
+
+    function handleLoading() {
+        setLoading(!isLoading);
+    }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,13 +36,16 @@ export function Login() {
       if (data.success) {
           localStorage.setItem('token', data.token);
           window.location.href = '/vinx';
+          handleLoading();
       } else {
         setError('Usuario o contraseña incorrectos');
         document.getElementsByName('usuario')[0].value='';
         document.getElementsByName('contrasena')[0].value='';
+        handleLoading();
       }
     })
     .catch(error => console.error('Error al iniciar sesión:', error));
+    handleLoading();
 };
 
   return (
@@ -62,7 +70,7 @@ export function Login() {
         />
 
         <a className="text-blue-3 mb-[1.562rem] text-sm text-nowrap" href="/forgotpass">Olvidó su contraseña?</a>
-        <Button text="Iniciar Sesion"/>
+        <Button text="Iniciar Sesion" loading={isLoading} handleLoading={handleLoading}/>
 
         <hr className="w-full mb-[1.562rem] border-blue-3" />
         <LoginGoogle />

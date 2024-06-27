@@ -11,33 +11,17 @@ import { ProfileDropDown } from "./ProfileDropDown";
 import { useFilteredEvents } from "../hooks/useFilteredEvents";
 import { format } from "date-fns";
 import { useModal } from '../hooks/useModal';
-import { AddEvent } from "./AddEvent";
+import { ShowEvent } from "./ShowEvent";
 import { EventInfo } from "./EventInfo";
 import { Loanding } from "./Loanding";
 
 // This component represents a navigation drawer
 export function NavDrawer({ eventos, handleFilterChange}) {
   const modalAddEvents = useModal();
-  // This function shows or hides the menu based on the input checkbox
-  function showMenu(input) {
-    const menu = document.getElementsByName("menu")[0];
-    const checkboxNav = document.getElementById("checkboxNav");
-    if (input.checked) {
-      menu.style.display = "block";
-      checkboxNav.style.position = "fixed";
-      menu.style.right = "0px";
-      menu.style.transition = "right ease 0.5s";
-      checkboxNav.style.zIndex = "30";
-    } else {
-      checkboxNav.style.position = "absolute";
-      menu.style.transition = "right ease 0.5s";
-      menu.style.right = "-1000px";
-      menu.style.display = "hidden";
-    }
-  }
-
+  const [selectedEvent, setSelectedEvent] = useState(null);  // Estado para almacenar el evento seleccionado
   const [user, setUser] = useState(null);
-
+  const [query, setQuery] = useState('');
+  const [filteredEvents, setFilteredEvents] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -58,25 +42,45 @@ export function NavDrawer({ eventos, handleFilterChange}) {
     fetchUserData();
   }, []);
 
+  // This function shows or hides the menu based on the input checkbox
+  function showMenu(input) {
+    const menu = document.getElementsByName("menu")[0];
+    const checkboxNav = document.getElementById("checkboxNav");
+    if (input.checked) {
+      menu.style.display = "block";
+      checkboxNav.style.position = "fixed";
+      menu.style.right = "0px";
+      menu.style.transition = "right ease 0.5s";
+      checkboxNav.style.zIndex = "30";
+    } else {
+      checkboxNav.style.position = "absolute";
+      menu.style.transition = "right ease 0.5s";
+      menu.style.right = "-1000px";
+      menu.style.display = "hidden";
+    }
+  }
 
-  //Realizar el logout
+  // Realizar el logout
   const handleLogout = () => {
     localStorage.removeItem('token');
     window.location.href = 'http://localhost:5173'; // Redirigir a la página de inicio de sesión
   };
 
-  //barra para buscar eventos
+  // barra para buscar eventos
   const events = eventos.data.events;
- 
-  const [query, setQuery] = useState('');
-  const [filteredEvents, setFilteredEvents] = useState([]);
-  const [eventText, setEventText] = useState('');
-  const [eventTitle, setEventTitle] = useState('');
-  const [eventHour, setEventHour] = useState('');
-  const [eventDate, setEventDate] = useState('');
+
+  function findEvent(id) {
+    const event = events.find(event => event.eve_id === id);
+    if (event) {
+      setSelectedEvent(event);  // Actualiza el estado con el evento encontrado
+      modalAddEvents.openModal();
+    }
+  }
+
   const handleInputChange = (e) => {
     const value = e.target.value;
     setQuery(value);
+
     if (value.length > 0) {
       const results = events.filter(event =>
         event.eve_title.toLowerCase().includes(value.toLowerCase())
@@ -87,18 +91,25 @@ export function NavDrawer({ eventos, handleFilterChange}) {
     }
   };
 
-
   if (!user) {
-    return <Loanding/>; // Mensaje mientras se cargan los datos
+    return <Loanding />; // Mensaje mientras se cargan los datos
   }
-  
-  return (
 
+  return (
     <>
-      {modalAddEvents.isOpen && (
-        <>
-          <AddEvent closeModal={modalAddEvents.toggleModal} texto={'texto'} titulo={eventTitle} hora={'hora'} fecha={'fecha'} />
-        </>
+      {modalAddEvents.isOpen && selectedEvent && (
+        <ShowEvent 
+          closeModal={modalAddEvents.toggleModal} 
+          titulo={selectedEvent.eve_title}
+          texto={selectedEvent.eve_description}
+          hora={selectedEvent.hora}
+          fecha={selectedEvent.fecha}
+          tag={selectedEvent.etiqueta_nombre}
+          cat={selectedEvent.categoria_nombre}
+          image={selectedEvent.eve_image}
+          estado={selectedEvent.estado}
+          fechahora={selectedEvent.eve_datetime}
+        />
       )}
 
       <div className="mb-8 relative">
@@ -130,10 +141,9 @@ export function NavDrawer({ eventos, handleFilterChange}) {
                 value={query}
                 onChange={handleInputChange}
               />
-              {/* <input className="absolute bg-no-repeat bg-center w-10 right-0 top-1 " style={{ backgroundImage: `url(${Search})` }} type="submit" value="" /> */}
               <div className="flex flex-col w-full absolute top-10 t-8 left-0 bg-blue-1 ring-blue-3 ring-[0.6px]">
                 {filteredEvents.map(event => (
-                  <button key={event.eve_id} onFocusCapture={modalAddEvents.toggleModal} className="hover:bg-blue-300 px-8 flex justify-between">
+                  <button key={event.eve_id} onClick={() => findEvent(event.eve_id)} className="hover:bg-blue-300 px-8 flex justify-between">
                     <p className="text-blue-3">{event.eve_title}</p>
                     <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
                   </button>
@@ -188,14 +198,13 @@ export function NavDrawer({ eventos, handleFilterChange}) {
                   <div className="bg-blue-1 flex sm:h-[3.5rem] h-[2rem] rounded-full">
                     <input value={query} onChange={handleInputChange} className="focus:outline-none pl-8 w-full text-blue-3 texto bg-transparent" placeholder="Buscar" type="text" />
                     <div className="flex flex-col w-full absolute z-30 top-10 t-8 left-0 bg-blue-1 ring-blue-3 ring-[0.6px]">
-                {filteredEvents.map(event => (
-                  <button key={event.eve_id} onFocusCapture={modalAddEvents.toggleModal} className="hover:bg-blue-300 px-8 flex justify-between">
-                    <p className="text-blue-3">{event.eve_title}</p>
-                    <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
-                  </button>
-                ))}
-              </div>
-                    {/* <input className="px-7 bg-no-repeat bg-center w-10" style={{ backgroundImage: `url(${Search})` }} type="submit" value="" /> */}
+                      {filteredEvents.map(event => (
+                        <button key={event.eve_id} onClick={() => findEvent(event.eve_id)} className="hover:bg-blue-300 px-8 flex justify-between">
+                          <p className="text-blue-3">{event.eve_title}</p>
+                          <p className="text-blue-3">{format(new Date(event.eve_datetime), 'dd/MM/yyyy')}</p>
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
                 <div className="sm:hidden block">

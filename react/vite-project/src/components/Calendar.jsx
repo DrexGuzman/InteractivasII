@@ -15,16 +15,17 @@ import {
   parseISO,
   startOfToday,
   startOfWeek,
-} from 'date-fns'
+  isBefore,
+} from 'date-fns';
 import { Link } from "react-router-dom";
 import { AddEvent } from "./AddEvent";
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
+  return classes.filter(Boolean).join(' ');
 }
 
-export function Calendario({eventsList, addNewEvent, dayClicked, setDay, carreraFilter, universidadFilter, cursosFilter, estudiantesFilter }) {
-  let events = []; 
+export function Calendario({ eventsList, addNewEvent, dayClicked, setDay, carreraFilter, universidadFilter, cursosFilter, estudiantesFilter }) {
+  let events = [];
   if (!eventsList.isLoading) {
     events = eventsList.data.events;
   }
@@ -54,29 +55,28 @@ export function Calendario({eventsList, addNewEvent, dayClicked, setDay, carrera
             <div className="flex justify-around mb-8">
               <div>
                 <p className="text-center texto">Poco</p>
-                    
-                    {events.length<= 2 ? (
-                       <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
-                    ) : (
-                      <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
-                    )}
-              
+
+                {events.length <= 2 ? (
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
+                ) : (
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
+                )}
               </div>
               <div>
-                <p className="text-center texto">Moderado</p> 
+                <p className="text-center texto">Moderado</p>
                 {events.length >= 4 ? (
-                       <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
-                    ) : (
-                      <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
-                    )}
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
+                ) : (
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
+                )}
               </div>
               <div className="place-items-center">
                 <p className="text-center texto">Mucho</p>
                 {events.length >= 6 ? (
-                       <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
-                    ) : (
-                      <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
-                    )}
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
+                ) : (
+                  <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
+                )}
               </div>
             </div>
 
@@ -86,7 +86,7 @@ export function Calendario({eventsList, addNewEvent, dayClicked, setDay, carrera
                   <path d="M9.59844 9.66V7.58L1.15844 4.42V5.58L9.59844 2.42V0.34L0.378437 3.92V6.08L9.59844 9.66Z" fill="#11567D" />
                 </svg>
               </button>
-              <p className="p-1 text-xl font-semibold text-center subtitulo-pesado w-[52%]">  
+              <p className="p-1 text-xl font-semibold text-center subtitulo-pesado w-[52%]">
                 {format(firstDayCurrentMonth, 'MMMM yyyy')}
               </p>
               <button onClick={nextMonth} type="button" className="w-5 h-5 ring-2 ring-[#11567D] rounded-full text-center flex items-center justify-center">
@@ -107,71 +107,56 @@ export function Calendario({eventsList, addNewEvent, dayClicked, setDay, carrera
               <div className="grid place-items-center">S</div>
             </div>
             <div className="grid grid-cols-7 gap-1 texto text-center">
-              {days.map((day, dayIdx) => (
-                <div onClick={() => dayClicked(day)}
-                  key={day.toString()}
-                  className={classNames(
-                    dayIdx === 0 && colStartClasses[getDay(day)],
-                    ' '
-                  )}
-                >
-                  <button
-                    type="button"
-                    onClick={() => setSelectedDay(day)}
-                    className={classNames(
-                      isEqual(day, selectedDay) && 'text-white',
-                      !isEqual(day, selectedDay) &&
-                      isToday(day) &&
-                      'text-red-500',
-                      !isEqual(day, selectedDay) &&
-                      !isToday(day) &&
-                      isSameMonth(day, firstDayCurrentMonth) &&
-                      'text-wite',
-                      !isEqual(day, selectedDay) &&
-                      !isToday(day) &&
-                      !isSameMonth(day, firstDayCurrentMonth) &&
-                      'text-gray-400',
-                      isEqual(day, selectedDay) && isToday(day) && 'bg-[#F5A747]',
-                      isEqual(day, selectedDay) &&
-                      !isToday(day) &&
-                      'bg-gray-900',
-                      !isEqual(day, selectedDay) && 'hover:bg-gray-200',
-                      (isEqual(day, selectedDay) || isToday(day)) &&
-                      '',
-                      'mx-auto flex h-8 w-8 items-center justify-center rounded-full texto relative'
-                    )}
-                  >
-                    <time className="texto" dateTime={format(day, 'yyyy-MM-dd')}>
-                      {format(day, 'd')}
-                    </time>
-                    <div className="w-1 h-1 mx-auto top-0 left-8  absolute">
-                      {events.some((event) =>
-                        filterEvents(event, day)
-                      ) && (
-                        <div className="w-2 h-2 rounded-full bg-sky-500"></div>
+              {days.map((day, dayIdx) => {
+                const filteredEvents = events.filter((event) => filterEvents(event, day));
+                const isPast = filteredEvents.some((event) => isBefore(parseISO(event.eve_datetime), new Date()));
+                const isCompleted = filteredEvents.some((event) => event.estado === "Completada");
+                return (
+                  <div onClick={() => dayClicked(day)} key={day.toString()} className={classNames(dayIdx === 0 && colStartClasses[getDay(day)], ' ')}>
+                    <button
+                      type="button"
+                      onClick={() => setSelectedDay(day)}
+                      className={classNames(
+                        isEqual(day, selectedDay) && 'text-white',
+                        !isEqual(day, selectedDay) && isToday(day) && 'text-red-500',
+                        !isEqual(day, selectedDay) && !isToday(day) && isSameMonth(day, firstDayCurrentMonth) && 'text-wite',
+                        !isEqual(day, selectedDay) && !isToday(day) && !isSameMonth(day, firstDayCurrentMonth) && 'text-gray-400',
+                        isEqual(day, selectedDay) && isToday(day) && 'bg-[#F5A747]',
+                        isEqual(day, selectedDay) && !isToday(day) && 'bg-gray-900',
+                        !isEqual(day, selectedDay) && 'hover:bg-gray-200',
+                        (isEqual(day, selectedDay) || isToday(day)) && '',
+                        'mx-auto flex h-8 w-8 items-center justify-center rounded-full texto relative'
                       )}
-                    </div>
-                  </button>
-                </div>
-              ))}
+                    >
+                      <time className="texto" dateTime={format(day, 'yyyy-MM-dd')}>
+                        {format(day, 'd')}
+                      </time>
+                      {filteredEvents.length > 0 && (
+                        <div className={classNames(
+                          'w-2 h-2 rounded-full absolute bottom-7 left-7', 
+                          isCompleted ? 'bg-green-500' : isPast ? 'bg-red-500' : 'bg-sky-500'
+                        )}></div>
+                      )}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
-            
+
             <button onClick={modalAddEvents.openModal} className="absolute left-[48%] top-[95%] ring-2 ring-[#11567D] bg-blue-1 h-8 w-8 rounded-md flex items-center justify-center">
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M8.25559 1.97652C8.25559 1.28296 7.69332 0.720703 6.99977 0.720703C6.30623 0.720703 5.74396 1.28296 5.74396 1.97652V5.74396H1.97652C1.28296 5.74396 0.720703 6.30623 0.720703 6.99977C0.720703 7.69332 1.28296 8.25559 1.97652 8.25559H5.74396V12.023C5.74396 12.7166 6.30623 13.2788 6.99977 13.2788C7.69332 13.2788 8.25559 12.7166 8.25559 12.023V8.25559H12.023C12.7166 8.25559 13.2788 7.69332 13.2788 6.99977C13.2788 6.30623 12.7166 5.74396 12.023 5.74396H8.25559V1.97652Z" fill="#11567D" />
+                <path d="M8.25559 7.22222H14V6.05556H8.25559V0H5.74441V6.05556H0V7.22222H5.74441V14H8.25559V7.22222Z" fill="#11567D" />
               </svg>
               <span className="text-center text-blue-3 font-main text-texto font-pesado sm:text-subtitulo text-nowrap absolute top-8">Añadir nuevo</span>
             </button>
           </div>
         </div>
-        
         <Link to='dailyTask' className="bg-blue-1 text-center rounded-full ring-1 ring-[#11567D] shadow-md hidden sm:flex flex-col py-4 mt-12">
           Resumen de actividades Diarias y Semanales
         </Link>
       </div>
-      
     </>
-  )
+  );
 }
 
 let colStartClasses = [
@@ -182,4 +167,4 @@ let colStartClasses = [
   'col-start-5',
   'col-start-6',
   'col-start-7',
-]
+];
