@@ -1,8 +1,12 @@
 import '../index.css';
 import checkW from '../assets/checkWhite.svg';
 import checkG from '../assets/CheckGreen.svg';
-import Penta from "../assets/penta.svg";
+/* import Penta from "../assets/pentafill.svg"; */
 import Ramdom from "../assets/ramdomevent.png";
+import Square from "../assets/square.svg";
+import Penta from "../assets/penta.svg";
+import Rombo from "../assets/rombo.svg";
+import Triangle from "../assets/triangle.svg";
 import EventesMenu from "../assets/eventsMenu.svg";
 import { useHandleCheck } from '../hooks/useHandleCheck';
 import { useModal } from '../hooks/useModal';
@@ -35,6 +39,21 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, 
         }
     };
 
+    function setImageCat(cat){
+        switch (cat) {
+            case 'Carrera':
+                return Triangle;
+            case 'Universidad':
+                return Square;
+            case 'Curso':
+                return Penta;
+            case 'Estudiantes':
+                return Rombo;
+            default:
+                return Square;
+        }
+    }
+
     return (
         <>
             {modalAddEvents.isOpen && (
@@ -51,7 +70,7 @@ export function Eventos({ titulo, texto, image, hora, cat, fecha, horaFomatted, 
                         <button disabled={isPast} onClick={handleComplete} className='z-40'>
                             <img src={event.estado === "Completada" ? checkG : checkW} alt="" id='img' />
                         </button>
-                        <img className='min-w-8' src={Penta} alt="" />
+                        <img className='min-w-8' src={setImageCat(cat)} alt="" />
                     </div>
                     <div className='flex flex-col items-center sm:items-start min-w-[135px] w-[70%] '>
                         <h1 className='font-main line-clamp-1 sm:line-clamp-none text-subtitulo font-pesado text-blue-3'>{event.eve_title}</h1>

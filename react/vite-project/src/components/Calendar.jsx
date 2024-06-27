@@ -56,7 +56,7 @@ export function Calendario({ eventsList, addNewEvent, dayClicked, setDay, carrer
               <div>
                 <p className="text-center texto">Poco</p>
 
-                {events.length <= 2 ? (
+                {events.length <= 2 && events.length >= 2 ? (
                   <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
                 ) : (
                   <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
@@ -64,7 +64,7 @@ export function Calendario({ eventsList, addNewEvent, dayClicked, setDay, carrer
               </div>
               <div>
                 <p className="text-center texto">Moderado</p>
-                {events.length >= 4 ? (
+                {events.length >= 4  && events.length <=4 ? (
                   <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-[#F5A747] rounded-lg mt-3"></div>
                 ) : (
                   <div className="h-5 w-14 ring-[2px] ring-[#11567D] bg-gray-300 m-auto rounded-lg mt-3"></div>
